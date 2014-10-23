@@ -115,7 +115,7 @@ if(!empty($_POST))
         <div class="control-group">
             <!-- Button -->
             <div class="controls">
-                <button class="btn btn-success">Register</button>
+                <button class="btn btn-success">Login</button>
             </div>
         </div>
     </fieldset>

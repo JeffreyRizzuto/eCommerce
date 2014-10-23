@@ -20,7 +20,8 @@ class User
 	public $displayname_taken = false;
 	public $activation_token = 0;
 	public $success = NULL;
-	
+
+
 	function __construct($user,$display,$pass,$email)
 	{
 		//Used for display only

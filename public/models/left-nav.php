@@ -1,8 +1,8 @@
 <div class="col-md-3">
-    <p class="lead">Our Site</p>
+    <p class="lead">CSBS</p>
     <div class="list-group">
-        <a href="#" class="list-group-item">This is</a>
-        <a href="#" class="list-group-item">an optional </a>
-        <a href="#" class="list-group-item">sidebar</a>
+        <a href="../greg_test_page.php" class="list-group-item">Gregs Test Page</a>
+        <a href="../greg_test_page.php" class="list-group-item">Gregs Test Page</a>
+        <a href="../greg_test_page.php" class="list-group-item">Gregs Test Page</a>
     </div>
 </div>

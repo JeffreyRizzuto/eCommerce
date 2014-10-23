@@ -4,6 +4,7 @@ UserCake Version: 2.0.2
 http://usercake.com
 */
 require_once("db-settings.php"); //Require DB connection
+require_once("query.php");
 
 //Retrieve settings
 $stmt = $mysqli->prepare("SELECT id, name, value
@@ -43,6 +44,7 @@ require_once($language);
 require_once("class.mail.php");
 require_once("class.user.php");
 require_once("class.newuser.php");
+require_once("class.neweuser.php");
 require_once("funcs.php");
 
 session_start();

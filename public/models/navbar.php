@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Store</a>
+            <a class="navbar-brand" href="index.php">CSBS</a>
         </div>
         <div class="navbar-collapse collapse" id="searchbar">
 
@@ -16,6 +16,7 @@
                     echo "
                 <li><a href='account.php'>Account</a></li>
                 <li><a href='cart.php'>Cart</a></li>
+                <li><a href='logout.php'>Logout</a></li>
                 ";
                 }
                 else{
@@ -27,7 +28,6 @@
                 }
                 ?>
             </ul>
-
             <form class="navbar-form">
                 <div class="form-group" style="display:inline;">
                     <div class="input-group">
@@ -36,7 +36,6 @@
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
