@@ -87,13 +87,21 @@ if(!empty($_POST))
 <div id='top'><div id='logo'></div></div>
 <div id='content'>
 </div>
-<div id='main'>
+<div class="row" id='main'>
 <?php   echo resultBlock($errors,$successes);   ?>
-<div id='regbox'>
+
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	<hr>
+</div>
+<div class="col-md-1"></div>
+
+<div class="col-md-4"></div>
+<div class="col-md-4" id='regbox'>
 <?php echo" <form name='login' action='".$_SERVER['PHP_SELF']."' method='post'> "?>
     <fieldset>
         <div id="legend">
-            <legend class="">Login</legend>
+            <h3>Login</h3>
         </div>
         <div class="control-group">
             <!-- Username -->
@@ -121,6 +129,7 @@ if(!empty($_POST))
     </fieldset>
 </form>
 </div>
+<div class="col-md-4"></div>
 </div>
     <!-- Footer-->
     <?php   require 'models/footer.php';    ?>
