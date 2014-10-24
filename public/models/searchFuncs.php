@@ -4,6 +4,13 @@ function correctSearchString($str) {
 	return ucfirst(strtolower($str));
 }//end of correctSearchString
 
+function searchByCategories($row) {
+	foreach($row as $category) {
+		$arr = searchByCategory(correctSearchString($category));
+	}
+	return $arr;
+}//end of searchByCategories
+
 function searchByCategory($category) {
 	global $myQuery;
 
