@@ -2,7 +2,7 @@
 require_once("models/config.php");
 if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
-echo "Someone else can make this pretty. I am just doin my work<br>"
+echo "Someone else can make this pretty. I am just doin my work<br>";
 
 $euser = $_SESSION["eUser"];
 
@@ -21,6 +21,6 @@ foreach ($cartInfo as $c) {
 echo "Subtotal: $$total<br>";
 
 
-echo "</html>"
+echo "</html>";
 
 ?>
