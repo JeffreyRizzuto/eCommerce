@@ -24,5 +24,9 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
     //$euser->getCart();
     $euser->addToCart($isbn, $qty);
 
+    $isbn = '9780538473934';
+    $qty = 1;
+    $euser->addToCart($isbn, $qty);
+
     echo "Continue to cart.php";
 ?>
