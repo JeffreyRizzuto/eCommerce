@@ -13,7 +13,7 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
     $state = "TX";
     $zip = 78258;
 
-    $euser = new EUser($loggedInUser->username, "qwerty12", $loggedInUser->email, $fname, $lname, $pn);
+    $euser = new EUser($loggedInUser->username, "qwertyuiop", $loggedInUser->email, $fname, $lname, $pn);
     $euser->addAddress($type, $st, $no, $city, $state, $zip);
     $euser->addEUser();
 
@@ -24,6 +24,6 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
     //$euser->getCart();
     $euser->addToCart($isbn, $qty);
 
-    echo "Success. Continue to ".<a href="cart.php">."cart.php";
-
+    echo "ISBN: $isbn
+    Continue to cart.php";
 ?>
