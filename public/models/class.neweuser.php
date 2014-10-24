@@ -188,24 +188,21 @@ class EUser {
 
         //get price of book
         $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE ISBN = ?");
-        $stmt->bind_param("d", $isbn);
+        $stmt->bind_param("i", $isbn);
         $stmt->execute();
         $stmt->bind_result($newPrice);
         $stmt->fetch();
         $stmt->close();
-        echo "newPrice = $newPrice";
-
+       
         //get current total_price of order
-        $stmt = $myQuery->prepare("SELECT `total_price` FROM `order` WHERE `oid` = ? AND `purchased` = 0");
+        $stmt = $myQuery->prepare("SELECT `total_price`, `qty` FROM `order` WHERE `oid` = ? AND `purchased` = 0");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
-        $stmt->bind_result($total);
+        $stmt->bind_result($total,$qty);
         $stmt->fetch();
         $stmt->close();
-        echo "total = $total";
-
-        $newPrice = $newPrice + $total;
-        echo "Price is $newPrice\n";
+       
+        $newPrice = $newPrice * $qty + $total;
 
         //update total price
         $stmt = $myQuery->prepare("UPDATE `order` SET `total_price` = ? WHERE `oid` = ? AND `purchased` = 0");
