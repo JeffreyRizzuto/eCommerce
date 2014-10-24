@@ -76,25 +76,6 @@ if(!empty($_POST))
 		$successes[] = $user->success;
 	}
 
-    //This is my test code dont touch it :O
-    $fname = "Greg";
-    $lname = "Gomez";
-    $pn = "2101234567";
-    $type = "both";
-    $st = "street";
-    $no = 1;
-    $city = "satown";
-    $state = "TX";
-    $zip = 78258;
-
-    $euser = new EUser($username, $password, $email, $fname, $lname, $pn);
-    $euser->addAddress($type, $st, $no, $city, $state, $zip);
-    $euser->addEUser();
-
-    $isbn = 9780132492676;
-    $qty = 2;
-    $euser->getCart();
-    $euser->addToCart($isbn, $qty);
 }
 ?>
     <div id='wrapper'>
