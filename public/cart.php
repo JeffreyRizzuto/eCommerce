@@ -15,7 +15,9 @@ foreach ($cartInfo as $c) {
 	OID: 		".$c['oid']."<br>
 	ISBN:		".$c['isbn']."<br>
 	Quantity:	".$c['qty']."<br>
-	Date Added:	".$c['date']."<br><hr>";
+	Date Added:	".$c['date']."<br>
+	Picture:	".$c['pic']."<br>
+	<hr>";
 }
 
 echo "Subtotal: $$total</html>";
