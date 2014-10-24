@@ -41,6 +41,6 @@ foreach ($cartInfo as $c) {
 	<hr>";
 }
 
-echo "Subtotal: $$total</html>";
+echo "Subtotal: $".$total."</html>";
 
 ?>
