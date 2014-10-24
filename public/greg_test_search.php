@@ -1,6 +1,5 @@
 <?php
 require_once("models/config.php");
-if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
 echo "Testing the searching functions :D<br>";
 

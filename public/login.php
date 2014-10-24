@@ -71,6 +71,16 @@ if(!empty($_POST))
 					//Update last sign in
 					$loggedInUser->updateLastSignIn();
 					$_SESSION["userCakeUser"] = $loggedInUser;
+
+					//construct new euser and populate it
+					$euserdetails = fetchEUserDetails($username);
+
+					$euser = new EUser($username, $password, $euserdetails['fname'], $euserdetails['lname'], $euserdetails['phone_num']);
+					$euser->addAddress('both', $euserdetails['cur_address_st'], $euserdetails['cur_address_no'], $euserdetails['cur_address_c'], 
+										$euserdetails['cur_address_st'], $euserdetails['cur_address_zip']);
+					$euser->cart = $euserdetails['uid'];
+
+					$_SESSION['euser'] = $euser;
 					
 					//Redirect to user account page
 					header("Location: account.php");
