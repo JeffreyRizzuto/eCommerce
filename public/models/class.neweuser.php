@@ -190,7 +190,7 @@ class EUser {
         $stmt->close();
 
         //get price of book
-        $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE ISBN = ?");
+        $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
         $stmt->bind_param("i", $isbn);
         $stmt->execute();
         $stmt->bind_result($newPrice);
@@ -205,7 +205,9 @@ class EUser {
         $stmt->fetch();
         $stmt->close();
        
+        echo "newPrice: $newPrice qty: $qty total: $total";
         $newPrice = $newPrice * $qty + $total;
+
 
         //update total price
         $stmt = $myQuery->prepare("UPDATE `order` SET `total_price` = ? WHERE `oid` = ? AND `purchased` = 0");
