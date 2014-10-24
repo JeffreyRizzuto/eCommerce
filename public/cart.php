@@ -2,11 +2,9 @@
 require_once("models/config.php");
 if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
-echo "<html>Someone else can make this pretty. I am just doin my work<br><hr>";
-
 $euser = $_SESSION["euser"];
 
-echo "OID = ".$euser->cart."<br>";
+echo "<html>Someone else can make this pretty. I am just doin my work. OID == cart = $euser->cart<br><hr>";
 
 $cartInfo = $euser->getCartInfo();
 $total = $euser->getCartTotal();

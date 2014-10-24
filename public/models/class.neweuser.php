@@ -156,7 +156,7 @@ class EUser {
         }//end of finding cart oid
 
         //put the info into shopping_cart table
-        $stmt = $myQuery->prepare("INSERT IGNORE INTO `shopping_cart` ( uid, oid ) VALUES ( ?, ?)");
+        $stmt = $myQuery->prepare("INSERT IGNORE INTO `shopping_cart` ( `uid`, `oid` ) VALUES ( ?, ? )");
         $stmt->bind_param("ii", $this->uid, $this->cart);
         $stmt->execute();
         $stmt->close();
