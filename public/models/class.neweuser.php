@@ -195,6 +195,7 @@ class EUser {
         $stmt->execute();
         $stmt->bind_result($newPrice);
         $stmt->fetch();
+        printf("%s\n", $stmt->mysql_error());
         $stmt->close();
        
         //get current total_price of order
