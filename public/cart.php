@@ -30,6 +30,7 @@ $euser = $_SESSION["eUser"];
 $cartInfo = $euser->getCartInfo();
 $total = $euser->getCartTotal();
 
+echo "OID = $euser->cart<br>";
 
 foreach ($cartInfo as $c) {
 	echo "
