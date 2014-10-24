@@ -28,7 +28,8 @@ foreach ($results as $r) {
 //will have to add each category to an array
 $cats = array('office', 'culture');
 $results = searchByCategories($cats);
-foreach ($results as $r) {
+foreach ($results as $result) {
+foreach ($result as $r) {
 	echo "
 	<img src=".$r['pic']."><br>
 	ISBN:			".$r['isbn']."<br>
@@ -44,5 +45,6 @@ foreach ($results as $r) {
 	Details:		".$r['details']."<br><hr>
 	";
 }//end of foreach loop
+}//end of outher foreach loop
 
 ?>

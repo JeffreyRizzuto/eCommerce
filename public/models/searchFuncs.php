@@ -6,7 +6,7 @@ function correctSearchString($str) {
 
 function searchByCategories($row) {
 	foreach($row as $category) {
-		$arr = searchByCategory(correctSearchString($category));
+		$arr[] = searchByCategory(correctSearchString($category));
 	}
 	return $arr;
 }//end of searchByCategories
