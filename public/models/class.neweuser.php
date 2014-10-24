@@ -223,7 +223,7 @@ class EUser {
         $stmt->execute();
         $stmt->bind_result($oid, $isbn, $qty, $date);
         while($stmt->fetch()) {
-            $row[] = array('oid' => $oid, 'isbn' => $isbn, 'qty' => $qty, 'date_added', $date);
+            $row[] = array('oid' => $oid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date);
         }
         $stmt->close();
 
