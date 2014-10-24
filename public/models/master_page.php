@@ -14,7 +14,7 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>CSBS - Computer Science B***S***</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
