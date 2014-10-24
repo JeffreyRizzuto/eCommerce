@@ -4,7 +4,7 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
 $euser = $_SESSION["euser"];
 
-echo "<html>Someone else can make this pretty. I am just doin my work. OID == cart = $euser->cart<br><hr>";
+echo "<html>Someone else can make this pretty. I am just doin my work.<br><hr>";
 
 $cartInfo = $euser->getCartInfo();
 $total = $euser->getCartTotal();
