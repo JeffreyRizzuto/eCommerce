@@ -215,4 +215,32 @@ class EUser {
 
     }//end of addToCart
 
+    function getCartInfo() {
+        global $myQuery;
+
+        $stmt = $myQuery->prepare("SELECT * FROM `book_order` WHERE `oid` = ?");
+        $stmt->bind_param("i", $this->cart);
+        $stmt->execute();
+        $stmt->bind_result($oid, $isbn, $qty, $date);
+        while($stmt->fetch()) {
+            $row[] = array('oid' => $oid, 'isbn' => $isbn, 'qty' => $qty, 'date_added', $date);
+        }
+        $stmt->close();
+
+        return $row;
+    }//end of getCartInfo
+
+    function getCartTotal() {
+        global $myQuery;
+
+        $stmt = $myQuery->prepare("SELECT `total_price` FROM `order` WHERE `oid` = ? AND `purchased` = 0");
+        $stmt->bind_param("i", $this->cart);
+        $stmt->execute();
+        $stmt->bind_result($total);
+        $stmt->fetch();
+        $stmt->close();
+
+        return $total;
+    }//end of getCartTotal
+
 }//end of EUser
