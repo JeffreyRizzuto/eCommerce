@@ -19,7 +19,7 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
     $_SESSION["eUser"] = $euser;
 
-    $isbn = 9780132492676;
+    $isbn = '9780132492676';
     $qty = 2;
     //$euser->getCart();
     $euser->addToCart($isbn, $qty);

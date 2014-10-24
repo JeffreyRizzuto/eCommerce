@@ -169,9 +169,6 @@ class EUser {
             //someone dun goofed D:<
             $this->getCart();
         }
-
-        echo "ISBN: $isbn
-        ";
         
         //create new book order
         $stmt = $myQuery->prepare("INSERT INTO `book_order` (
@@ -185,17 +182,16 @@ class EUser {
             ?,
             ?,
             ?)");
-        $stmt->bind_param("iiis", $this->cart, $isbn, $qty, date("Y-m-d h:i:s"));
+        $stmt->bind_param("isis", $this->cart, $isbn, $qty, date("Y-m-d h:i:s"));
         $stmt->execute();
         $stmt->close();
 
         //get price of book
         $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
-        $stmt->bind_param("i", $isbn);
+        $stmt->bind_param("s", $isbn);
         $stmt->execute();
         $stmt->bind_result($newPrice);
         $stmt->fetch();
-        printf("%s\n", $stmt->mysql_error());
         $stmt->close();
        
         //get current total_price of order
