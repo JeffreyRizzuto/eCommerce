@@ -6,9 +6,10 @@ echo "Someone else can make this pretty. I am just doin my work";
 
 $euser = $_SESSION["eUser"];
 
-$cartInfo[] = $euser->getCartInfo();
+$cartInfo = $euser->getCartInfo();
 $total = $euser->getCartTotal();
 
+/*
 foreach ($cartInfo as $c) {
 	echo "
 	OID: 		$c['oid']
@@ -18,5 +19,5 @@ foreach ($cartInfo as $c) {
 }
 
 echo "Subtotal: $$total";
-
+*/
 ?>
