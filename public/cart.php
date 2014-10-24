@@ -6,10 +6,10 @@ echo "<html>Someone else can make this pretty. I am just doin my work<br><hr>";
 
 $euser = $_SESSION["euser"];
 
+echo "OID = ".$euser->cart."<br>";
+
 $cartInfo = $euser->getCartInfo();
 $total = $euser->getCartTotal();
-
-echo "OID = ".$euser->cart."<br>";
 
 foreach ($cartInfo as $c) {
 	echo "
@@ -21,6 +21,6 @@ foreach ($cartInfo as $c) {
 	<hr>";
 }
 
-echo "Subtotal: $".$total."</html>";
+echo "Subtotal: $total</html>";
 
 ?>
