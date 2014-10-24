@@ -78,7 +78,7 @@ if(!empty($_POST))
 					$euser = new EUser($username, $password, $euserdetails['fname'], $euserdetails['lname'], $euserdetails['phone_num']);
 					$euser->addAddress('both', $euserdetails['cur_address_st'], $euserdetails['cur_address_no'], $euserdetails['cur_address_c'], 
 										$euserdetails['cur_address_st'], $euserdetails['cur_address_zip']);
-					$euser->cart = $euserdetails['uid'];
+					$euser->getCart();
 
 					$_SESSION['euser'] = $euser;
 					
