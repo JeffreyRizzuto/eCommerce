@@ -80,40 +80,10 @@ class EUser {
             $securepass = generateHash($this->password);
 
             $stmt = $myQuery->prepare("INSERT INTO user (
-                username,
-                email,
-                fname,
-                lname,
-                cur_address_street,
-                cur_address_no,
-                cur_address_city,
-                cur_address_state,
-                cur_address_zip,
-                phone_number,
-                pass,
-                bil_address_street,
-                bil_address_no,
-                bil_address_city,
-                bil_address_state,
-                bil_address_zip
-                )
-                VALUES (
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?,
-                ?)");
+                username, email, fname, lname, cur_address_street, cur_address_no, cur_address_city, cur_address_state,
+                cur_address_zip, phone_number, pass, bil_address_street, bil_address_no, bil_address_city,
+                bil_address_state, bil_address_zip 
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $stmt->bind_param("ssssssssiisssssi", $this->username, $this->email, $this->fname, $this->lname, $this->cur_address_street, $this->cur_address_no, $this->cur_address_city, $this->cur_address_state, $this->cur_address_zip, $this->phone_number, $securepass, $this->bil_address_street, $this->bil_address_no, $this->bil_address_city, $this->bil_address_state, $this->bil_address_zip);
             $stmt->execute();
@@ -140,14 +110,9 @@ class EUser {
         } else {
             //we must create a new order to be the user's wishlist
             $stmt = $myQuery->prepare("INSERT INTO `order` (
-                purchased,
-                purchase_date,
-                total_price
-                )
-                VALUES (
-                ?,
-                ?,
-                ?");
+                purchased, purchase_date, total_price
+                ) VALUES (
+                ?, ?, ?");
             $stmt->bind_param("isi", 0, "n/a", 0);
             $stmt->execute();
             $this->wishlist = $myQuery->insert_id;
@@ -223,7 +188,7 @@ class EUser {
 
         //get price of book
         $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE ISBN = ?");
-        $stmt->bind_param("i", $isbn);
+        $stmt->bind_param("d", $isbn);
         $stmt->execute();
         $stmt->bind_result($newPrice);
         $stmt->fetch();
