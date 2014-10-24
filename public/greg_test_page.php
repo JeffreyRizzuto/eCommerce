@@ -19,7 +19,6 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
     $isbn = '9780132492676';
     $qty = 2;
-    //$euser->getCart();
     $euser->addToCart($isbn, $qty);
 
     $isbn = '9780538473934';

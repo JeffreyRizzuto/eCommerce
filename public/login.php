@@ -80,6 +80,15 @@ if(!empty($_POST))
 										$euserdetails['cur_address_st'], $euserdetails['cur_address_zip']);
 					$euser->getCart();
 
+					$isbn = '9780132492676';
+    				$qty = 2;
+    				$euser->addToCart($isbn, $qty);
+
+    				$isbn = '9780538473934';
+    				$qty = 1;
+    				$euser->addToCart($isbn, $qty);
+
+
 					$_SESSION['euser'] = $euser;
 					
 					//Redirect to user account page
