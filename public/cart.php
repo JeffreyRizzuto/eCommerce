@@ -16,7 +16,7 @@ foreach ($cartInfo as $c) {
 	ISBN:		".$c['isbn']."<br>
 	Quantity:	".$c['qty']."<br>
 	Date Added:	".$c['date']."<br>
-	Picture:	".$c['pic']."<br>
+	Picture:	<img src=".$c['pic']."><br>
 	<hr>";
 }
 
