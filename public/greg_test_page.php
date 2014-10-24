@@ -17,8 +17,6 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
     $euser->addAddress($type, $st, $no, $city, $state, $zip);
     $euser->addEUser();
 
-    $_SESSION["euser"] = $euser;
-
     $isbn = '9780132492676';
     $qty = 2;
     $euser->getCart();
@@ -28,5 +26,6 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
     $qty = 1;
     $euser->addToCart($isbn, $qty);
 
+    $_SESSION["euser"] = $euser;
     echo "Continue to cart.php";
 ?>
