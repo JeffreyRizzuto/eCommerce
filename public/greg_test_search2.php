@@ -13,6 +13,10 @@ if(!empty($_POST)) {
 
 	$debug[] =  "The search string is: $searchString<br>";
 
+	echo "
+		Test String Please Ignore.
+	";
+
 }//end of POST
 
 ?>
