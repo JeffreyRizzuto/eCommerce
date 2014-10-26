@@ -1,5 +1,6 @@
 <?php
 require_once("models/config.php");
+require_once("models/master_page.php");
 
 echo "Testing a general search by keyword or whatnot<br>";
 
@@ -16,7 +17,21 @@ if(!emtpy($_POST)) {
 
 ?>
 
-<?php   echo resultBlock($errors,$debug);   ?>
+<div id='wrapper'>
+<div id='top'><div id='logo'></div></div>
+<div id='content'>
+</div>
+<div class="row" id='main'>
+<?php   echo resultBlock($errors,$successes);   ?>
+
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	<hr>
+</div>
+<div class="col-md-1"></div>
+
+<div class="col-md-4"></div>
+<div class="col-md-4" id='regbox'>
 
 <?php echo" <form name='searchTest' action='".$_SERVER['PHP_SELF']."' method='post'> "?>
     <fieldset>
@@ -39,3 +54,6 @@ if(!emtpy($_POST)) {
         </div>
     </fieldset>
 </form>
+</div>
+<div class="col-md-4"></div>
+</div>
