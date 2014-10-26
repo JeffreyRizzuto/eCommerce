@@ -1,8 +1,16 @@
 <?php
 
-function correctCategoryString($str) {
+private function correctCategoryString($str) {
 	return ucfirst(strtolower($str));
 }//end of correctCategoryString
+
+private function returnValueCheck($row) {
+	if(empty($row)) {
+		return NULL;
+	} else {
+		return $row;
+	}
+}//end of returnValueCheck
 
 function searchByCategories($row) {
 	foreach($row as $category) {
@@ -24,7 +32,7 @@ function searchByCategory($category) {
 	}
 	$stmt->close();
 
-	return $row;
+	return returnValueCheck($row);
 }//end of searchByCategory
 
 function searchByISBN($isbn) {
@@ -40,7 +48,7 @@ function searchByISBN($isbn) {
 	}
 	$stmt->close();
 
-	return $row;
+	return returnValueCheck($row);
 }//end of searchByISBN
 
 function searchByCourse($course) {
@@ -64,7 +72,7 @@ function searchByCourse($course) {
 	}
 	$stmt->close();
 
-	return $row;
+	return returnValueCheck($row);
 }//end of searchByCourse
 
 function searchByAuthor($searchAuthor) {
@@ -81,9 +89,28 @@ function searchByAuthor($searchAuthor) {
 	}
 	$stmt->close();
 
-
+	return returnValueCheck($row);
 }//end of searchByAuthor
 
+function searchByKeyword($searchString) {
+	global $myQuery;
+
+	//first see if we can determine if the search string can be applied to a defined function
+	$matches = array();
+	$cnum = preg_match("/[0-9]+/", $searchString, $matches);
+	$search = $matches[0];
+	if(is_int($search) && (strlen($search) == 4)) {
+		//assume its a course number search
+		return searchByCourse($search);
+	} elseif ( is_int($search) && (strlen($search) > 4)) {
+		//assume its an isbn search because it is a number and is greater than length 4
+		return searchByISBN($search);
+	} else {
+		//we can assume that this is gonna be harder now
+		//check for categories
+		if($searchString)
+	}
+}//end of search by Keyword
 
 
 ?>
