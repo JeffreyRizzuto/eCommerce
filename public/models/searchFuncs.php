@@ -1,10 +1,10 @@
 <?php
 
-private function correctCategoryString($str) {
+function correctCategoryString($str) {
 	return ucfirst(strtolower($str));
 }//end of correctCategoryString
 
-private function returnValueCheck($row) {
+function returnValueCheck($row) {
 	if(empty($row)) {
 		return NULL;
 	} else {
@@ -92,6 +92,7 @@ function searchByAuthor($searchAuthor) {
 	return returnValueCheck($row);
 }//end of searchByAuthor
 
+/*
 function searchByKeyword($searchString) {
 	global $myQuery;
 
@@ -111,6 +112,6 @@ function searchByKeyword($searchString) {
 		if($searchString)
 	}
 }//end of search by Keyword
-
+*/
 
 ?>
