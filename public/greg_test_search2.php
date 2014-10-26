@@ -5,7 +5,7 @@ require_once("models/master_page.php");
 echo "Testing a general search by keyword or whatnot<br>";
 
 //form posted
-if(!emtpy($_POST)) {
+if(!empty($_POST)) {
 
 	$searchString = $_POST['search'];
 	$errors = array();
@@ -33,7 +33,7 @@ if(!emtpy($_POST)) {
 <div class="col-md-4"></div>
 <div class="col-md-4" id='regbox'>
 
-<?php echo" <form name='searchTest' action='".$_SERVER['PHP_SELF']."' method='post'> "?>
+<?php echo" <form name='searchTest' action='".$_SERVER['PHP_SELF']."' method='post'> "; ?>
     <fieldset>
         <div id="legend">
             <h3>Search below</h3>
