@@ -8,10 +8,10 @@ echo "Testing a general search by keyword or whatnot<br>";
 if(!emtpy($_POST)) {
 
 	$searchString = $_POST['search'];
-	$errors[] = array();
-	$debug[] = array();
+	$errors = array();
+	$debug = array();
 
-	$debug =  "The search string is: $searchString<br>";
+	$debug[] =  "The search string is: $searchString<br>";
 
 }//end of POST
 
@@ -22,7 +22,7 @@ if(!emtpy($_POST)) {
 <div id='content'>
 </div>
 <div class="row" id='main'>
-<?php   echo resultBlock($errors,$successes);   ?>
+<?php   echo resultBlock($errors,$debug);   ?>
 
 <div class="col-md-1"></div>
 <div class="col-md-10">
