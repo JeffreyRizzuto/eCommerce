@@ -4,7 +4,7 @@ require_once("models/config.php");
 echo "Testing the searching functions :D<br>";
 
 //Single category search
-$results = searchByCategory(correctSearchString('office'));
+$results = searchByCategory('office');
 
 foreach ($results as $r) {
 	echo "

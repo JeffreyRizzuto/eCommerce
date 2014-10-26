@@ -1202,4 +1202,11 @@ function fetchEUserDetails($username)
 	return $row;
 }//end of fetchEUserDetails
 
+//copied from stackoverflow
+//http://stackoverflow.com/questions/834303/startswith-and-endswith-functions-in-php
+function startsWith($haystack, $needle)
+{
+    return $needle === "" || strpos($haystack, $needle) === 0;
+}
+
 ?>
