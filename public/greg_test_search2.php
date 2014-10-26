@@ -4,21 +4,6 @@ require_once("models/master_page.php");
 
 echo "Testing a general search by keyword or whatnot<br>";
 
-//form posted
-if(!empty($_POST)) {
-
-	$searchString = $_POST['search'];
-	$errors = array();
-	$debug = array();
-
-	$debug[] =  "The search string is: $searchString<br>";
-
-	echo "
-		Test String Please Ignore.
-	";
-
-}//end of POST
-
 ?>
 
 <div id='wrapper'>
@@ -61,3 +46,44 @@ if(!empty($_POST)) {
 </div>
 <div class="col-md-4"></div>
 </div>
+
+<?php
+
+//form posted
+if(!empty($_POST)) {
+
+	$searchString = $_POST['search'];
+	$errors = array();
+	$debug = array();
+
+	$debug[] =  "The search string is: $searchString<br>";
+
+	echo "
+		Test String Please Ignore.
+	";
+
+	$results = searchByCategory($searchString);
+	if($results !== NULL) {
+	foreach ($results as $r) {
+		echo "
+		<img src=".$r['pic']."><br>
+		ISBN:			".$r['isbn']."<br>
+		Title:			".$r['title']."<br>
+		Author:			".$r['author']."<br>
+		Edition:		".$r['edition']."<br>
+		Type:			".$r['type']."<br>
+		Publisher:		".$r['publisher']."<br>
+		Price:			$".$r['price']."<br>
+		Course:			".$r['course']."<br>
+		Category:		".$r['cat']."<br>
+		Quantity:		".$r['qty']."<br>
+		Details:		".$r['details']."<br><hr>
+		";
+	}//end of foreach loop
+	} else {
+		echo "No products match your search: $searchString<br>";
+	}
+
+}//end of POST
+
+?>
