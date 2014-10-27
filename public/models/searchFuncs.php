@@ -92,26 +92,30 @@ function searchByAuthor($searchAuthor) {
 	return returnValueCheck($row);
 }//end of searchByAuthor
 
-/*
-function searchByKeyword($searchString) {
+
+function search($searchString) {
 	global $myQuery;
 
 	//first see if we can determine if the search string can be applied to a defined function
 	$matches = array();
 	$cnum = preg_match("/[0-9]+/", $searchString, $matches);
 	$search = $matches[0];
-	if(is_int($search) && (strlen($search) == 4)) {
+	if(strlen($search) == 4) {
 		//assume its a course number search
 		return searchByCourse($search);
-	} elseif ( is_int($search) && (strlen($search) > 4)) {
+	} elseif ( strlen($search) > 4) {
 		//assume its an isbn search because it is a number and is greater than length 4
 		return searchByISBN($search);
 	} else {
-		//we can assume that this is gonna be harder now
-		//check for categories
-		if($searchString)
+		$row = searchByCategory($searchString);
+
+		if(is_null($row)) {
+			$row = searchByAuthor($searchString);
+		}
+
+		return $row;
 	}
-}//end of search by Keyword
-*/
+}//end of search
+
 
 ?>

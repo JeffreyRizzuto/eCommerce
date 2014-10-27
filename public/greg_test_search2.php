@@ -2,7 +2,7 @@
 require_once("models/config.php");
 require_once("models/master_page.php");
 
-echo "Testing a general search by keyword or whatnot<br>";
+echo "Testing search<br>";
 
 ?>
 
@@ -58,11 +58,7 @@ if(!empty($_POST)) {
 
 	$debug[] =  "The search string is: $searchString<br>";
 
-	echo "
-		Test String Please Ignore.
-	";
-
-	$results = searchByCategory($searchString);
+	$results = search($searchString);
 	if($results !== NULL) {
 	foreach ($results as $r) {
 		echo "
