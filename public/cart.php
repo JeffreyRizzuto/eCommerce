@@ -25,4 +25,6 @@ foreach ($cartInfo as $c) {
 
 echo "Subtotal: $total</html>";
 
+
+require 'models/footer.php';
 ?>
