@@ -2,11 +2,14 @@
 require_once("models/config.php");
 if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 require_once("models/master_page.php");
-
 $euser = $_SESSION["euser"];
+?>
 
-echo "<html>Someone else can make this pretty. I am just doing my work.<br><hr>";
 
+
+
+
+<?php
 $cartInfo = $euser->getCartInfo();
 $total = $euser->getCartTotal();
 
@@ -21,7 +24,8 @@ foreach ($cartInfo as $c) {
 }
 
 echo "Subtotal: $total</html>";
+echo "</body>";
 
-
-
+<!-- Footer-->
+require 'models/footer.php';
 ?>
