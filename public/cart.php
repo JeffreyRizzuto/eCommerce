@@ -60,6 +60,8 @@ require_once("models/master_page.php");
 
 ?>
 
+<?php
+
 $euser = $_SESSION["euser"];
 
 echo "<html>Someone else can make this pretty. I am just doin my work.<br><hr>";
