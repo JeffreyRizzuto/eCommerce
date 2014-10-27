@@ -5,46 +5,27 @@ require_once("models/master_page.php");
 $euser = $_SESSION["euser"];
 ?>
 
-<div class="col-md-5 col-sm-12">
+<div class="here-unit col-md-5 col-sm-12">
+    <?php
+    $cartInfo = $euser->getCartInfo();
+    $total = $euser->getCartTotal();
+    ?>
+
     <ul>
-        <li class="row list-inline columnCaptions">
-            <span>QTY</span>
-            <span>ITEM</span>
-            <span>Price</span>
+    <?php
+    foreach ($cartInfo as $c) {
+        echo "<li class='row'>
+            <span class='OID: '>".$c['isbn']."</span>
+            <span class='ISBN: '>".$c['isbn']."</span>
+            <span class='Quantity: '>".$c['qty']. "</span>
+            <span class='Date Added: '>".$c['date']. "</span>
+            <span class='Picture:'><img src=".$c['pic']."></span>
         </li>
-        <li class="row">
-            <span class="quantity">1</span>
-            <span class="itemName">Item Name</span>
-            <span class="popbtn"><a class="arrow"></a></span>
-            <span class="price">$49.95</span>
-        </li>
-        <li class="row">
-            <span class="quantity">1</span>
-            <span class="itemName">Item Name</span>
-            <span class="popbtn"><a class="arrow"></a></span>
-            <span class="price">$5.00</span>
-        </li>
-        <li class="row">
-            <span class="quantity">1</span>
-            <span class="itemName">Item Name</span>
-            <span class="popbtn"><a class="arrow"></a></span>
-            <span class="price">$919.99</span>
-        </li>
-        <li class="row">
-            <span class="quantity">1</span>
-            <span class="itemName">Item Name</span>
-            <span class="popbtn"><a class="arrow"></a></span>
-            <span class="price">$269.45</span>
-        </li>
-        <li class="row">
-            <span class="quantity">1</span>
-            <span class="itemName">Item Name</span>
-            <span class="popbtn"  data-parent="#asd" data-toggle="collapse" data-target="#demo"><a class="arrow"></a></span>
-            <span class="price">$450.00</span>
-        </li>
+        "
+        ?>
         <li class="row totals">
             <span class="itemName">Total:</span>
-            <span class="price">$Something/span>
+            <span class="price"><?php $total ?>/span>
             <span class="order"> <a class="text-center">ORDER</a></span>
         </li>
     </ul>
@@ -59,20 +40,20 @@ $euser = $_SESSION["euser"];
 </div>
 
 <?php
-$cartInfo = $euser->getCartInfo();
-$total = $euser->getCartTotal();
-
-foreach ($cartInfo as $c) {
-	echo "
-	OID: 		".$c['oid']."<br>
-	ISBN:		".$c['isbn']."<br>
-	Quantity:	".$c['qty']."<br>
-	Date Added:	".$c['date']."<br>
-	Picture:	<img src=".$c['pic']."><br>
-	<hr>";
-}
-
-echo "Subtotal: $total</html>";
+//$cartInfo = $euser->getCartInfo();
+//$total = $euser->getCartTotal();
+//
+//foreach ($cartInfo as $c) {
+//	echo "
+//	OID: 		".$c['oid']."<br>
+//	ISBN:		".$c['isbn']."<br>
+//	Quantity:	"Quantity:	".$c['qty']."<br>"<br>
+//	Date Added:	".$c['date']."<br>
+//	Picture:	<img src=".$c['pic']."><br>
+//	<hr>";
+//}
+//
+//echo "Subtotal: $total</html>";
 
 
 require 'models/footer.php';
