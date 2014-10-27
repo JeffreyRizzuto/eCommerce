@@ -58,8 +58,6 @@ require_once("models/master_page.php");
     </ul>
 </div>
 
-?>
-
 <?php
 
 $euser = $_SESSION["euser"];
