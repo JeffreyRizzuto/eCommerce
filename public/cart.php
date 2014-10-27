@@ -2,7 +2,6 @@
 require_once("models/config.php");
 if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 require_once("models/master_page.php");
-
 ?>
 
 <div class="col-md-5 col-sm-12">
@@ -79,6 +78,7 @@ foreach ($cartInfo as $c) {
 
 echo "Subtotal: $total</html>";
 
+echo"</body>";
 <!-- Footer-->
 require 'models/footer.php';
 
