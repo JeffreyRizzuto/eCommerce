@@ -58,10 +58,6 @@ if(!empty($_POST)) {
 
 	$debug[] =  "The search string is: $searchString<br>";
 
-	echo "
-		Test String Please Ignore.<br>
-	";
-
 	$results = search($searchString);
 	if($results !== NULL) {
 	foreach ($results as $r) {

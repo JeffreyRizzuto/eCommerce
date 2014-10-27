@@ -100,10 +100,10 @@ function search($searchString) {
 	$matches = array();
 	$cnum = preg_match("/[0-9]+/", $searchString, $matches);
 	$search = $matches[0];
-	if(is_int($search) && (strlen($search) == 4)) {
+	if(strlen($search) == 4) {
 		//assume its a course number search
 		return searchByCourse($search);
-	} elseif ( is_int($search) && (strlen($search) > 4)) {
+	} elseif ( strlen($search) > 4) {
 		//assume its an isbn search because it is a number and is greater than length 4
 		return searchByISBN($search);
 	} else {
