@@ -1,6 +1,7 @@
 <?php
 require_once("models/config.php");
 if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
+require_once("models/master_page.php");
 
 $euser = $_SESSION["euser"];
 
