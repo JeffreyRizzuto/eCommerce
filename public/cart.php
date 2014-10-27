@@ -4,15 +4,8 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 require_once("models/master_page.php");
 $euser = $_SESSION["euser"];
 ?>
-<div class="col-md-5 col-sm-12">
-    <div class="bigcart"></div>
-    <h1>Your shopping cart</h1>
-    <p>
-        Something Something shopping cart
-    </p>
-</div>
 
-<div class="col-md-7 col-sm-12 text-left">
+<div class="col-md-5 col-sm-12">
     <ul>
         <li class="row list-inline columnCaptions">
             <span>QTY</span>
@@ -55,6 +48,14 @@ $euser = $_SESSION["euser"];
             <span class="order"> <a class="text-center">ORDER</a></span>
         </li>
     </ul>
+</div>
+
+<div class="col-md-7 col-sm-12 text-left">
+    <div class="bigcart"></div>
+    <h1>Your shopping cart</h1>
+    <p>
+        Something Something shopping cart
+    </p>
 </div>
 
 <?php
