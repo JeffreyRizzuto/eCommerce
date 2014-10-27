@@ -92,8 +92,8 @@ function searchByAuthor($searchAuthor) {
 	return returnValueCheck($row);
 }//end of searchByAuthor
 
-/*
-function searchByKeyword($searchString) {
+
+function search($searchString) {
 	global $myQuery;
 
 	//first see if we can determine if the search string can be applied to a defined function
@@ -107,11 +107,15 @@ function searchByKeyword($searchString) {
 		//assume its an isbn search because it is a number and is greater than length 4
 		return searchByISBN($search);
 	} else {
-		//we can assume that this is gonna be harder now
-		//check for categories
-		if($searchString)
+		$row = searchByCategory($searchString);
+
+		if(is_null($row)) {
+			$row = searchByAuthor($searchString);
+		}
+
+		return $row;
 	}
-}//end of search by Keyword
-*/
+}//end of search
+
 
 ?>
