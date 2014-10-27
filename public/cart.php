@@ -26,7 +26,7 @@ $euser = $_SESSION["euser"];
         ?>
         <li class="row totals">
             <span class="itemName">Total:</span>
-            <span class="price"><?php $total ?>/span>
+            <span class="price"><?php $total ?></span>
             <span class="order"> <a class="text-center">ORDER</a></span>
         </li>
     </ul>
