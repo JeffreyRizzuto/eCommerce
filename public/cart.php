@@ -15,13 +15,14 @@ $euser = $_SESSION["euser"];
     <?php
     foreach ($cartInfo as $c) {
         echo "<li class='row'>
-            <span class='OID: '>".$c['isbn']."</span>
-            <span class='ISBN: '>".$c['isbn']."</span>
-            <span class='Quantity: '>".$c['qty']. "</span>
-            <span class='Date Added: '>".$c['date']. "</span>
-            <span class='Picture:'><img src=".$c['pic']."></span>
+            <span class='OID: '>" . $c['isbn'] . "</span>
+            <span class='ISBN: '>" . $c['isbn'] . "</span>
+            <span class='Quantity: '>" . $c['qty'] . "</span>
+            <span class='Date Added: '>" . $c['date'] . "</span>
+            <span class='Picture:'><img src=" . $c['pic'] . "></span>
         </li>
-        "
+        ";
+        }
         ?>
         <li class="row totals">
             <span class="itemName">Total:</span>
@@ -40,21 +41,5 @@ $euser = $_SESSION["euser"];
 </div>
 
 <?php
-//$cartInfo = $euser->getCartInfo();
-//$total = $euser->getCartTotal();
-//
-//foreach ($cartInfo as $c) {
-//	echo "
-//	OID: 		".$c['oid']."<br>
-//	ISBN:		".$c['isbn']."<br>
-//	Quantity:	"Quantity:	".$c['qty']."<br>"<br>
-//	Date Added:	".$c['date']."<br>
-//	Picture:	<img src=".$c['pic']."><br>
-//	<hr>";
-//}
-//
-//echo "Subtotal: $total</html>";
-
-
 require 'models/footer.php';
 ?>
