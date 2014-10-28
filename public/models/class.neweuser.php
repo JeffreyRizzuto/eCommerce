@@ -95,6 +95,7 @@ class EUser {
 
     function setuid($uid) {
         $this->uid = $uid;
+        echo "UID: $uid<br>";
     }
 
     /*
@@ -144,7 +145,6 @@ class EUser {
             $this->newCart = false;
             echo "New: $this->cart<br>";
         } else {
-            $cart = -1;
             $stmt = $myQuery->prepare("SELECT `OID` FROM `shopping_cart` WHERE `UID` = ?");
             $stmt->bind_param("i", $this->uid);
             $stmt->execute();
