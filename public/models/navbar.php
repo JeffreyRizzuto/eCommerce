@@ -49,6 +49,7 @@ if(!empty($_POST)) {
     if(!is_null($_POST['search'])) {
         //searching possibility
         $searchString = $_POST['search'];
+        $_POST['search'] = NULL;
         $_SESSION['search'] = $searchString;
     
         $results = search($searchString);
@@ -60,6 +61,7 @@ if(!empty($_POST)) {
     } elseif (!is_null($_POST['isbn'])) {
         //add to cart possibility
         $isbn = $_POST['isbn'];
+        $_POST['isbn'] = NULL;
         $euser = $_SESSION['euser'];
         $qty = 1;
         $euser->addToCart($isbn, $qty);
