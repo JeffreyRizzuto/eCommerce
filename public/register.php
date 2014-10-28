@@ -54,6 +54,13 @@ if(!empty($_POST))
 	{	
 		//Construct a user object
 		$user = new User($username,$displayname,$password,$email);
+        $euser = new EUser($username, $password, $email, "FTest", "LTest", 2108675309);
+        $st = 'UTSA Cirlce';
+        $no = 1;
+        $city = 'satown';
+        $state = 'TX';
+        $zip = 78249;
+        $euser->addAddress('both', $st, $no, $city, $state, $zip);
 		
 		//Checking this flag tells us whether there were any errors such as possible data duplication occured
 		if(!$user->status)
@@ -67,6 +74,7 @@ if(!empty($_POST))
 			//Attempt to add the user to the database, carry out finishing  tasks like emailing the user (if required)
 			if(!$user->userCakeAddUser())
 			{
+                $esuer->addEUser();
 				if($user->mail_failure) $errors[] = lang("MAIL_ERROR");
 				if($user->sql_failure)  $errors[] = lang("SQL_ERROR");
 			}
