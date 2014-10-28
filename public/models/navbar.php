@@ -28,14 +28,26 @@
                 }
                 ?>
             </ul>
-            <form class="navbar-form">
+            <?php echo" <form name='login' action='".$_SERVER['PHP_SELF']."' method='post'> "?>
+            <!-- form class="navbar-form" -->
                 <div class="form-group" style="display:inline;">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                        <input class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="autofocus" type="text">
+                        <input class="form-control" name="search" placeholder="Search" autocomplete="off" autofocus="off" type="text">
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<?php
+
+//form posted
+if(!empty($_POST)) {
+
+    $input = $_POST['search'];
+    echo "This is a test dudes you entered: $input<br>";
+}//end of POST
+
+?>
