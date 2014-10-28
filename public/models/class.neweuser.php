@@ -127,8 +127,9 @@ class EUser {
     function getCart() {
         global $myQuery;
 
-        if($this->newCart) {
-            $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES ( ?, ?, ?)");
+        if($this->newCart == true) {
+            echo "$Creating a new cart<br>";
+            $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES (?, ?, ?)");
             $stmt->bind_param("isd", 0, NULL, 0);
             $stmt->execute();
             $this->cart = $myQuery->insert_id;

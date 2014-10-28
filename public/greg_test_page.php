@@ -4,7 +4,7 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
     $euser = $_SESSION['euser'];
 
-    echo "Testing the checkout function<br><hr>";
+    echo "Testing the checkout function123<br><hr>";
 ?>
 <div class="col-md-5 col-sm-12 pull-left">
     <?php
@@ -47,6 +47,10 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
     <ul>
     <?php
+    if(is_null($cartInfo) || is_null($total)) {
+        echo "Your cart is emtpy<br>";
+    } else {
+
     foreach ($cartInfo as $c) {
         echo "<div class='panel panel-default' >
             <div class='panel-body'>
@@ -60,6 +64,7 @@ if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
         </div>
         ";
         }
+    }
         ?>
         <div class='panel panel-default' >
             <div class='panel-body'>
