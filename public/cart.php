@@ -27,11 +27,11 @@ $euser = $_SESSION["euser"];
         ";
         }
         ?>
-        <li class="row totals">
-            <span class="itemName">Total:</span>
-            <span class="price"><?php $total ?></span>
+        <div class='panel panel-default' >
+            <div class='panel-body'>
+            <p>Total: <?php $total ?></p>
             <span class="order"> <a class="text-center">ORDER</a></span>
-    </ul>
+        </div>
 </div>
 
 <div class="col-md-7 col-sm-12 text-left">
