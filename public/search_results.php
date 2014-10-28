@@ -22,7 +22,7 @@ $searchString = $_SESSION['search'];
         Details:        ".$r['details']."<br><hr>
         ";
         echo "<form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>";
-        echo "<button class="btn btn-success" name=".$r['isbn'].">Add to Cart</button>
+        echo "<button class='.btn btn-success.' name=".$r['isbn'].">Add to Cart</button>
         </form>";
     }//end of foreach loop
 }
