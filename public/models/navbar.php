@@ -48,6 +48,28 @@ if(!empty($_POST)) {
 
     $input = $_POST['search'];
     echo "This is a test dudes you entered: $input<br>";
+
+    $results = search($searchString);
+    if($results !== NULL) {
+    foreach ($results as $r) {
+        echo "
+        <img src=".$r['pic']."><br>
+        ISBN:           ".$r['isbn']."<br>
+        Title:          ".$r['title']."<br>
+        Author:         ".$r['author']."<br>
+        Edition:        ".$r['edition']."<br>
+        Type:           ".$r['type']."<br>
+        Publisher:      ".$r['publisher']."<br>
+        Price:          $".$r['price']."<br>
+        Course:         ".$r['course']."<br>
+        Category:       ".$r['category']."<br>
+        Quantity:       ".$r['qty']."<br>
+        Details:        ".$r['details']."<br><hr>
+        ";
+    }//end of foreach loop
+    } else {
+        echo "No products match your search: $searchString<br>";
+    }
 }//end of POST
 
 ?>
