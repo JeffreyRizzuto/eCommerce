@@ -93,6 +93,10 @@ class EUser {
             $stmt->close();
     }//end of addEUser
 
+    function setuid($uid) {
+        $this->uid = $uid;
+    }
+
     /*
     * Helper function to create a new order to be the user's wishlist.
     */
