@@ -5,7 +5,7 @@ require_once("models/master_page.php");
 $euser = $_SESSION["euser"];
 ?>
 
-<div class="jumbotron col-md-5 col-sm-12">
+<div class="col-md-5 col-sm-12">
     <?php
     $cartInfo = $euser->getCartInfo();
     $total = $euser->getCartTotal();
@@ -14,7 +14,7 @@ $euser = $_SESSION["euser"];
     <ul>
     <?php
     foreach ($cartInfo as $c) {
-        echo "<li class='row'>
+        echo "<li class='jumbotron row'>
             <span class='OID: '>" . $c['isbn'] . "</span>
             <span class='ISBN: '>" . $c['isbn'] . "</span>
             <span class='Quantity: '>" . $c['qty'] . "</span>
