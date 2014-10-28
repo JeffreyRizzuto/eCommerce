@@ -5,7 +5,7 @@ require_once("models/master_page.php");
 $euser = $_SESSION["euser"];
 ?>
 
-<div class="hero-unit col-md-5 col-sm-12">
+<div class="jumbotron col-md-5 col-sm-12">
     <?php
     $cartInfo = $euser->getCartInfo();
     $total = $euser->getCartTotal();
