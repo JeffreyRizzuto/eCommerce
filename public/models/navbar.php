@@ -69,7 +69,7 @@ if(!empty($_POST)) {
     }//end of foreach loop
     */
     //send them to the search results page
-    header("Location: item_page.php");
+    header("Location: models/item_page.php");
     die();
     } else {
         echo "No products match your search: $searchString<br>";
