@@ -74,7 +74,7 @@ if(!empty($_POST))
 			//Attempt to add the user to the database, carry out finishing  tasks like emailing the user (if required)
 			if(!$user->userCakeAddUser())
 			{
-                $esuer->addEUser();
+                $euser->addEUser();
 				if($user->mail_failure) $errors[] = lang("MAIL_ERROR");
 				if($user->sql_failure)  $errors[] = lang("SQL_ERROR");
 			}
