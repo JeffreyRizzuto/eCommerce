@@ -4,8 +4,8 @@ require_once("models/master_page.php");
 
 $searchString = $_SESSION['search'];
 
-   $results = search($searchString);
-    if($results !== NULL) {
+$results = search($searchString);
+if($results !== NULL) {
     foreach ($results as $r) {
         echo "
         <img src=".$r['pic']."><br>
@@ -22,8 +22,8 @@ $searchString = $_SESSION['search'];
         Details:        ".$r['details']."<br><hr>
         ";
         echo "<form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>";
-        echo "<button class='.btn btn-success.' name=".$r['isbn'].">Add to Cart</button>
-        </form>";
+        echo "<button class='.btn btn-success.' name='isbn' value = ".$r['isbn'].">Add to Cart</button>";
+        echo "</form>";
     }//end of foreach loop
 }
 
