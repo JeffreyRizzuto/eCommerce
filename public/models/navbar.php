@@ -46,6 +46,7 @@
 //form posted
 if(!empty($_POST)) {
 
+    //searching possibility
     $searchString = $_POST['search'];
     $_SESSION['search'] = $searchString;
 

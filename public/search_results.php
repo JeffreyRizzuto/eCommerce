@@ -21,8 +21,19 @@ $searchString = $_SESSION['search'];
         Quantity:       ".$r['qty']."<br>
         Details:        ".$r['details']."<br><hr>
         ";
+        echo "<form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>";
+        echo "<button class="btn btn-success" name=".$r['isbn'].">Add to Cart</button>
+        </form>";
     }//end of foreach loop
 }
 
+//form posted
+if(!empty($_POST)) {
+
+    $isbn = $_POST['isbn']
+
+    $esuer = $_SESSION['euser'];
+    $euser->addtoCart($isbn);
+}//end of POST
 
 ?>
