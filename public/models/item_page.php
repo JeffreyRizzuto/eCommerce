@@ -1,6 +1,6 @@
 <?php
-require_once("models/config.php");
-require_once("models/master_page.php");
+require_once("config.php");
+require_once("master_page.php");
 
 echo "TEST PAGE PLEASE IGNORE";
 /*
