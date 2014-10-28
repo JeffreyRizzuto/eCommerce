@@ -46,15 +46,22 @@
 //form posted
 if(!empty($_POST)) {
 
-    //searching possibility
-    $searchString = $_POST['search'];
-    $_SESSION['search'] = $searchString;
-
-    $results = search($searchString);
-    if($results !== NULL) {
-    header("Location: search_results.php"); die();
-    } else {
-        echo "No products match your search: $searchString<br>";
+    if(!is_null($_POST['search'])) {
+        //searching possibility
+        $searchString = $_POST['search'];
+        $_SESSION['search'] = $searchString;
+    
+        $results = search($searchString);
+        if($results !== NULL) {
+        header("Location: search_results.php"); die();
+        } else {
+            echo "No products match your search: $searchString<br>";
+        }
+    } elseif (!is_null($_POST['isbn'])) {
+        //add to cart possibility
+        $isbn = $_POST['isbn'];
+        $esuer = $_SESSION['euser'];
+        $euser->addtoCart($isbn, 1);
     }
 }//end of POST
 
