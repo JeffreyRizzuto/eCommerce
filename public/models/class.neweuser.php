@@ -257,7 +257,7 @@ class EUser {
         global $myQuery;
 
         //set order purchased to 1
-        $stmt = $myQuery->prepare("UPDATE `order` WHERE `oid` = ? SET `purchased` = 1");
+        $stmt = $myQuery->prepare("UPDATE `order` SET `purchased` = 1 WHERE `oid` = ? ");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
         $stmt->close();
