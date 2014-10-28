@@ -71,7 +71,7 @@ if(!empty($_POST)) {
     */
     //send them to the search results page
     header("Location: models/item_page.php");
-    //die();
+    die();
     } else {
         echo "No products match your search: $searchString<br>";
     }
