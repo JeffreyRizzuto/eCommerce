@@ -15,11 +15,11 @@ $euser = $_SESSION["euser"];
     <?php
     foreach ($cartInfo as $c) {
         echo "<li class='jumbotron row'>
+            <span class='Picture:'><img src=" . $c['pic'] . "></span>
             <span class='OID: '>" . $c['isbn'] . "</span>
             <span class='ISBN: '>" . $c['isbn'] . "</span>
             <span class='Quantity: '>" . $c['qty'] . "</span>
             <span class='Date Added: '>" . $c['date'] . "</span>
-            <span class='Picture:'><img src=" . $c['pic'] . "></span>
         </li>
         ";
         }
