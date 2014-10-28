@@ -256,7 +256,12 @@ class EUser {
         global $myQuery;
 
         //set order purchased to 1
-        $stmt = $myQuery->prepare("UPDATE `order` SET `purchased` = 1, `purchased_date` = ? WHERE `oid` = ? ");
+        $stmt = $myQuery->prepare("UPDATE `order` SET `purchased` = 1 WHERE `oid` = ? ");
+        $stmt->bind_param("i", $this->cart);
+        $stmt->execute();
+        $stmt->close();
+
+        $stmt = $myQuery->prepare("UPDATE `order` SET `purchased_date` = ? WHERE `oid` = ? ");
         $stmt->bind_param("si", date("Y-m-d h:i:s"), $this->cart);
         $stmt->execute();
         $stmt->close();
