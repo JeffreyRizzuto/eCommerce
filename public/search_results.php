@@ -19,13 +19,13 @@ if($results !== NULL) {
         Course:         ".$r['course']."<br>
         Category:       ".$r['category']."<br>
         Quantity:       ".$r['qty']."<br>
-        Details:        ".$r['details']."<br><hr>
+        Details:        ".$r['details']."<br>
         ";
         echo "
         <form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>
             <input type='hidden' id='isbn' name='isbn' value='".$r['isbn']."'/>
             <input type='Submit' value='Add to Cart' />
-        </form>";
+        </form><hr><br>";
     }//end of foreach loop
 }
 ?>

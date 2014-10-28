@@ -29,8 +29,16 @@ $euser = $_SESSION["euser"];
         ?>
         <div class='panel panel-default' >
             <div class='panel-body'>
-            <span>Total: <?php $total ?></span>
-            <span class="order pull-right"> <a class="text-center">ORDER</a></span>
+            <span>Total: <?php echo "$total"; ?></span>
+            <span class="order pull-right"> <a class="text-center">
+            <?php
+            echo "
+                <form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>
+                    <input type='hidden' id='isbn' name='isbn' value='".$r['isbn']."'/>
+                    <input type='Submit' value='Add to Cart' />
+                </form><br>";
+            ?>
+            </a></span>
         </div>
 </div>
 
