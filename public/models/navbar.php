@@ -51,7 +51,7 @@ if(!empty($_POST)) {
 
     $results = search($searchString);
     if($results !== NULL) {
-    header("Location: item_page.php"); die();
+    header("Location: search_results.php"); die();
     } else {
         echo "No products match your search: $searchString<br>";
     }
