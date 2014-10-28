@@ -61,11 +61,8 @@ if(!empty($_POST)) {
         //add to cart possibility
         $isbn = $_POST['isbn'];
 
-        echo "ISBN: $isbn<br>";
         $esuer = $_SESSION['euser'];
-        echo "fetched euser<br>";
-        $euser->addtoCart($isbn, 1);
-        echo "added to cart?<br>";
+        $euser->addToCart($isbn, 1);
         $_SESSION['euser'] = $euser;
         header("Location: cart.php"); die();
     }
