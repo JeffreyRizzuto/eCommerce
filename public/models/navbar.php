@@ -46,8 +46,9 @@
 //form posted
 if(!empty($_POST)) {
 
-    $input = $_POST['search'];
-    echo "This is a test dudes you entered: $input<br>";
+    
+
+    $searchString = $_POST['search'];
 
     $results = search($searchString);
     if($results !== NULL) {
