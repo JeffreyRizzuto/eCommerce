@@ -194,17 +194,7 @@ class EUser {
         }
         
         //create new book order
-        $stmt = $myQuery->prepare("INSERT INTO `book_order` (
-            oid,
-            ISBN,
-            qty,
-            date_added
-            )
-            VALUES (
-            ?,
-            ?,
-            ?,
-            ?)");
+        $stmt = $myQuery->prepare("INSERT INTO `book_order` (oid, ISBN, qty, date_added) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("isis", $this->cart, $isbn, $qty, date("Y-m-d h:i:s"));
         $stmt->execute();
         $stmt->close();
