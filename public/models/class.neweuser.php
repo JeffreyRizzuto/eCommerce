@@ -128,13 +128,14 @@ class EUser {
         global $myQuery;
 
         if($this->newCart == true) {
-            echo "$Creating a new cart<br>";
+            echo "Creating a new cart Old: $this->cart<br>";
             $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES (?, ?, ?)");
             $stmt->bind_param("isd", 0, NULL, 0);
             $stmt->execute();
             $this->cart = $myQuery->insert_id;
             $stmt->close();
             $this->newCart = false;
+            echo "New: $this->cart<br>";
         } else {
             $cart = -1;
             $stmt = $myQuery->prepare("SELECT `OID` FROM `shopping_cart` WHERE `UID` = ?");
