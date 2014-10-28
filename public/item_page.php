@@ -2,10 +2,7 @@
 require_once("models/config.php");
 require_once("models/master_page.php");
 
-echo "TEST PAGE PLEASE IGNORE";
-
 $searchString = $_SESSION['search'];
-echo "searchString = $searchString";
 
    $results = search($searchString);
     if($results !== NULL) {
