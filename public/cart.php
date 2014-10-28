@@ -13,19 +13,23 @@ $euser = $_SESSION["euser"];
 
     <ul>
     <?php
-    foreach ($cartInfo as $c) {
-        echo "<div class='panel panel-default' >
-            <div class='panel-body'>
-            <span class=''><img src=" . $c['pic'] . "></span>
-            <ul class='pull-right' style='list-style-type:none'>
-                <li><span class=''>ISBN: " . $c['isbn'] . "</span></li>
-                <li><span class='Quantity: '>Quantity: " . $c['qty'] . "</span></li>
-                <li><span class='Date Added: '>Date Added: " . $c['date'] . "</span></li>
-            </ul>
+    if(is_null($cartInfo)) {
+        echo "Your cart is emtpy D:<br>";
+    } else {
+        foreach ($cartInfo as $c) {
+            echo "<div class='panel panel-default' >
+                <div class='panel-body'>
+                <span class=''><img src=" . $c['pic'] . "></span>
+                <ul class='pull-right' style='list-style-type:none'>
+                    <li><span class=''>ISBN: " . $c['isbn'] . "</span></li>
+                    <li><span class='Quantity: '>Quantity: " . $c['qty'] . "</span></li>
+                    <li><span class='Date Added: '>Date Added: " . $c['date'] . "</span></li>
+                </ul>
+                </div>
             </div>
-        </div>
-        ";
-        }
+            ";
+            }
+        }//end of else
         ?>
         <div class='panel panel-default' >
             <div class='panel-body'>
@@ -33,9 +37,9 @@ $euser = $_SESSION["euser"];
             <span class="order pull-right"> <a class="text-center">
             <?php
             echo "
-                <form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>
-                    <input type='hidden' id='isbn' name='isbn' value='".$r['isbn']."'/>
-                    <input type='Submit' value='Add to Cart' />
+                <form name='checkout' action='".$_SERVER['PHP_SELF']."' method='post'>
+                    <input type='hidden' id='checkout' name='checkout'/>
+                    <input type='Submit' value='Checkout' />
                 </form><br>";
             ?>
             </a></span>

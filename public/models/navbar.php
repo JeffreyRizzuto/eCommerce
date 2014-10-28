@@ -66,6 +66,11 @@ if(!empty($_POST)) {
         $qty = 1;
         $euser->addToCart($isbn, $qty);
         header("Location: cart.php"); die();
+    } elseif (!is_null($_POST['checkout'])) {
+        $_POST['checkout'] = NULL;
+        $euser = $_SESSION['euser'];
+        $euser->checkout();
+        header("Location: cart.php");
     }
 }//end of POST
 
