@@ -28,7 +28,7 @@ function searchByCategory($category) {
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
 	while($stmt->fetch()) {
 		$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
-						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.gif');
+						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
 	}
 	$stmt->close();
 
@@ -44,7 +44,7 @@ function searchByISBN($isbn) {
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
 	while($stmt->fetch()) {
 		$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
-						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.gif');
+						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
 	}
 	$stmt->close();
 
@@ -68,7 +68,7 @@ function searchByCourse($course) {
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
 	while($stmt->fetch()) {
 		$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
-						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.gif');
+						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
 	}
 	$stmt->close();
 
@@ -84,7 +84,7 @@ function searchByAuthor($searchAuthor) {
 	while($stmt->fetch()) {
 		if(strpos($searchAuthor, $author) !== false) {
 			$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
-						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.gif');
+						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
 		}
 	}
 	$stmt->close();
