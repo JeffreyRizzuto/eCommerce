@@ -1,29 +1,19 @@
-<<<<<<< HEAD
 <?php require_once 'models/master_page.php' ?>
 
-=======
->>>>>>> 36aeb26a147a04389f518550c9e52ca87fce59e7
 <div class="container-fluid">
     <div class="content-wrapper">	
 		<div class="item-container">	
 			<div class="container">	
 				<div class="col-md-12">
 					<div class="product col-md-3 service-image-left">
-<<<<<<< HEAD
 						<center>
 							<img id="item-display" src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
-=======
-                    
-						<center>
-							<img id="item-display" src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
->>>>>>> 36aeb26a147a04389f518550c9e52ca87fce59e7
 						</center>
 					</div>
 					
 					<div class="container service1-items col-sm-2 col-md-2 pull-left">
 						<center>
 							<a id="item-1" class="service1-item">
-<<<<<<< HEAD
 								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
 							</a>
 							<a id="item-2" class="service1-item">
@@ -47,26 +37,6 @@
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
 					<div class="product-price"><?php echo $price; ?></div>
-=======
-								<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-							</a>
-							<a id="item-2" class="service1-item">
-								<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-							</a>
-							<a id="item-3" class="service1-item">
-								<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-							</a>
-						</center>
-					</div>
-				</div>
-					
-				<div class="col-md-7">
-					<div class="product-title">Corsair GS600 600 Watt PSU</div>
-					<div class="product-desc">The Corsair Gaming Series GS600 is the ideal price/performance choice for mid-spec gaming PC</div>
-					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
-					<hr>
-					<div class="product-price">$ 1234.00</div>
->>>>>>> 36aeb26a147a04389f518550c9e52ca87fce59e7
 					<div class="product-stock">In Stock</div>
 					<hr>
 					<div class="btn-group cart">
@@ -95,10 +65,8 @@
 						<div class="tab-pane fade in active" id="service-one">
 						 
 							<section class="container product-info">
-<<<<<<< HEAD
+
 							    <!--
-=======
->>>>>>> 36aeb26a147a04389f518550c9e52ca87fce59e7
 								The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.
 
 								<h3>Corsair Gaming Series GS600 Features:</h3>
@@ -113,11 +81,8 @@
 								<li>Dimensions: 150mm(W) x 86mm(H) x 160mm(L)</li>
 								<li>MTBF: 100,000 hours</li>
 								<li>Safety Approvals: UL, CUL, CE, CB, FCC Class B, T†V, CCC, C-tick</li>
-<<<<<<< HEAD
 							    -->
 							    <?php echo $description; ?>
-=======
->>>>>>> 36aeb26a147a04389f518550c9e52ca87fce59e7
 							</section>
 										  
 						</div>
