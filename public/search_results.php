@@ -4,8 +4,8 @@ require_once("models/master_page.php");
 
 $searchString = $_SESSION['search'];
 
-   $results = search($searchString);
-    if($results !== NULL) {
+$results = search($searchString);
+if($results !== NULL) {
     foreach ($results as $r) {
         echo "
         <img src=".$r['pic']."><br>
@@ -21,8 +21,19 @@ $searchString = $_SESSION['search'];
         Quantity:       ".$r['qty']."<br>
         Details:        ".$r['details']."<br><hr>
         ";
+        echo "<form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>";
+        echo "<button class='btn btn-success' name='isbn' value=".$r['isbn'].">Add to Cart</button>";
+        echo "</form>";
     }//end of foreach loop
 }
 
+//form posted
+if(!empty($_POST)) {
+
+    $isbn = $_POST['isbn']
+
+    $esuer = $_SESSION['euser'];
+    $euser->addtoCart($isbn);
+}//end of POST
 
 ?>
