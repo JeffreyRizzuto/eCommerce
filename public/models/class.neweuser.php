@@ -23,6 +23,7 @@ class EUser {
     public  $address_status = false;
     public  $address_count = 0;
     public  $user_status = false;
+    public  $newCart = false;
 
     function __construct($user, $pass, $email, $fname, $lname, $phone_number) {
         $this->email = sanitize($email);
@@ -126,6 +127,16 @@ class EUser {
     function getCart() {
         global $myQuery;
         $cart = -1;
+
+        if($this->newCart) {
+            $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES ( ?, ?, ?)");
+            $stmt->bind_param("isd", 0, NULL, 0);
+            $stmt->execute();
+            $this->cart = $myQuery->insert_id;
+            $stmt->close();
+            $this->newCart = false;
+            return;
+        }
 
         $stmt = $myQuery->prepare("SELECT `OID` FROM `shopping_cart` WHERE `UID` = ?");
         $stmt->bind_param("i", $this->uid);
@@ -245,7 +256,15 @@ class EUser {
     function checkout() {
         global $myQuery;
 
-        //$stmt = $myQuery->prepare();
+        //set order purchased to 1
+        $stmt = $myQuery->prepare("UPDATE `order` WHERE `oid` = ? SET `purchased` = 1");
+        $stmt->bind_param("i", $this->cart);
+        $stmt->execute();
+        $stmt->close();
+
+        //update cart order number
+        $newCart = true;
+        $this->getCart();
     }//end of checkout
 
 }//end of EUser

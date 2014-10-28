@@ -2,30 +2,14 @@
 require_once("models/config.php");
 if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 
-    //This is my test code dont touch it :O
-    $fname = "Greg";
-    $lname = "Gomez";
-    $pn = "2101234567";
-    $type = "both";
-    $st = "street";
-    $no = 1;
-    $city = "satown";
-    $state = "TX";
-    $zip = 78258;
+    $euser = $_SESSION['euser'];
 
-    $euser = new EUser($loggedInUser->username, "qwertyuiop", $loggedInUser->email, $fname, $lname, $pn);
-    $euser->addAddress($type, $st, $no, $city, $state, $zip);
-    $euser->addEUser();
+    echo "Testing the checkout function<br>";
+    echo "Old cart: $euser->cart";
 
-    $isbn = '9780132492676';
-    $qty = 2;
-    $euser->addToCart($isbn, $qty);
+    $euser->checkout();
 
-    $isbn = '9780538473934';
-    $qty = 1;
-    $euser->addToCart($isbn, $qty);
+    echo "New cart: $euser->cart<br>";
 
-    $_SESSION["euser"] = $euser;
 
-    echo "Continue to cart.php";
 ?>
