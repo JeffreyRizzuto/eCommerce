@@ -71,7 +71,7 @@ if(!empty($_POST)) {
 		Publisher:		".$r['publisher']."<br>
 		Price:			$".$r['price']."<br>
 		Course:			".$r['course']."<br>
-		Category:		".$r['cat']."<br>
+		Category:		".$r['category']."<br>
 		Quantity:		".$r['qty']."<br>
 		Details:		".$r['details']."<br><hr>
 		";

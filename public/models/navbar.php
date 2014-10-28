@@ -28,7 +28,7 @@
                 }
                 ?>
             </ul>
-            <?php echo" <form name='login' action='".$_SERVER['PHP_SELF']."' method='post'> "?>
+            <?php echo" <form name='search' action='".$_SERVER['PHP_SELF']."' method='post'> "?>
             <!-- form class="navbar-form" -->
                 <div class="form-group" style="display:inline;">
                     <div class="input-group">
@@ -46,7 +46,7 @@
 //form posted
 if(!empty($_POST)) {
 
-    
+
 
     $searchString = $_POST['search'];
 
