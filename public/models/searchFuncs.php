@@ -117,5 +117,20 @@ function search($searchString) {
 	}
 }//end of search
 
+function getAllBooks() {
+	global $myQuery;
+
+	$stmt = $myQuery->prepare("SELECT * FROM `books`");
+	$stmt->execute();
+	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
+	while($stmt->fetch()) {
+		$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
+						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
+	}
+	$stmt->close();
+
+	return returnValueCheck($row);
+}//end of getAllBooks
+
 
 ?>
