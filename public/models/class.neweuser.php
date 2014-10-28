@@ -242,4 +242,10 @@ class EUser {
         return $total;
     }//end of getCartTotal
 
+    function checkout() {
+        global $myQuery;
+
+        //$stmt = $myQuery->prepare();
+    }//end of checkout
+
 }//end of EUser
