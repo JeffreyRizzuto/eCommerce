@@ -5,6 +5,7 @@ require_once("models/master_page.php");
 
 
 $searchString = $_SESSION['search'];
+echo "searchString = $searchString";
 
 $results = search($searchString);
     if($results !== NULL) {
@@ -24,6 +25,6 @@ $results = search($searchString);
         Details:        ".$r['details']."<br><hr>
         ";
     }//end of foreach loop
-
+}
 
 ?>
