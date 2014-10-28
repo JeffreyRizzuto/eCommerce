@@ -14,13 +14,14 @@ $euser = $_SESSION["euser"];
     <ul>
     <?php
     foreach ($cartInfo as $c) {
-        echo "<li class='jumbotron row'>
+        echo "<li class='jumbotron list-style-type:none' >
             <span class='Picture:'><img src=" . $c['pic'] . "></span>
-            <div class 'list-group'>
+            <ul div class 'list-group'>
                 <li><span class='OID: '>" . $c['isbn'] . "</span></li>
                 <li><span class='ISBN: '>" . $c['isbn'] . "</span></li>
                 <li><span class='Quantity: '>" . $c['qty'] . "</span></li>
                 <li><span class='Date Added: '>" . $c['date'] . "</span></li>
+            </ul>
             </div>
         ";
         }
