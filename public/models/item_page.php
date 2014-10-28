@@ -1,13 +1,13 @@
 <?php
 require_once("models/config.php");
-//if (!securePage($_SERVER['PHP_SELF'])){die();}
 require_once("models/master_page.php");
 
-
+echo "TEST PAGE PLEASE IGNORE";
+/*
 $searchString = $_SESSION['search'];
 echo "searchString = $searchString";
 
-$results = search($searchString);
+   $results = search($searchString);
     if($results !== NULL) {
     foreach ($results as $r) {
         echo "
@@ -26,5 +26,6 @@ $results = search($searchString);
         ";
     }//end of foreach loop
 }
+*/
 
 ?>
