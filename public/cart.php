@@ -17,10 +17,9 @@ $euser = $_SESSION["euser"];
         echo "<div class='panel panel-default' >
             <span class=''><img src=" . $c['pic'] . "></span>
             <ul class='pull-right' style='list-style-type:none'>
-                <li><span class=''>" . $c['isbn'] . "</span></li>
-                <li><span class='ISBN: '>" . $c['isbn'] . "</span></li>
-                <li><span class='Quantity: '>" . $c['qty'] . "</span></li>
-                <li><span class='Date Added: '>" . $c['date'] . "</span></li>
+                <li><span class=''>ISBN: " . $c['isbn'] . "</span></li>
+                <li><span class='Quantity: '>Quantity: " . $c['qty'] . "</span></li>
+                <li><span class='Date Added: '>Date Added: " . $c['date'] . "</span></li>
             </ul>
         ";
         }
