@@ -126,7 +126,6 @@ class EUser {
     */
     function getCart() {
         global $myQuery;
-        $cart = -1;
 
         if($this->newCart) {
             $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES ( ?, ?, ?)");
@@ -135,36 +134,36 @@ class EUser {
             $this->cart = $myQuery->insert_id;
             $stmt->close();
             $this->newCart = false;
-            return;
-        }
-
-        $stmt = $myQuery->prepare("SELECT `OID` FROM `shopping_cart` WHERE `UID` = ?");
-        $stmt->bind_param("i", $this->uid);
-        $stmt->execute();
-        $stmt->bind_result($cart);
-        if($stmt->fetch()) {
-            $this->cart = $cart;
-            $stmt->close();
         } else {
-            $stmt->close();
-            //we must create a new order to be the user's cart
-            $stmt = $myQuery->prepare("INSERT INTO `order` (
-                purchased,
-                purchase_date,
-                total_price
-                )
-                VALUES (
-                ?,
-                ?,
-                ?)");
-            $purchased = 0;
-            $date = NULL;
-            $price = 0;
-            $stmt->bind_param("isd", $purchased, $date, $price);
+            $cart = -1;
+            $stmt = $myQuery->prepare("SELECT `OID` FROM `shopping_cart` WHERE `UID` = ?");
+            $stmt->bind_param("i", $this->uid);
             $stmt->execute();
-            $this->cart = $myQuery->insert_id;
-            $stmt->close();
-        }//end of finding cart oid
+            $stmt->bind_result($cart);
+            if($stmt->fetch()) {
+                $this->cart = $cart;
+                $stmt->close();
+            } else {
+                $stmt->close();
+                //we must create a new order to be the user's cart
+                $stmt = $myQuery->prepare("INSERT INTO `order` (
+                    purchased,
+                    purchase_date,
+                    total_price
+                    )
+                    VALUES (
+                    ?,
+                    ?,
+                    ?)");
+                $purchased = 0;
+                $date = NULL;
+                $price = 0;
+                $stmt->bind_param("isd", $purchased, $date, $price);
+                $stmt->execute();
+                $this->cart = $myQuery->insert_id;
+                $stmt->close();
+            }//end of finding cart oid
+        }//end of else
 
         //put the info into shopping_cart table
         $stmt = $myQuery->prepare("INSERT IGNORE INTO `shopping_cart` ( `uid`, `oid` ) VALUES ( ?, ? )");
@@ -257,13 +256,13 @@ class EUser {
         global $myQuery;
 
         //set order purchased to 1
-        $stmt = $myQuery->prepare("UPDATE `order` SET `purchased` = 1 WHERE `oid` = ? ");
-        $stmt->bind_param("i", $this->cart);
+        $stmt = $myQuery->prepare("UPDATE `order` SET `purchased` = 1, `purchased_date` = ? WHERE `oid` = ? ");
+        $stmt->bind_param("si", date("Y-m-d h:i:s"), $this->cart);
         $stmt->execute();
         $stmt->close();
 
         //update cart order number
-        $newCart = true;
+        $this->newCart = true;
         $this->getCart();
     }//end of checkout
 
