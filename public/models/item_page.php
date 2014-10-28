@@ -4,7 +4,7 @@ require_once("models/config.php");
 require_once("models/master_page.php");
 
 
-$searchString = $_POST['search'];
+$searchString = $_SESSION['search'];
 
 $results = search($searchString);
     if($results !== NULL) {

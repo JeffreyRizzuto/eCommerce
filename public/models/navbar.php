@@ -47,6 +47,7 @@
 if(!empty($_POST)) {
 
     $searchString = $_POST['search'];
+    $_SESSION['search'] = $searchString;
 
     $results = search($searchString);
     if($results !== NULL) {
