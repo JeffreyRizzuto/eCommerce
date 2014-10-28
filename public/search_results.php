@@ -21,11 +21,11 @@ if($results !== NULL) {
         Quantity:       ".$r['qty']."<br>
         Details:        ".$r['details']."<br><hr>
         ";
-        echo "
+        /*echo "
         <form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>
             <input type='hidden' id='isbn' name='isbn' value='".$r['isbn']."'/>
             <input type='Submit' value='Add to Cart' />
-        </form>";
+        </form>";*/
     }//end of foreach loop
 }
 
