@@ -35,7 +35,7 @@ if(!empty($_POST)) {
     $isbn = $_POST['isbn']
 
     $esuer = $_SESSION['euser'];
-    $euser->addtoCart($isbn);
+    $euser->addtoCart($isbn, 1);
 }//end of POST
 
 ?>
