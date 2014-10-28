@@ -15,9 +15,9 @@ $euser = $_SESSION["euser"];
     <?php
     foreach ($cartInfo as $c) {
         echo "<div class='panel panel-default' >
-            <span class='Picture:'><img src=" . $c['pic'] . "></span>
-            <ul style='list-style-type:none'>
-                <li><span class='list-group-item OID: '>" . $c['isbn'] . "</span></li>
+            <span class='col-md-4'><img src=" . $c['pic'] . "></span>
+            <ul class='col-md-8' style='list-style-type:none'>
+                <li><span class=''>" . $c['isbn'] . "</span></li>
                 <li><span class='ISBN: '>" . $c['isbn'] . "</span></li>
                 <li><span class='Quantity: '>" . $c['qty'] . "</span></li>
                 <li><span class='Date Added: '>" . $c['date'] . "</span></li>
