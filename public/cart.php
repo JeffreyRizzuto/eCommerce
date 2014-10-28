@@ -34,7 +34,7 @@ $euser = $_SESSION["euser"];
         </div>
 </div>
 
-<div class="col-md-7 col-sm-12 text-left">
+<div class="col-md-7 col-sm-12 text-left pull-right">
     <div class="bigcart"></div>
     <h1>Your shopping cart</h1>
     <p>
