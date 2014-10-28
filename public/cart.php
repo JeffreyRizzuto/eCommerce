@@ -29,12 +29,12 @@ $euser = $_SESSION["euser"];
         ?>
         <div class='panel panel-default' >
             <div class='panel-body'>
-            <p>Total: <?php $total ?></p>
+            <span>Total: <?php $total ?></span>
             <span class="order pull-right"> <a class="text-center">ORDER</a></span>
         </div>
 </div>
 
-<div class="col-md-7 col-sm-12 text-left pull-right">
+<div class="col-md-7 col-sm-12 text-left">
     <div class="bigcart"></div>
     <h1>Your shopping cart</h1>
     <p>
