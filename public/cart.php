@@ -16,11 +16,12 @@ $euser = $_SESSION["euser"];
     foreach ($cartInfo as $c) {
         echo "<li class='jumbotron row'>
             <span class='Picture:'><img src=" . $c['pic'] . "></span>
-            <span class='OID: '>" . $c['isbn'] . "</span>
-            <span class='ISBN: '>" . $c['isbn'] . "</span>
-            <span class='Quantity: '>" . $c['qty'] . "</span>
-            <span class='Date Added: '>" . $c['date'] . "</span>
-        </li>
+            <div class 'list-group'>
+                <li><span class='OID: '>" . $c['isbn'] . "</span></li>
+                <li><span class='ISBN: '>" . $c['isbn'] . "</span></li>
+                <li><span class='Quantity: '>" . $c['qty'] . "</span></li>
+                <li><span class='Date Added: '>" . $c['date'] . "</span></li>
+            </div>
         ";
         }
         ?>
