@@ -51,7 +51,7 @@ if(!empty($_POST)) {
 
     $results = search($searchString);
     if($results !== NULL) {
-    /*
+    
     foreach ($results as $r) {
         echo "
         <img src=".$r['pic']."><br>
@@ -68,10 +68,6 @@ if(!empty($_POST)) {
         Details:        ".$r['details']."<br><hr>
         ";
     }//end of foreach loop
-    */
-    //send them to the search results page
-    header("Location: models/item_page.php");
-    //die();
     } else {
         echo "No products match your search: $searchString<br>";
     }
