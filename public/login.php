@@ -76,7 +76,7 @@ if(!empty($_POST))
 					$euserdetails = fetchEUserDetails($username);
 
 					$euser = new EUser($username, $password, $euserdetails['fname'], $euserdetails['lname'], $euserdetails['phone_num']);
-					$euser->setuid($euserdetails['uid']);
+					$euser->setuid();
 					$euser->addAddress('both', $euserdetails['cur_address_st'], $euserdetails['cur_address_no'], $euserdetails['cur_address_c'], 
 										$euserdetails['cur_address_st'], $euserdetails['cur_address_zip']);
 					$euser->getCart();

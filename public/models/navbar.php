@@ -62,8 +62,10 @@ if(!empty($_POST)) {
         $isbn = $_POST['isbn'];
 
         $esuer = $_SESSION['euser'];
-        $euser->addToCart($isbn, 1);
+        $qty = 1;
+        $euser->addToCart($isbn, $qty);
         $_SESSION['euser'] = $euser;
+        echo "Added to cart<br>";
         header("Location: cart.php"); die();
     }
 }//end of POST

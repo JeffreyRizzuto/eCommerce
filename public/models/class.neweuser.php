@@ -89,13 +89,19 @@ class EUser {
             $stmt->bind_param("ssssssssiisssssi", $this->username, $this->email, $this->fname, $this->lname, $this->cur_address_street, $this->cur_address_no, $this->cur_address_city, $this->cur_address_state, $this->cur_address_zip, $this->phone_number, $securepass, $this->bil_address_street, $this->bil_address_no, $this->bil_address_city, $this->bil_address_state, $this->bil_address_zip);
             $stmt->execute();
             $this->uid = $myQuery->insert_id;
-//            echo "$this->uid\n";
             $stmt->close();
     }//end of addEUser
 
-    function setuid($uid) {
+    //sets the uid
+    function setuid() {
+        global $myQuery;
+
+        $stmt = $myQuery->prepare("SELECT `UID` FROM `user` WHERE `username` = ?");
+        $stmt->bind_param("s", $this->username);
+        $stmt->execute();
+        $stmt->bind_result($uid);
+        $stmt->fetch();
         $this->uid = $uid;
-        echo "UID: $uid<br>";
     }
 
     /*
@@ -133,7 +139,6 @@ class EUser {
         global $myQuery;
 
         if($this->newCart == true) {
-            echo "Creating a new cart Old: $this->cart<br>";
             $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES (?, ?, ?)");
             $purchased = 0;
             $date = NULL;
@@ -143,7 +148,6 @@ class EUser {
             $this->cart = $myQuery->insert_id;
             $stmt->close();
             $this->newCart = false;
-            echo "New: $this->cart<br>";
         } else {
             $stmt = $myQuery->prepare("SELECT `OID` FROM `shopping_cart` WHERE `UID` = ?");
             $stmt->bind_param("i", $this->uid);
@@ -172,12 +176,10 @@ class EUser {
                 $this->cart = $myQuery->insert_id;
                 $stmt->close();
             }//end of finding cart oid
-
-            echo "Cart: $this->cart";
         }//end of else
 
         //put the info into shopping_cart table
-        $stmt = $myQuery->prepare("INSERT IGNORE INTO `shopping_cart` ( `uid`, `oid` ) VALUES ( ?, ? )");
+        $stmt = $myQuery->prepare("INSERT IGNORE INTO `shopping_cart` (uid, oid) VALUES ( ?, ?)");
         $stmt->bind_param("ii", $this->uid, $this->cart);
         $stmt->execute();
         $stmt->close();
@@ -223,9 +225,7 @@ class EUser {
         $stmt->fetch();
         $stmt->close();
        
-        echo "newPrice: $newPrice qty: $qty total: $total";
         $newPrice = $newPrice * $qty + $total;
-
 
         //update total price
         $stmt = $myQuery->prepare("UPDATE `order` SET `total_price` = ? WHERE `oid` = ? AND `purchased` = 0");
