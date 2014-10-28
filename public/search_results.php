@@ -22,7 +22,7 @@ if($results !== NULL) {
         Details:        ".$r['details']."<br><hr>
         ";
         echo "<form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>";
-        echo "<button class='btn btn-success' name='isbn' value=".$r['isbn'].">Add to Cart</button>";
+        echo "<button class='btn btn-success' id='isbn' name='isbn' value='".$r['isbn']."''>Add to Cart</button>";
         echo "</form>";
     }//end of foreach loop
 }
