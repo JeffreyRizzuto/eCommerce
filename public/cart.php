@@ -15,12 +15,15 @@ $euser = $_SESSION["euser"];
     <?php
     foreach ($cartInfo as $c) {
         echo "<div class='panel panel-default' >
+            <div class="panel-body">
             <span class=''><img src=" . $c['pic'] . "></span>
             <ul class='pull-right' style='list-style-type:none'>
                 <li><span class=''>ISBN: " . $c['isbn'] . "</span></li>
                 <li><span class='Quantity: '>Quantity: " . $c['qty'] . "</span></li>
                 <li><span class='Date Added: '>Date Added: " . $c['date'] . "</span></li>
             </ul>
+            </div>
+        </div>
         ";
         }
         ?>
