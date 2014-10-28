@@ -7,6 +7,32 @@ http://usercake.com
 //Functions that do not interact with DB
 //------------------------------------------------------------------------------
 
+//Create a product thumbnail section
+function createProdThumb($title, $price, $description)
+{
+	$code =
+	"
+	<div class='col-sm-4 col-lg-4 col-md-4'>
+		<div class='thumbnail'>
+		    <img src='http://placehold.it/320x150' alt=''>
+		    <div class='caption'>
+			<h4 class='pull-right'>$price</h4>
+			<h4><a href='#'>$title</a>
+			</h4>
+			<p>$description</a>.</p>
+		    </div>
+		    <div class='ratings'>
+			<p>
+			<button class='btn btn-primary' style='width: 100%'>Add to cart</button>    
+			</p>
+		    </div>
+		</div>
+	</div>
+	";
+	//print the html code
+	echo $code;
+}
+
 //Retrieve a list of all .php files in models/languages
 function getLanguageFiles()
 {
