@@ -130,7 +130,10 @@ class EUser {
         if($this->newCart == true) {
             echo "Creating a new cart Old: $this->cart<br>";
             $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES (?, ?, ?)");
-            $stmt->bind_param("isd", 0, NULL, 0);
+            $purchased = 0;
+            $date = NULL;
+            $price = 0;
+            $stmt->bind_param("isd", $purchased, $date, $price);
             $stmt->execute();
             $this->cart = $myQuery->insert_id;
             $stmt->close();
