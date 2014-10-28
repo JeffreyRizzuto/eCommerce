@@ -60,6 +60,7 @@ if(!empty($_POST)) {
     } elseif (!is_null($_POST['isbn'])) {
         //add to cart possibility
         $isbn = $_POST['isbn'];
+        $res = fetchEUserDetails();
 
         echo "ISBN: $isbn<br>";
         $esuer = $_SESSION['euser'];

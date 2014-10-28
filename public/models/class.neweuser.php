@@ -172,6 +172,8 @@ class EUser {
                 $this->cart = $myQuery->insert_id;
                 $stmt->close();
             }//end of finding cart oid
+
+            echo "Cart: $this->cart";
         }//end of else
 
         //put the info into shopping_cart table

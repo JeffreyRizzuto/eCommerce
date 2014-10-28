@@ -28,14 +28,4 @@ if($results !== NULL) {
         </form>";
     }//end of foreach loop
 }
-
-//form posted
-if(!empty($_POST)) {
-
-    $isbn = $_POST['isbn'];
-
-    $esuer = $_SESSION['euser'];
-    $euser->addtoCart($isbn, 1);
-}//end of POST
-
 ?>
