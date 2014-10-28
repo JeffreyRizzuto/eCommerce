@@ -53,15 +53,18 @@ if(!empty($_POST)) {
     
         $results = search($searchString);
         if($results !== NULL) {
-        header("Location: search_results.php"); die();
+            header("Location: search_results.php"); die();
         } else {
             echo "No products match your search: $searchString<br>";
         }
     } elseif (!is_null($_POST['isbn'])) {
         //add to cart possibility
         $isbn = $_POST['isbn'];
+
+        echo "ISBN: $isbn<br>";
         $esuer = $_SESSION['euser'];
         $euser->addtoCart($isbn, 1);
+        header("Location: cart.php"); die();
     }
 }//end of POST
 
