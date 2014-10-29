@@ -155,23 +155,23 @@ if(!empty($_POST))
                     <legend class="">Account</legend>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Username -->
                             <label class="control-label">Username</label>
                             <div class="controls">
                                 <input type="text" name="username" placeholder="" class="input-xlarge">
-                                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                                <p class="help-block">Contains only letters or numbers</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Display Bane -->
                             <label class="control-label">Display Name</label>
                             <div class="controls">
                                 <input type="text"  name="displayname" placeholder="" class="input-xlarge">
-                                <p class="help-block">Display names must not already be taken</p>
+                                <p class="help-block">Must not already be taken</p>
                             </div>
                         </div>
                     </div>
@@ -209,13 +209,13 @@ if(!empty($_POST))
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Password-->
                             <label class="control-label">Password</label>
                             <div class="controls">
                                 <input type="password"  name="password" placeholder="" class="input-xlarge">
-                                <p class="help-block">Password should be at least 8 characters</p>
+                                <p class="help-block">At least 8 characters</p>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@ if(!empty($_POST))
                             <label class="control-label">Password (Confirm)</label>
                             <div class="controls">
                                 <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
-                                <p class="help-block">Please confirm password</p>
+                                <p class="help-block">Confirm password</p>
                             </div>
                         </div>
                     </div>
