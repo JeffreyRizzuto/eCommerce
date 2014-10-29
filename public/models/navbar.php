@@ -59,15 +59,15 @@ if(!empty($_POST)) {
             echo "No products match your search: $searchString<br>";
         }
     } elseif (!is_null($_POST['isbn'])) {
-        //add to cart possibility
+        add to cart possibility
         $isbn = $_POST['isbn'];
-        //$_POST['isbn'] = NULL;
+        $_POST['isbn'] = NULL;
         $euser = $_SESSION['euser'];
         $qty = 1;
         $euser->addToCart($isbn, $qty);
         header("Location: cart.php"); die();
     } elseif (!is_null($_POST['checkout'])) {
-        //$_POST['checkout'] = NULL;
+        $_POST['checkout'] = NULL;
         $euser = $_SESSION['euser'];
         $euser->checkout();
         header("Location: cart.php");
