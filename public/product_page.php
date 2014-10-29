@@ -29,7 +29,7 @@ $pic = $book['pic'];
 					<div class="product col-md-3 service-image-left">
 							<center>
 							<a id="item-1" class="service1-item">
-								<img id="item-display" src="<?php $pic ?>" alt=""></img>
+								<img id="item-display" src="<?php echo $pic; ?>" alt=""></img>
 							</a>
 							<a id="item-2" class="service1-item">
 								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
