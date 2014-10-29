@@ -20,7 +20,7 @@ if(!empty($_POST))
 	$confirm_pass = trim($_POST["passwordc"]);
     $telephone = trim($_POST["telephone"]);
     $street = trim($_POST["street"]);
-    $streetnumber = trim($_POST["streetnumber"]);
+    $apartmentnumber = trim($_POST["streetnumber"]);
     $city = trim($_POST["city"]);
     $state = trim($_POST["state"]);
     $zipcode = trim($_POST["zipcode"]);
@@ -105,13 +105,7 @@ if(!empty($_POST))
 		//Construct a user object
 		$user = new User($username,$displayname,$password,$email);
         $euser = new EUser($username, $password, $email, $firstname, $lastname, $telephone);
-//        $st = 'UTSA Cirlce';
-//        $no = 1;
-//        $city = 'satown';
-//        $state = 'TX';
-//        $zip = 78249;
-        //new
-        $euser->addAddress($both, $street, $streetnumber, $city, $state, $zipcode);
+        $euser->addAddress($both, $street, $apartmentnumber, $city, $state, $zipcode);
 
         //old
         //$euser->addAddress('both', $st, $no, $city, $state, $zip);
@@ -248,9 +242,9 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Display Name -->
-                            <label class="control-label">Street Number</label>
+                            <label class="control-label">Apartment Number</label>
                             <div class="controls">
-                                <input type="text"  name="streetnumber" placeholder="" class="input-xlarge">
+                                <input type="text"  name="apartmentnumber" placeholder="" class="input-xlarge">
                             </div>
                         </div>
                     </div>
