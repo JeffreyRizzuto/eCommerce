@@ -212,7 +212,7 @@ class EUser {
         $total = 0;
 
         //compile a list of all isbns of the customer's cart
-        $stmt = $myQuery->prepare("SELECT `isbn` FROM `book_order` WHERE `oid` = ?");
+        $stmt = $myQuery->prepare("SELECT `ISBN` FROM `book_order` WHERE `oid` = ?");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
         $stmt->bind_result($isbn);
