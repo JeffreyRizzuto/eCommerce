@@ -15,6 +15,8 @@ function createProdThumb($title, $price, $description)
 	{
 	   $thisTitle = substr($title, 0, 17);  // cut title to 17 chars
 	   $thisTitle = $thisTitle."...";      // append ...
+	} else {
+	   $thisTitle = $title;
 	}
 	
 	$desc_lngth = strlen($description);
@@ -22,6 +24,8 @@ function createProdThumb($title, $price, $description)
 	{
 	   $thisDesc = substr($description, 0, 122);
 	   $thisDesc = $thisDesc."...";
+	} else {
+	   $thisDesc = $description;
 	}
 	
 	$code =
