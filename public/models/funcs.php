@@ -14,6 +14,8 @@ function createProdThumb($book)
 {
 	$isbn = $book['isbn'];
 	$title = $book['title'];
+	$author = $book['author'];
+	$edition = $book['edition'];
 	$description = $book['details'];
 	$price = $book['price'];
 	$pic = $book['pic'];
@@ -26,13 +28,6 @@ function createProdThumb($book)
 	   $thisTitle = $title;
 	}
 
-	if(strlen($description) > 125)
-	{
-	   $thisDesc = substr($description, 0, 122);
-	   $thisDesc = $thisDesc."...";
-	} else {
-	   $thisDesc = $description;
-	}
 	
 	$code =
 	"
@@ -43,7 +38,7 @@ function createProdThumb($book)
 			<h4 class='pull-right'>$$price</h4>
 			<h4><a href='product_page.php?isbn=$isbn' alt='$title'>$thisTitle</a>
 			</h4>
-			<p>$thisDesc</p>
+			<p>by: $author<br>Edition: $edition<br>ISBN: $isbn</p>
 		    </div>
 		    <div class='ratings'>
 			<p>
