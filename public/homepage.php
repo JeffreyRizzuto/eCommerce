@@ -5,6 +5,7 @@
         <?php
             require 'models/left-nav.php';
             require 'models/searchFuncs.php';
+            require 'models/config.php';
         ?>
 
         <div class="col-md-9">
