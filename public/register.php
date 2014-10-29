@@ -16,6 +16,13 @@ if(!empty($_POST))
 	$displayname = trim($_POST["displayname"]);
 	$password = trim($_POST["password"]);
 	$confirm_pass = trim($_POST["passwordc"]);
+    $street = trim($_POST["street"]);
+    $streetnumber = trim($_POST["streetnumber"]);
+    $city = trim($_POST["city"]);
+    $state = trim($_POST["state"]);
+    $zipcode = trim($_POST["zipcode"]);
+    $both = trim($_POST["both"]);
+    $phonenumber = trim($_POST["phonenumber"]);
 	$captcha = md5($_POST["captcha"]);
 	
 	
@@ -49,18 +56,52 @@ if(!empty($_POST))
 	{
 		$errors[] = lang("ACCOUNT_INVALID_EMAIL");
 	}
+
+    //address validation
+
+    //street
+    if(!ctype_alnum($street))
+    {
+        $errors[] = lang("ACCOUNT_STREET_INVALID");
+    }
+    //street number
+    if(!ctype_digit($streetnumber))
+    {
+        $errors[] = lang("ACCOUNT_STREET_NUMBER_INVALID");
+    }
+    //city
+    if(!ctype_alpha($city))
+    {
+        $errors[] = lang("ACCOUNT_CITY_INVALID");
+    }
+    //state
+    if(!ctype_alpha($state))
+    {
+        $errors[] = lang("ACCOUNT_STATE_INVALID");
+    }
+    //zipcode
+    if(!ctype_digit($zipcode))
+    {
+        $errors[] = lang("ACCOUNT_INVALID_EMAIL");
+    }
+
 	//End data validation
+
 	if(count($errors) == 0)
 	{	
 		//Construct a user object
 		$user = new User($username,$displayname,$password,$email);
         $euser = new EUser($username, $password, $email, "FTest", "LTest", 2108675309);
-        $st = 'UTSA Cirlce';
-        $no = 1;
-        $city = 'satown';
-        $state = 'TX';
-        $zip = 78249;
-        $euser->addAddress('both', $st, $no, $city, $state, $zip);
+//        $st = 'UTSA Cirlce';
+//        $no = 1;
+//        $city = 'satown';
+//        $state = 'TX';
+//        $zip = 78249;
+        //new
+        $euser->addAddress($both, $street, $streetnumber, $city, $state, $zipcode);
+
+        //old
+        //$euser->addAddress('both', $st, $no, $city, $state, $zip);
 		
 		//Checking this flag tells us whether there were any errors such as possible data duplication occured
 		if(!$user->status)
@@ -93,31 +134,35 @@ if(!empty($_POST))
     <div id='main'>
     <?php    echo resultBlock($errors,$successes);    ?>
 
-    <div id='regbox'>
-    <?php echo" <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>"  ?>
+    <div id='regbox' class="panel panel-default">
+    <?php echo"
+        <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
             <fieldset>
                 <div id="legend">
                     <legend class="">Register</legend>
                 </div>
-                <div class="control-group">
-                    <!-- Username -->
-                    <label class="control-label"  for="username">Username</label>
-                    <div class="controls">
-                        <input type="text" name="username" placeholder="" class="input-xlarge">
-                        <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <!-- Username -->
+                        <label class="control-label"  for="username">Username</label>
+                        <div class="controls">
+                            <input type="text" name="username" placeholder="" class="input-xlarge">
+                            <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <!-- Username -->
+                        <label class="control-label"  for="username">Display Name</label>
+                        <div class="controls">
+                            <input type="text"  name="displayname" placeholder="" class="input-xlarge">
+                            <p class="help-block">Display names must not already be taken</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="control-group">
-                    <!-- Username -->
-                    <label class="control-label"  for="username">Display Name</label>
-                    <div class="controls">
-                        <input type="text"  name="displayname" placeholder="" class="input-xlarge">
-                        <p class="help-block">Display names must not already be taken</p>
-                    </div>
-                </div>
-
-                <div class="control-group">
+                <div class="form-group">
                     <!-- E-mail -->
                     <label class="control-label" for="email">E-mail</label>
                     <div class="controls">
@@ -125,26 +170,28 @@ if(!empty($_POST))
                         <p class="help-block">Please provide your E-mail</p>
                     </div>
                 </div>
-
-                <div class="control-group">
-                    <!-- Password-->
-                    <label class="control-label" for="password">Password</label>
-                    <div class="controls">
-                        <input type="password"  name="password" placeholder="" class="input-xlarge">
-                        <p class="help-block">Password should be at least 8 characters</p>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <!-- Password-->
+                        <label class="control-label" for="password">Password</label>
+                        <div class="controls">
+                            <input type="password"  name="password" placeholder="" class="input-xlarge">
+                            <p class="help-block">Password should be at least 8 characters</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="control-group">
-                    <!-- Password -->
-                    <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-                    <div class="controls">
-                        <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
-                        <p class="help-block">Please confirm password</p>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <!-- Password -->
+                        <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+                        <div class="controls">
+                            <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
+                            <p class="help-block">Please confirm password</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="control-group">
+                </div>
+                <div class="form-group">
                     <!-- Password -->
                     <p>
                         <label>Security Code:</label>
@@ -156,14 +203,16 @@ if(!empty($_POST))
                     </div>
                 </div>
 
-                <div class="control-group">
+                <hr class="colorgraph">
+
+                <div class="form-group">
                     <!-- Button -->
                     <div class="controls">
                         <button class="btn btn-success">Register</button>
                     </div>
                 </div>
             </fieldset>
-        </form>
-    </div>
+        </form><!-- End Form -->
+    </div><!-- End registration box -->
     <!-- Footer-->
     <?php   require 'models/footer.php';    ?>
