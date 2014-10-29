@@ -215,15 +215,19 @@ class EUser {
         $stmt->execute();
         $stmt->bind_result($price);
         while($stmt->fetch()) {
-            $stmt2 = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
-            $stmt2->bind_param("is", $this->cart, $isbn);
-            $stmt2->execute();
-            $stmt2->bind_result($qty);
-            $stmt2->fetch();
-            $stmt2->close();
-            $total = $total + ($price * $qty);
+            $row[] = array('price' => $price);
         }
         $stmt->close();
+
+        foreach ($row as $r) {
+            $stmt = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
+            $stmt->bind_param("is", $this->cart, $isbn);
+            $stmt->execute();
+            $stmt->bind_result($qty);
+            $stmt->fetch();
+            $stmt->close();
+            $total = $total + ($r['price'] * $qty);
+        }
        
         //get current total_price of order
         $stmt = $myQuery->prepare("SELECT `total_price` FROM `order` WHERE `oid` = ? AND `purchased` = 0");
