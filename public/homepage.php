@@ -4,8 +4,6 @@
 
         <?php
             require 'models/left-nav.php';
-            require 'models/searchFuncs.php';
-            require 'models/config.php';
         ?>
 
         <div class="col-md-9">
@@ -46,8 +44,6 @@
                 <?php
                     $booklist = array();
                     $booklist = getAllBooks();
-                    
-                    var_dump($booklist);
                     
                     for($i=0; $i<25; $i++)
                     {
