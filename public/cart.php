@@ -5,7 +5,16 @@ require_once("models/master_page.php");
 $euser = $_SESSION["euser"];
 ?>
 
-<div class="col-md-5 col-sm-12 pull-left">
+
+<div class="col-xs-12 col-sm-5 col-md-5 text-left pull-right">
+    <div class="bigcart"></div>
+    <h1>Your shopping cart</h1>
+    <p>
+        Something Something shopping cart
+    </p>
+</div>
+
+<div class="col-xs-12 col-sm-7 col-md-7 pull-left">
     <?php
     $cartInfo = $euser->getCartInfo();
     $total = $euser->getCartTotal();
@@ -18,14 +27,14 @@ $euser = $_SESSION["euser"];
     } else {
         foreach ($cartInfo as $c) {
             echo "
-                <div class='panel panel-default' >
+                <div class='panel panel-default'>
                     <div class='panel-body'>
                     <span class=''><img src=" . $c['pic'] . "></span>
                     <ul class='pull-right' style='list-style-type:none'>
                         <form name='updateCart' action='".$_SERVER['PHP_SELF']."' method='post'>
-                        <li><span class=''>ISBN: " . $c['isbn'] . "</span></li>
-                        <li><span class='Quantity: '>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
-                        <li><span class='Date Added: '>Date Added: " . $c['date'] . "</span></li>
+                        <li>ISBN: " . $c['isbn'] . "</span></li>
+                        <li>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
+                        <li>Date Added: " . $c['date'] . "</span></li>
                         <li>Price: $".$c['price']."</li>
                         <input type='hidden' id='qty_isbn' name='qty_isbn' value='".$C['isbn']."'/>
                         </form>
@@ -44,19 +53,12 @@ $euser = $_SESSION["euser"];
             echo "
                 <form name='checkout' action='".$_SERVER['PHP_SELF']."' method='post'>
                     <input type='hidden' id='checkout' name='checkout'/>
-                    <input type='Submit' value='Checkout' />
+                    <button class='btn btn-success' value='Checkout'>Checkout</button>
                 </form><br>";
             ?>
+                    <!--<input type='Submit' value='Checkout' /> -->
             </a></span>
         </div>
-</div>
-
-<div class="col-md-7 col-sm-12 text-left">
-    <div class="bigcart"></div>
-    <h1>Your shopping cart</h1>
-    <p>
-        Something Something shopping cart
-    </p>
 </div>
 
 <?php

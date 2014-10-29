@@ -8,10 +8,15 @@ http://usercake.com
 //------------------------------------------------------------------------------
 
 //Create a product thumbnail section
-function createProdThumb($title, $price, $description)
+//function createProdThumb($title, $price, $isbn, $description)
+function createProdThumb($isbn)
 {
-	$title_lngth = strlen($title); // get title length
-	if($title_lngth > 20) // check for book titles that are too long to display in thumbnail
+    $book = searchByISBN($isbn);
+    $title = $book['title'];
+    $description = $book['description'];
+    $price = $book['price'];
+	$title_length = strlen($title); // get title length
+	if($title_length > 20) // check for book titles that are too long to display in thumbnail
 	{
 	   $thisTitle = substr($title, 0, 17);  // cut title to 17 chars
 	   $thisTitle = $thisTitle."...";      // append ...
@@ -35,7 +40,8 @@ function createProdThumb($title, $price, $description)
 		    <img src='http://placehold.it/320x150' alt=''>
 		    <div class='caption'>
 			<h4 class='pull-right'>$price</h4>
-			<h4><a href='product_page.php?title=$title&price=$price&description=$description'>$thisTitle</a>
+			<!-- <h4><a href='product_page.php?title=$title&price=$price&description=$description'>$thisTitle</a> -->
+			<h4><a href='product_page.php?isbn=$isbn'></a>
 			</h4>
 			<p>$thisDesc</p>
 		    </div>

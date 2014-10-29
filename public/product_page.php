@@ -1,18 +1,27 @@
 <?php require_once 'models/master_page.php' ?>
 
+<?php
+if(!empty($_POST))
+{
+    if(isset($_GET['addtocart'])){
+        $euser->addToCart($isbn, $qty);
+    }elseif(isset($_GET['addtowish'])){
+        //nothing here yet
+    }
+}
+?>
+
+
 <div class="container-fluid">
     <div class="content-wrapper">	
 		<div class="item-container">	
 			<div class="container">	
 				<div class="col-md-12">
 					<div class="product col-md-3 service-image-left">
-						<center>
 							<img id="item-display" src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
-						</center>
 					</div>
 					
 					<div class="container service1-items col-sm-2 col-md-2 pull-left">
-						<center>
 							<a id="item-1" class="service1-item">
 								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
 							</a>
@@ -22,14 +31,26 @@
 							<a id="item-3" class="service1-item">
 								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
 							</a>
-						</center>
 					</div>
 				
 				<?php
 				    //GET PRODUCT INFO
-				    $title = $_GET['title'];
-				    $price = $_GET['price'];
-				    $description = $_GET['description'];
+                    $book = searchByISBN($isbn);
+                    $course= $book['course'];
+                    $cat = $book['cat'];
+                    $isbn = $book['isbn'];
+                    $title = $book['title'];
+                    $edition= $book['edition'];
+                    $author = $book['author'];
+                    $type = $book['type'];
+                    $price = $book['price'];
+                    $details = $book['details'];
+                    $publisher = $book['publisher'];
+                    $quantity = $book['quantity'];
+                    //old
+				    //$title = $_GET['title'];
+				    //$price = $_GET['price'];
+				    //$description = $_GET['description'];
 				?>
 				
 					<div class="product-title"><?php echo $title; ?></div>
@@ -40,12 +61,12 @@
 					<div class="product-stock">In Stock</div>
 					<hr>
 					<div class="btn-group cart">
-						<button type="button" class="btn btn-success">
+						<button type="button" value ="addtocart" class="btn btn-success">
 							Add to cart 
 						</button>
 					</div>
 					<div class="btn-group wishlist">
-						<button type="button" class="btn btn-danger">
+						<button type="button" value ="addtowish" class="btn btn-danger">
 							Add to wishlist 
 						</button>
 					</div>
@@ -74,13 +95,13 @@
 								<li>An ultra-quiet 140mm double ball-bearing fan delivers great airflow at an very low noise level by varying fan speed in response to temperature</li>
 								<li>80Plus certified to deliver 80% efficiency or higher at normal load conditions (20% to 100% load)</li>
 								<li>0.99 Active Power Factor Correction provides clean and reliable power</li>
-								<li>Universal AC input from 90~264V Ñ no more hassle of flipping that tiny red switch to select the voltage input!</li>
+								<li>Universal AC input from 90~264V ï¿½ no more hassle of flipping that tiny red switch to select the voltage input!</li>
 								<li>Extra long fully-sleeved cables support full tower chassis</li>
-								<li>A three year warranty and lifetime access to CorsairÕs legendary technical support and customer service</li>
+								<li>A three year warranty and lifetime access to Corsairï¿½s legendary technical support and customer service</li>
 								<li>Over Current/Voltage/Power Protection, Under Voltage Protection and Short Circuit Protection provide complete component safety</li>
 								<li>Dimensions: 150mm(W) x 86mm(H) x 160mm(L)</li>
 								<li>MTBF: 100,000 hours</li>
-								<li>Safety Approvals: UL, CUL, CE, CB, FCC Class B, T†V, CCC, C-tick</li>
+								<li>Safety Approvals: UL, CUL, CE, CB, FCC Class B, Tï¿½V, CCC, C-tick</li>
 							    -->
 							    <?php echo $description; ?>
 							</section>
