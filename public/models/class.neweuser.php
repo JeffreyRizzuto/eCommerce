@@ -246,16 +246,13 @@ class EUser {
             $total = $total + ($prices[$index] * $qty);
             $index++;
         }
-       
-        echo "Total: $total<br />";
-        $newTotal = $total;
 
         //update total price
         $stmt = $myQuery->prepare("UPDATE `order` SET `total_price` = ? WHERE `oid` = ? AND `purchased` = 0");
-        $stmt->bind_param("di", $newTotal, $this->cart);
+        $stmt->bind_param("di", $total, $this->cart);
         $stmt->execute();
         $stmt->close();
-    }
+    }//end of updateData
 
     function getCartInfo() {
         global $myQuery;
