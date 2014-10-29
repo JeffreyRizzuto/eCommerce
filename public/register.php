@@ -100,6 +100,8 @@ if(!empty($_POST))
     if(!$both)
     {
         $both = "current";
+    } else {
+        $both = "both";
     }
 
 	//End data validation

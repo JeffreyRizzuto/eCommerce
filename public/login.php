@@ -75,7 +75,7 @@ if(!empty($_POST))
 					//construct new euser and populate it
 					$euserdetails = fetchEUserDetails($username);
 
-					$euser = new EUser($username, $password,$userdetails["email"], $euserdetails['fname'], $euserdetails['lname'], $euserdetails['phone_num']);
+					$euser = new EUser($username, $password, $userdetails["email"], $euserdetails['fname'], $euserdetails['lname'], $euserdetails['phone_num']);
 					$euser->setuid();
 					$euser->addAddress('both', $euserdetails['cur_address_st'], $euserdetails['cur_address_no'], $euserdetails['cur_address_c'], 
 										$euserdetails['cur_address_st'], $euserdetails['cur_address_zip']);
