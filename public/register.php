@@ -161,13 +161,14 @@ if(!empty($_POST))
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <!-- E-mail -->
-                    <label class="control-label" for="email">E-mail</label>
-                    <div class="controls">
-                        <input type="text"  name="email" placeholder="" class="input-xlarge">
-                        <p class="help-block">Please provide your E-mail</p>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="form-group">
+                        <!-- E-mail -->
+                        <label class="control-label" for="email">E-mail</label>
+                        <div class="controls">
+                            <input type="text"  name="email" placeholder="" class="input-xlarge">
+                            <p class="help-block">Please provide your E-mail</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3">
