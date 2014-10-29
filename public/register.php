@@ -97,6 +97,10 @@ if(!empty($_POST))
     {
         $errors[] = lang("ACCOUNT_INVALID_TELEPHONE");
     }
+    if(!$both)
+    {
+        $both = "current";
+    }
 
 	//End data validation
 
