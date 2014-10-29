@@ -23,7 +23,7 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="slide-image" src="../images/BookSale_banner.png" style="width: 80%; height: 100%;" alt="">
+                                <img class="slide-image" src="../images/BookSale_banner.png" style="height: 80%; width: 100%;" alt="">
                             </div>
                             <!--
                             <div class="item">
