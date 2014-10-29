@@ -6,6 +6,7 @@
 $search = $_GET['isbn'];
 //print $search;
 $book = searchByISBN($search);
+$book = $book[0];
 $course= $book['course'];
 $cat = $book['cat'];
 $isbn = $book['isbn'];
@@ -27,19 +28,25 @@ $pic = $book['pic'];
 			<div class="container">	
 				<div class="col-md-12">
 					<div class="product col-md-3 service-image-left">
-							<center>
+						
+						    <img src="<?php echo $pic; ?>" style="width: 100%; height: 100%;" alt=""></img>
+						
+					</div>
+    
+					<div class="container service1-items col-sm-2 col-md-2 pull-left">
+						<center>
 							<a id="item-1" class="service1-item">
-								<img id="item-display" src="<?php $pic ?>" alt=""></img>
+								<img src="<?php echo $pic; ?>" alt=""></img>
 							</a>
 							<a id="item-2" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+								<img src="<?php echo $pic; ?>" alt=""></img>
 							</a>
 							<a id="item-3" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+								<img src="<?php echo $pic; ?>" alt=""></img>
 							</a>
 						</center>
 					</div>
-				
+				<div class="col-md-7">
 					<div class="product-title"><?php echo $title; ?></div>
 					<div class="product-desc">
 					    <p>
