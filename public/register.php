@@ -74,9 +74,10 @@ if(!empty($_POST))
         $errors[] = lang("ACCOUNT_STREET_INVALID");
     }
     //street number
-    if(!ctype_digit($apartmentnumber) || empty($apartmentnumber))
+    if(!ctype_digit($apartmentnumber))
     {
-        $errors[] = lang("ACCOUNT_APARTMENT_NUMBER_INVALID");
+        $apartmentnumber = 0;
+        //$errors[] = lang("ACCOUNT_APARTMENT_NUMBER_INVALID");
     }
     //city
     if(!is_string($city))
@@ -93,7 +94,7 @@ if(!empty($_POST))
     {
         $errors[] = lang("ACCOUNT_INVALID_ZIP");
     }
-    if(!preg_match('/^[\d -]+$/',$telephone))
+    if(!preg_match('/^[0-9]+$/',$telephone))
     {
         $errors[] = lang("ACCOUNT_INVALID_TELEPHONE");
     }
