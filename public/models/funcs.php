@@ -10,8 +10,14 @@ http://usercake.com
 
 //Create a product thumbnail section
 //function createProdThumb($title, $price, $isbn, $description)
-function createProdThumb($isbn, $title, $price, $description, $pic)
+function createProdThumb($book)
 {
+	$isbn = $book['isbn'];
+	$title = $book['title'];
+	$description = $book['details'];
+	$price = $book['price'];
+	$pic = $book['pic'];
+	
 	if(strlen($title) > 20) // check for book titles that are too long to display in thumbnail
 	{
 	   $thisTitle = substr($title, 0, 17);  // cut title to 17 chars
