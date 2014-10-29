@@ -277,6 +277,8 @@ class EUser {
     function updateQuantity($newQty, $isbn) {
         global $myQuery;
 
+        echo "newQty: $newQty<br>ISBN: $isbn<br>";
+
         $query = "UPDATE `book_order` SET `qty`=$newQty WHERE `oid` = ? AND `ISBN` = ?";
         $stmt = $myQuery->prepare($query);
         $stmt->bind_param("ii", $this->cart, $isbn);
