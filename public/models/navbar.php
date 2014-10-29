@@ -71,6 +71,14 @@ if(!empty($_POST)) {
         $euser = $_SESSION['euser'];
         $euser->checkout();
         header("Location: cart.php");
+    } elseif (!is_null($_POST['qty'])) {
+        $isbn = $_POST['qty_isbn'];
+        $newQty = $_POST['qty'];
+        $euser = $_SESSION['euser'];
+        $_POST['qty_isbn'] = NULL;
+        $_POST['qty'] = NULL;
+        $euser->updateQuantity($newQty, $isbn);
+        header("Location cart.php");
     }
 }//end of POST
 
