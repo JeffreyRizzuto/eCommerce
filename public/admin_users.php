@@ -31,7 +31,7 @@ echo "
 <h2>Admin Users</h2>
 <div id='left-nav'>";
 
-include("left-nav.php");
+include("models/left-nav.php");
 
 echo "
 </div>
