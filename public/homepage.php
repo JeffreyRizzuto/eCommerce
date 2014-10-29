@@ -48,15 +48,20 @@
 
                     foreach($booklist as $book)
                     {
-                        $title = $book['title'];
-                        $title_lngth = strlen($title);
-                        if($title_lngth > 20)
+                        $title = $book['title']; // get title
+                        $title_lngth = strlen($title); // get title length
+                        if($title_lngth > 20) // check for book titles that are too long to display in thumbnail
                         {
-                            $title = substr($title, 0, 17);
-                            $title = $title."...";
+                            $shortTitle = substr($title, 0, 17);  // cut title to 17 chars
+                            $shortTitle = $shortTitle."...";      // append ...
                         }
-                        $price = "$".$book['price'];
-                        createProdThumb($title, $price, $book['details']);
+                        $price = "$".$book['price']; // get price
+                        
+                        if(isset($shortTitle)){ // pass through short title if one was created
+                            createProdThumb($title, $shortTitle, $price, $book['details']);
+                        } else {
+                            createProdThumb($title, $price, $book['details']);
+                        }
                     }
                 ?>
                 <!--
