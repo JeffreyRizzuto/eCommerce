@@ -33,7 +33,7 @@ function createProdThumb($title, $price, $description)
 			<h4 class='pull-right'>$price</h4>
 			<h4><a href='product_page.php?title=$title&price=$price&description=$description'>$thisTitle</a>
 			</h4>
-			<p>$thisDesc</a>.</p>
+			<p>$thisDesc</p>
 		    </div>
 		    <div class='ratings'>
 			<p>
