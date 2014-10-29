@@ -11,7 +11,8 @@ http://usercake.com
 //function createProdThumb($title, $price, $isbn, $description)
 function createProdThumb($isbn)
 {
-    $book = getBookByISBN($isbn);
+    //$book = getBookByISBN($isbn);
+    $book = searchByISBN($isbn);
     $title = $book['title'];
     $description = $book['description'];
     $price = $book['price'];
