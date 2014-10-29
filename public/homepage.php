@@ -45,9 +45,9 @@
                     $booklist = array();
                     $booklist = getAllBooks();
                     
-                    for($i=0; $i<25; $i++)
+                    for($booklist as $book)
                     {
-                        createProdThumb("Operating Systems", "$79.99", "A Brief Description about operating systems book goes here.");
+                        createProdThumb($book['title'], $book['price'], $book['details']);
                     }
                 ?>
                 <!--
