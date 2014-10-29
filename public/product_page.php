@@ -3,9 +3,13 @@
 <?php
 
 //GET PRODUCT INFO
+<<<<<<< HEAD
 $search = $_GET['isbn'];
 //print $search;
 $book = searchByISBN($search);
+=======
+$book = searchByISBN($_GET['isbn']);
+>>>>>>> b59fdc77cfe117eb4184dbe34870328aebbc23f6
 $course= $book['course'];
 $cat = $book['cat'];
 $isbn = $book['isbn'];
@@ -29,7 +33,7 @@ $pic = $book['pic'];
 					<div class="product col-md-3 service-image-left">
 							<center>
 							<a id="item-1" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+								<img id="item-display" src="<?php $pic ?>" alt=""></img>
 							</a>
 							<a id="item-2" class="service1-item">
 								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
