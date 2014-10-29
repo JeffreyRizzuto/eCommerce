@@ -41,7 +41,7 @@ function createProdThumb($isbn)
 		    <div class='caption'>
 			<h4 class='pull-right'>$price</h4>
 			<!-- <h4><a href='product_page.php?title=$title&price=$price&description=$description'>$thisTitle</a> -->
-			<h4><a href='product_page.php?isbn=$isbn'></a>
+			<h4><a href='product_page.php?isbn=$isbn'>$thisTitle</a>
 			</h4>
 			<p>$thisDesc</p>
 		    </div>
