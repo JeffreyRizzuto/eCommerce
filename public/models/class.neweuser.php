@@ -221,6 +221,8 @@ class EUser {
         }
         $stmt->close();
 
+        echo "var_dump($isbns)<br>";
+
         //loop through isbns, getting list of prices tied to isbn
         foreach($isbns as $isbn) {
             //get price of book
@@ -229,7 +231,7 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($price);
             while($stmt->fetch()) {
-                $prices[] = array($isbn => $price);
+                $prices[] = array("$isbn" => $price);
             }
             $stmt->close();
         }
@@ -242,7 +244,7 @@ class EUser {
             $stmt->bind_result($qty);
             $stmt->fetch();
             $stmt->close();
-            $total = $total + ($prices[$isbn] * $qty);
+            $total = $total + ($prices["$isbn"] * $qty);
         }
        
         $newTotal = $total;
