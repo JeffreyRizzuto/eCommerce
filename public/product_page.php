@@ -6,10 +6,8 @@
 $search = $_GET['isbn'];
 //print $search;
 $book = searchByISBN($search);
-var_dump($book);
-$book = $book[0]; echo "<br><br>";
-var_dump($book);
-$course= $book["course"];
+$book = $book[0];
+$course= $book['course'];
 $cat = $book['cat'];
 $isbn = $book['isbn'];
 $title = $book['title'];
@@ -20,7 +18,8 @@ $price = $book['price'];
 $details = $book['details'];
 $publisher = $book['publisher'];
 $quantity = $book['qty'];
-$pic = $book["pic"];
+$pic = $book['pic'];
+
 ?>
 
 <div class="container-fluid">
@@ -29,15 +28,16 @@ $pic = $book["pic"];
 			<div class="container">	
 				<div class="col-md-12">
 					<div class="product col-md-3 service-image-left">
-							<center>
+						<img id="item-display" src="<?php echo $pic; ?>" alt=""></img>
+						<center>
 							<a id="item-1" class="service1-item">
-								<img id="item-display" src="<?php echo $pic; ?>" alt=""></img>
+								<img src="<?php echo $pic; ?>" alt=""></img>
 							</a>
 							<a id="item-2" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+								<img src="<?php echo $pic; ?>" alt=""></img>
 							</a>
 							<a id="item-3" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+								<img src="<?php echo $pic; ?>" alt=""></img>
 							</a>
 						</center>
 					</div>
