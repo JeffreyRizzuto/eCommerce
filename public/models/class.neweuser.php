@@ -201,7 +201,7 @@ class EUser {
         $stmt->execute();
         $stmt->close();
 
-        updateData($isbn);
+        $this->updateData($isbn);
     }//end of addToCart
 
     //used as a helper function to update total in order
@@ -286,7 +286,7 @@ class EUser {
         $stmt->execute();
         $stmt->close();
 
-        updateData($isbn);
+        $this->updateData($isbn);
     }//end of updateQuantity
 
 }//end of EUser
