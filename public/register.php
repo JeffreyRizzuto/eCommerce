@@ -266,8 +266,7 @@ if(!empty($_POST))
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <select name="state">
+                            <select name="state" class="form-control">
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
                                 <option value="AZ">Arizona</option>
@@ -320,7 +319,6 @@ if(!empty($_POST))
                                 <option value="WI">Wisconsin</option>
                                 <option value="WY">Wyoming</option>
                             </select>
-                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
