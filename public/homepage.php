@@ -2,7 +2,10 @@
 
     <div class="row">
 
-        <?php require 'models/left-nav.php' ?>
+        <?php
+            require 'models/left-nav.php';
+            require 'models/searchFuncs.php';
+        ?>
 
         <div class="col-md-9">
 
@@ -40,6 +43,11 @@
             <div class="row">
                 
                 <?php
+                    $booklist = array();
+                    $booklist = getAllBooks();
+                    
+                    var_dump($booklist);
+                    
                     for($i=0; $i<25; $i++)
                     {
                         createProdThumb("Operating Systems", "$79.99", "A Brief Description about operating systems book goes here.");
