@@ -32,9 +32,9 @@ $euser = $_SESSION["euser"];
                     <span class=''><img src=" . $c['pic'] . "></span>
                     <ul class='pull-right' style='list-style-type:none'>
                         <form name='updateCart' action='".$_SERVER['PHP_SELF']."' method='post'>
-                        <li><span class=''>ISBN: " . $c['isbn'] . "</span></li>
-                        <li><span class='Quantity: '>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
-                        <li><span class='Date Added: '>Date Added: " . $c['date'] . "</span></li>
+                        <li>ISBN: " . $c['isbn'] . "</span></li>
+                        <li>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
+                        <li>Date Added: " . $c['date'] . "</span></li>
                         <li>Price: $".$c['price']."</li>
                         <input type='hidden' id='qty_isbn' name='qty_isbn' value='".$C['isbn']."'/>
                         </form>
