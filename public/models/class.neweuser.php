@@ -102,6 +102,8 @@ class EUser {
         $stmt->bind_result($uid);
         $stmt->fetch();
         $this->uid = $uid;
+        //this is jeff, shouldn't there be a close here??
+        //$stmt->close();
     }
 
     /*
