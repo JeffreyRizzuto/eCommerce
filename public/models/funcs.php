@@ -15,6 +15,7 @@ function createProdThumb($isbn)
     $title = $book['title'];
     $description = $book['description'];
     $price = $book['price'];
+    print("test print" + $price);
 	$title_length = strlen($title); // get title length
 	if($title_length > 20) // check for book titles that are too long to display in thumbnail
 	{
@@ -24,8 +25,8 @@ function createProdThumb($isbn)
 	   $thisTitle = $title;
 	}
 	
-	$desc_lngth = strlen($description);
-	if($desc_lngth > 125)
+	$desc_length = strlen($description);
+	if($desc_length > 125)
 	{
 	   $thisDesc = substr($description, 0, 122);
 	   $thisDesc = $thisDesc."...";
