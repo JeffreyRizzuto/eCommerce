@@ -35,6 +35,7 @@ if(!empty($_POST))
 				
 				<?php
 				    //GET PRODUCT INFO
+                    $isbn = $_GET['isbn'];
                     $book = searchByISBN($isbn);
                     $course= $book['course'];
                     $cat = $book['cat'];
