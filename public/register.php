@@ -16,6 +16,7 @@ if(!empty($_POST))
 	$displayname = trim($_POST["displayname"]);
 	$password = trim($_POST["password"]);
 	$confirm_pass = trim($_POST["passwordc"]);
+    $telephone = trim($_POST["telephone"]);
     $street = trim($_POST["street"]);
     $streetnumber = trim($_POST["streetnumber"]);
     $city = trim($_POST["city"]);
@@ -134,12 +135,12 @@ if(!empty($_POST))
     <div id='main'>
     <?php    echo resultBlock($errors,$successes);    ?>
 
-    <div id='regbox' class="panel panel-default">
+    <div id='regbox'>
     <?php echo"
         <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
             <fieldset>
                 <div id="legend">
-                    <legend class="">Register</legend>
+                    <legend class="">Account</legend>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-2 col-md-2">
@@ -198,22 +199,93 @@ if(!empty($_POST))
                         </div>
                     </div>
                 </div>
-                    <div class="form-group">
-                        <!-- captcha-->
-                        <p>
-                            <label>Security Code:</label>
-                            <img src='models/captcha.php'>
-                        </p>
-                        <label class="control-label"  for="captcha">Enter Security Code</label>
-                        <div class="controls">
-                            <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
+                <!-- Address form -->
+                <div id="legend">
+                    <legend class="">Address</legend>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Username</label>
+                            <div class="controls">
+                                <input type="text" name="street" placeholder="" class="input-xlarge">
+                                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            <!-- Display Name -->
+                            <label class="control-label"  for="username">Display Name</label>
+                            <div class="controls">
+                                <input type="text"  name="streetnumber" placeholder="" class="input-xlarge">
+                                <p class="help-block">Display names must not already be taken</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
-                    <div class="form-group">
-                        <!-- Button -->
-                        <div class="controls">
-                            <button class="btn btn-success">Register</button>
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            <!-- City -->
+                            <label class="control-label"  for="username">City</label>
+                            <div class="controls">
+                                <input type="text" name="city" placeholder="" class="input-xlarge">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            <!-- State -->
+                            <label class="control-label"  for="username">State</label>
+                            <div class="controls">
+                                <input type="text"  name="state" placeholder="" class="input-xlarge">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            <!-- Zipcode -->
+                            <label class="control-label"  for="username">Zip Code</label>
+                            <div class="controls">
+                                <input type="text"  name="zipcode" placeholder="" class="input-xlarge">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="form-group">
+                            <!-- Zipcode -->
+                            <label class="control-label"  for="username">Use as billing?</label>
+                            <div class="controls">
+                                <input type="checkbox"  name="both" placeholder="" class="input-xlarge">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- register button -->
+                <div id="legend">
+                    <legend class="">Address</legend>
+                </div>
+                <div class="form-group">
+                    <!-- captcha-->
+                    <p>
+                        <label>Security Code:</label>
+                        <img src='models/captcha.php'>
+                    </p>
+                    <label class="control-label"  for="captcha">Enter Security Code</label>
+                    <div class="controls">
+                        <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <!-- Button -->
+                            <div class="controls">
+                                <button class="btn btn-success">Register</button>
+                            </div>
                         </div>
                     </div>
                 </div>
