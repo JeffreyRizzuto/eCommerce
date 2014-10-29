@@ -53,10 +53,14 @@
                         //$price = "$".$book['price']; // get price
                         
                        //createProdThumb($title, $price, $book['details']);
+                        $title = $book['title'];
+                        $description = $book['description'];
+                        $price = $book['price'];
+                        $pic = $book['pic'];
 
                         $isbn = "$".$book['isbn']; // get price
 
-                        createProdThumb($isbn);
+                        createProdThumb($isbn, $title, $price, $description, $pic);
                     }
                 ?>
                 <!--
