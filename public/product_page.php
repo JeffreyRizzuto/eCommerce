@@ -1,9 +1,10 @@
 <?php require_once 'models/master_page.php' ?>
 
 <?php
+
 //GET PRODUCT INFO
 $search = $_GET['isbn'];
-print $search;
+//print $search;
 $book = searchByISBN($search);
 $course= $book['course'];
 $cat = $book['cat'];
@@ -17,10 +18,7 @@ $details = $book['details'];
 $publisher = $book['publisher'];
 $quantity = $book['qty'];
 $pic = $book['pic'];
-//old
-//$title = $_GET['title'];
-//$price = $_GET['price'];
-//$description = $_GET['description'];
+
 ?>
 
 <div class="container-fluid">
@@ -29,11 +27,25 @@ $pic = $book['pic'];
 			<div class="container">	
 				<div class="col-md-12">
 					<div class="product col-md-3 service-image-left">
-							<img id="item-display" src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+							<center>
+							<a id="item-1" class="service1-item">
+								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+							</a>
+							<a id="item-2" class="service1-item">
+								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+							</a>
+							<a id="item-3" class="service1-item">
+								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
+							</a>
+						</center>
 					</div>
 				
 					<div class="product-title"><?php echo $title; ?></div>
-					<div class="product-desc">Short book description goes here...need to add this to GET</div>
+					<div class="product-desc">
+					    <p>
+						
+					    </p>
+					</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
 					<div class="product-price"><?php echo $price; ?></div>
