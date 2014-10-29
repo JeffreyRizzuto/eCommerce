@@ -54,6 +54,13 @@ $lang = array_merge($lang,array(
 	"ACCOUNT_PERMISSION_ADDED"		=> "Added access to %m1% permission levels",
 	"ACCOUNT_PERMISSION_REMOVED"		=> "Removed access from %m1% permission levels",
 	"ACCOUNT_INVALID_USERNAME"		=> "Invalid username",
+    "ACCOUNT_APARTMENT_NUMBER_INVALID"  => "Invalid apartment number",
+    "ACCOUNT_CITY_INVALID"  =>  "Invalid City",
+    "ACCOUNT_STATE_INVALID" =>  "Invalid State",
+    "ACCOUNT_INVALID_ZIP"   =>  "Invalid Zip",
+    "ACCOUNT_INVALID_TELEPHONE" =>  "Invalid Telephone Number",
+    "ACCOUNT_FIRST_NAME_INVALID_CHARACTERS" =>  "Invalid First Name Characters",
+    "ACCOUNT_LAST_NAME_INVALID_CHARACTERS"  =>  "Invalid Last Name Characters"
 	));
 
 //Configuration

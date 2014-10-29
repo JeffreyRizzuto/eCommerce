@@ -76,7 +76,7 @@ if(!empty($_POST))
     //street number
     if(!ctype_digit($apartmentnumber) || empty($apartmentnumber))
     {
-        $errors[] = lang("ACCOUNT_STREET_NUMBER_INVALID");
+        $errors[] = lang("ACCOUNT_APARTMENT_NUMBER_INVALID");
     }
     //city
     if(!ctype_alpha($city))
@@ -91,7 +91,7 @@ if(!empty($_POST))
     //zipcode
     if(!ctype_digit($zipcode))
     {
-        $errors[] = lang("ACCOUNT_INVALID_EMAIL");
+        $errors[] = lang("ACCOUNT_INVALID_ZIP");
     }
     if(!preg_match('/^[\d -]+$/',$telephone))
     {
