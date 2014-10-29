@@ -12,13 +12,21 @@ $euser = $_SESSION["euser"];
     ?>
 
     <ul>
+
+    <div class="col-xs-12 col-sm-5 col-md-5 text-left pull-right">
+        <div class="bigcart"></div>
+        <h1>Your shopping cart</h1>
+        <p>
+            Something Something shopping cart
+        </p>
+    </div>
     <?php
     if(is_null($cartInfo)) {
         echo "Your cart is emtpy D:<br>";
     } else {
         foreach ($cartInfo as $c) {
             echo "
-                <div class='panel panel-default' >
+                <div class='panel panel-default col-xs-12 col-sm-7 col-md-7 pull-left'>
                     <div class='panel-body'>
                     <span class=''><img src=" . $c['pic'] . "></span>
                     <ul class='pull-right' style='list-style-type:none'>
@@ -49,14 +57,6 @@ $euser = $_SESSION["euser"];
             ?>
             </a></span>
         </div>
-</div>
-
-<div class="col-md-7 col-sm-12 text-left">
-    <div class="bigcart"></div>
-    <h1>Your shopping cart</h1>
-    <p>
-        Something Something shopping cart
-    </p>
 </div>
 
 <?php
