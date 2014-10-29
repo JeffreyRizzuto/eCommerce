@@ -2,7 +2,7 @@
 
 <?php
 //GET PRODUCT INFO
-$search = $_GET['isbn'];
+$search = $_GET['booknum'];
 print $search;
 $book = search($search);
 $course= $book['course'];
