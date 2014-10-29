@@ -201,6 +201,11 @@ class EUser {
         $stmt->execute();
         $stmt->close();
 
+        $this->updateData($isbn);
+    }//end of addToCart
+
+    //used as a helper function to update total in order
+    function updateData($isbn) {
         //get price of book
         $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
         $stmt->bind_param("s", $isbn);
@@ -224,8 +229,7 @@ class EUser {
         $stmt->bind_param("di", $newPrice, $this->cart);
         $stmt->execute();
         $stmt->close();
-
-    }//end of addToCart
+    }
 
     function getCartInfo() {
         global $myQuery;
@@ -277,12 +281,12 @@ class EUser {
     function updateQuantity($newQty, $isbn) {
         global $myQuery;
 
-        $query = "UPDATE `book_order` SET `qty`=$newQty WHERE `oid` = ? AND `ISBN` = ?";
-        $stmt = $myQuery->prepare($query);
-        $stmt->bind_param("is", $this->cart, $isbn);
+        $stmt = $myQuery->prepare("UPDATE `book_order` SET `qty`= ? WHERE `oid` = ? AND `ISBN` = ?");
+        $stmt->bind_param("iis", $newQty, $this->cart, $isbn);
         $stmt->execute();
         $stmt->close();
 
-    }
+        $this->updateData($isbn);
+    }//end of updateQuantity
 
 }//end of EUser
