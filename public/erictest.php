@@ -5,6 +5,10 @@ require("models/master_page.php");
 
 $booklist = getAllBooks();
 
-var_dump($booklist);
+foreach($booklist as $book)
+{
+    var_dump($book);
+    echo "<br><br>";
+}
 
 ?>
