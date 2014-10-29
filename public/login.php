@@ -9,7 +9,7 @@ if (!securePage($_SERVER['PHP_SELF'])){die();}
 require_once("models/master_page.php");
 
 //Prevent the user visiting the logged in page if he/she is already logged in
-//if(isUserLoggedIn()) { header("Location: account.php"); die(); }
+if(isUserLoggedIn()) { header("Location: account.php"); die(); }
 
 //Forms posted
 if(!empty($_POST))
