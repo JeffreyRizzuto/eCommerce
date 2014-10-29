@@ -8,15 +8,21 @@ http://usercake.com
 //------------------------------------------------------------------------------
 
 //Create a product thumbnail section
-function createProdThumb($title, $shortTitle = "-1", $price, $description)
+function createProdThumb($title, $price, $description)
 {
-	if($shortTitle != "-1"){
-		$thisTitle = $shortTitle;
-	} else {
-		$thisTitle = $title;
+	$title_lngth = strlen($title); // get title length
+	if($title_lngth > 20) // check for book titles that are too long to display in thumbnail
+	{
+	   $thisTitle = substr($title, 0, 17);  // cut title to 17 chars
+	   $thisTitle = $thisTitle."...";      // append ...
 	}
 	
-	$thisTitle = str_replace("&", "and", $thisTitle);
+	$desc_lngth = strlen($description);
+	if($desc_lngth > 125)
+	{
+	   $thisDesc = substr($description, 0, 122);
+	   $thisDesc = $thisDesc."...";
+	}
 	
 	$code =
 	"
@@ -27,7 +33,7 @@ function createProdThumb($title, $shortTitle = "-1", $price, $description)
 			<h4 class='pull-right'>$price</h4>
 			<h4><a href='product_page.php?title=$title&price=$price&description=$description'>$thisTitle</a>
 			</h4>
-			<p>$description</a>.</p>
+			<p>$thisDesc</a>.</p>
 		    </div>
 		    <div class='ratings'>
 			<p>
