@@ -141,7 +141,7 @@ if(!empty($_POST))
                 <div id="legend">
                     <legend class="">Register</legend>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-3 col-md-3">
                     <div class="form-group">
                         <!-- Username -->
                         <label class="control-label"  for="username">Username</label>
@@ -151,7 +151,7 @@ if(!empty($_POST))
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-3 col-md-3">
                     <div class="form-group">
                         <!-- Username -->
                         <label class="control-label"  for="username">Display Name</label>
@@ -170,7 +170,7 @@ if(!empty($_POST))
                         <p class="help-block">Please provide your E-mail</p>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-3 col-md-3">
                     <div class="form-group">
                         <!-- Password-->
                         <label class="control-label" for="password">Password</label>
@@ -180,7 +180,7 @@ if(!empty($_POST))
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-3 col-md-3">
                     <div class="form-group">
                         <!-- Password -->
                         <label class="control-label"  for="password_confirm">Password (Confirm)</label>
