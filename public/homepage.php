@@ -4,6 +4,8 @@
 
         <?php
             require 'models/left-nav.php';
+            require("models/config.php");
+            require("models/master_page.php");
         ?>
 
         <div class="col-md-9">
@@ -42,10 +44,9 @@
             <div class="row">
                 
                 <?php
-                    $booklist = array();
                     $booklist = getAllBooks();
-                    
-                    for($booklist as $book)
+
+                    foreach($booklist as $book)
                     {
                         createProdThumb($book['title'], $book['price'], $book['details']);
                     }
