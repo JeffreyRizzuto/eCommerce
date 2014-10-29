@@ -207,26 +207,27 @@ class EUser {
     //used as a helper function to update total in order
     function updateData($isbn) {
         global $myQuery;
-
+        $prices = array();
         $total = 0;
+
         //get price of book
         $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
         $stmt->bind_param("s", $isbn);
         $stmt->execute();
         $stmt->bind_result($price);
         while($stmt->fetch()) {
-            $row[] = array('price' => $price);
+            $prices[] = $price;
         }
         $stmt->close();
 
-        foreach ($row as $r) {
+        foreach ($prices as $price) {
             $stmt = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
             $stmt->bind_param("is", $this->cart, $isbn);
             $stmt->execute();
             $stmt->bind_result($qty);
             $stmt->fetch();
             $stmt->close();
-            $total = $total + ($r['price'] * $qty);
+            $total = $total + ($price * $qty);
         }
        
         //get current total_price of order
