@@ -232,10 +232,13 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($price);
             while($stmt->fetch()) {
-                $prices[] = array("$isbn" => $price);
+                $prices[] = array($isbn => $price);
             }
             $stmt->close();
         }
+
+        $output = var_dump($prices);
+        echo "<br>$output";
 
         //loop through isbns, add their (price * qty) to total
         foreach ($isbns as $isbn) {
@@ -245,7 +248,7 @@ class EUser {
             $stmt->bind_result($qty);
             $stmt->fetch();
             $stmt->close();
-            $total = $total + ($prices["$isbn"] * $qty);
+            $total = $total + ($prices[$isbn] * $qty);
         }
        
         $newTotal = $total;
