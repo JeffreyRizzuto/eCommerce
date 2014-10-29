@@ -30,6 +30,12 @@ $pic = $book['pic'];
 					<div class="product col-md-3 service-image-left">
 						<img id="item-display" src="<?php echo $pic; ?>" alt=""></img>
 						<center>
+						    <img src="<?php echo $pic; ?>" alt=""></img>
+						</center>
+					</div>
+    
+					<div class="container service1-items col-sm-2 col-md-2 pull-left">
+						<center>
 							<a id="item-1" class="service1-item">
 								<img src="<?php echo $pic; ?>" alt=""></img>
 							</a>
@@ -41,7 +47,7 @@ $pic = $book['pic'];
 							</a>
 						</center>
 					</div>
-				
+				<div class="col-md-7">
 					<div class="product-title"><?php echo $title; ?></div>
 					<div class="product-desc">
 					    <p>
