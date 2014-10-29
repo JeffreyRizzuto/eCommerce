@@ -239,7 +239,7 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
+                    <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- Display Name -->
                             <label class="control-label">*Apartment Number</label>
