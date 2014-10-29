@@ -207,28 +207,41 @@ class EUser {
     //used as a helper function to update total in order
     function updateData($isbn) {
         global $myQuery;
-        
+
+        $total = 0;
         //get price of book
         $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
         $stmt->bind_param("s", $isbn);
         $stmt->execute();
-        $stmt->bind_result($newPrice);
-        $stmt->fetch();
+        $stmt->bind_result($price);
+        while($stmt->fetch()) {
+            $row[] = array('price' => $price);
+        }
         $stmt->close();
+
+        foreach ($row as $r) {
+            $stmt = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
+            $stmt->bind_param("is", $this->cart, $isbn);
+            $stmt->execute();
+            $stmt->bind_result($qty);
+            $stmt->fetch();
+            $stmt->close();
+            $total = $total + ($r['price'] * $qty);
+        }
        
         //get current total_price of order
         $stmt = $myQuery->prepare("SELECT `total_price` FROM `order` WHERE `oid` = ? AND `purchased` = 0");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
-        $stmt->bind_result($total);
+        $stmt->bind_result($oldTotal);
         $stmt->fetch();
         $stmt->close();
        
-        $newPrice = $newPrice * $qty + $total;
+        $newTotal = $total + $oldTotal;
 
         //update total price
         $stmt = $myQuery->prepare("UPDATE `order` SET `total_price` = ? WHERE `oid` = ? AND `purchased` = 0");
-        $stmt->bind_param("di", $newPrice, $this->cart);
+        $stmt->bind_param("di", $newTotal, $this->cart);
         $stmt->execute();
         $stmt->close();
     }
