@@ -59,7 +59,7 @@ if(!empty($_POST)) {
             echo "No products match your search: $searchString<br>";
         }
     } elseif (!is_null($_POST['isbn'])) {
-        add to cart possibility
+        //add to cart possibility
         $isbn = $_POST['isbn'];
         $_POST['isbn'] = NULL;
         $euser = $_SESSION['euser'];
