@@ -18,7 +18,7 @@ $details = $book['details'];
 $publisher = $book['publisher'];
 $quantity = $book['qty'];
 $pic = $book['pic'];
-
+var_dump($pic);
 ?>
 
 <div class="container-fluid">
