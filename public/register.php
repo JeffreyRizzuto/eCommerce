@@ -169,23 +169,24 @@ if(!empty($_POST))
                             <!-- E-mail -->
                             <label class="control-label" for="email">E-mail</label>
                             <div class="controls">
-                                <input type="text"  name="email" placeholder="" class="input-xlarge">
+                                <input type="email"  name="email" placeholder="" class="input-xlarge">
                                 <p class="help-block">Please provide your E-mail</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <div class="form-group">
-                        <!-- Password-->
-                        <label class="control-label" for="password">Password</label>
-                        <div class="controls">
-                            <input type="password"  name="password" placeholder="" class="input-xlarge">
-                            <p class="help-block">Password should be at least 8 characters</p>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <!-- Password-->
+                            <label class="control-label" for="password">Password</label>
+                            <div class="controls">
+                                <input type="password"  name="password" placeholder="" class="input-xlarge">
+                                <p class="help-block">Password should be at least 8 characters</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
+
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <div class="form-group">
                             <!-- Password -->
@@ -196,9 +197,9 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
                     <div class="form-group">
-                        <!-- Password -->
+                        <!-- captcha-->
                         <p>
                             <label>Security Code:</label>
                             <img src='models/captcha.php'>
@@ -208,7 +209,6 @@ if(!empty($_POST))
                             <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
                         </div>
                     </div>
-                </div>
                 <div class="row">
                     <div class="form-group">
                         <!-- Button -->
