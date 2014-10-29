@@ -221,7 +221,8 @@ class EUser {
         }
         $stmt->close();
 
-        echo "var_dump($isbns)<br>";
+        $output = var_dump($isbns);
+        echo "$output";
 
         //loop through isbns, getting list of prices tied to isbn
         foreach($isbns as $isbn) {
