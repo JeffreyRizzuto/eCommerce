@@ -245,6 +245,7 @@ if(!empty($_POST))
                             <label class="control-label">*Apartment Number</label>
                             <div class="controls">
                                 <input type="text"  name="apartmentnumber" placeholder="" class="input-xlarge">
+                                <p class="help-block">Optional Field</p>
                             </div>
                         </div>
                     </div>
