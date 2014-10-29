@@ -7,7 +7,7 @@ $search = $_GET['isbn'];
 //print $search;
 $book = searchByISBN($search);
 var_dump($book);
-$course= $book['course'];
+$course= $book["course"];
 $cat = $book['cat'];
 $isbn = $book['isbn'];
 $title = $book['title'];
@@ -18,7 +18,7 @@ $price = $book['price'];
 $details = $book['details'];
 $publisher = $book['publisher'];
 $quantity = $book['qty'];
-$pic = $book['pic'];
+$pic = $book["pic"];
 ?>
 
 <div class="container-fluid">
