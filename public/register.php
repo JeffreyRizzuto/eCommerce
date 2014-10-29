@@ -161,7 +161,7 @@ if(!empty($_POST))
                             <label class="control-label">Username</label>
                             <div class="controls">
                                 <input type="text" name="username" placeholder="" class="input-xlarge">
-                                <p class="help-block">Contains only letters or numbers, no spaces</p>
+                                <p class="help-block">Contains only letters or numbers</p>
                             </div>
                         </div>
                     </div>
