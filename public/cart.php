@@ -53,9 +53,10 @@ $euser = $_SESSION["euser"];
             echo "
                 <form name='checkout' action='".$_SERVER['PHP_SELF']."' method='post'>
                     <input type='hidden' id='checkout' name='checkout'/>
-                    <input type='Submit' value='Checkout' />
+                    <button class='btn btn-success' value='Checkout'>Checkout</button>
                 </form><br>";
             ?>
+                    <!--<input type='Submit' value='Checkout' /> -->
             </a></span>
         </div>
 </div>
