@@ -20,10 +20,10 @@ class EUser {
     private $uid = -1;
     private $wishlist = -1; //oid connects wishlist order and book_order to a wishlist
     private $cart = -1; //oid connects wishlist order and book_order to a cart
-    public  $address_status = false;
+    public  $address_status = FALSE;
     public  $address_count = 0;
-    public  $user_status = false;
-    public  $newCart = false;
+    public  $user_status = FALSE;
+    public  $newCart = FALSE;
 
     function __construct($user, $pass, $email, $fname, $lname, $phone_number) {
         $this->email = sanitize($email);
@@ -34,11 +34,11 @@ class EUser {
         $this->phone_number = $phone_number;
 
         if(usernameExists($this->username)) {
-            $this->user_status = false;
+            $this->user_status = FALSE;
         } else if(emailExists($this->email)) {
-            $this->user_status = false;
+            $this->user_status = FALSE;
         } else {
-            $this->user_status = true;
+            $this->user_status = TRUE;
         }
     }//end of constructor
 
@@ -71,7 +71,7 @@ class EUser {
             $address_count = 2;
         }
         if($this->address_count == 2) {
-            $this->address_status = true;
+            $this->address_status = TRUE;
         }
     }//end of addAddress
 
@@ -140,7 +140,7 @@ class EUser {
     function getCart() {
         global $myQuery;
 
-        if($this->newCart == true) {
+        if($this->newCart == TRUE) {
             $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES (?, ?, ?)");
             $purchased = 0;
             $date = NULL;
@@ -149,7 +149,7 @@ class EUser {
             $stmt->execute();
             $this->cart = $myQuery->insert_id;
             $stmt->close();
-            $this->newCart = false;
+            $this->newCart = FALSE;
         } else {
             $stmt = $myQuery->prepare("SELECT `OID` FROM `shopping_cart` WHERE `UID` = ?");
             $stmt->bind_param("i", $this->uid);
@@ -270,7 +270,7 @@ class EUser {
         $stmt->close();
 
         //update cart order number
-        $this->newCart = true;
+        $this->newCart = TRUE;
         $this->getCart();
     }//end of checkout
 

@@ -51,7 +51,6 @@ if(!empty($_POST)) {
         $searchString = $_POST['search'];
         $_POST['search'] = NULL;
         $_SESSION['search'] = $searchString;
-    
         $results = search($searchString);
         if($results !== NULL) {
             header("Location: search_results.php"); die();
