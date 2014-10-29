@@ -16,7 +16,7 @@ function createProdThumb($isbn)
     $title = $book['title'];
     $description = $book['description'];
     $price = $book['price'];
-    $image = $book['price'];
+    $pic = $book['pic'];
 	$title_length = strlen($title); // get title length
 	if($title_length > 20) // check for book titles that are too long to display in thumbnail
 	{
@@ -39,7 +39,7 @@ function createProdThumb($isbn)
 	"
 	<div class='col-sm-4 col-lg-4 col-md-4'>
 		<div class='thumbnail'>
-		    <img src='http://placehold.it/320x150' alt=''>
+		    <img src='$pic' alt=''>
 		    <div class='caption'>
 			<h4 class='pull-right'>$price</h4>
 			<h4><a href='product_page.php?isbn=$isbn'>$thisTitle</a>
