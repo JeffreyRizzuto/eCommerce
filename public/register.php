@@ -85,6 +85,10 @@ if(!empty($_POST))
     {
         $errors[] = lang("ACCOUNT_INVALID_EMAIL");
     }
+    if(!preg_match('/^[\d -]+$/',$telephone))
+    {
+        $errors[] = lang("ACCOUNT_INVALID_TELEPHONE");
+    }
 
 	//End data validation
 
