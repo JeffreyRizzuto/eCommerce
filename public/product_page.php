@@ -1,5 +1,28 @@
 <?php require_once 'models/master_page.php' ?>
 
+<?php
+//GET PRODUCT INFO
+$search = $_GET['isbn'];
+print $search;
+$book = search($search);
+$course= $book['course'];
+$cat = $book['cat'];
+$isbn = $book['isbn'];
+$title = $book['title'];
+$edition= $book['edition'];
+$author = $book['author'];
+$type = $book['type'];
+$price = $book['price'];
+$details = $book['details'];
+$publisher = $book['publisher'];
+$quantity = $book['qty'];
+$pic = $book['pic'];
+//old
+//$title = $_GET['title'];
+//$price = $_GET['price'];
+//$description = $_GET['description'];
+?>
+
 <div class="container-fluid">
     <div class="content-wrapper">	
 		<div class="item-container">	
@@ -8,41 +31,6 @@
 					<div class="product col-md-3 service-image-left">
 							<img id="item-display" src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
 					</div>
-					
-					<div class="container service1-items col-sm-2 col-md-2 pull-left">
-							<a id="item-1" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
-							</a>
-							<a id="item-2" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
-							</a>
-							<a id="item-3" class="service1-item">
-								<img src="http://images.clipartpanda.com/open-book-outline-clipart-simple-open-book-Download-Royalty-free-Vector-File-EPS-14632.jpg" alt=""></img>
-							</a>
-					</div>
-				
-				<?php
-				    //GET PRODUCT INFO
-                    $search = $_GET['isbn'];
-                    print $search;
-                    $book = search($search);
-                    $course= $book['course'];
-                    $cat = $book['cat'];
-                    $isbn = $book['isbn'];
-                    $title = $book['title'];
-                    $edition= $book['edition'];
-                    $author = $book['author'];
-                    $type = $book['type'];
-                    $price = $book['price'];
-                    $details = $book['details'];
-                    $publisher = $book['publisher'];
-                    $quantity = $book['qty'];
-                    $pic = $book['pic'];
-                    //old
-				    //$title = $_GET['title'];
-				    //$price = $_GET['price'];
-				    //$description = $_GET['description'];
-				?>
 				
 					<div class="product-title"><?php echo $title; ?></div>
 					<div class="product-desc">Short book description goes here...need to add this to GET</div>
@@ -94,7 +82,6 @@
 								<li>MTBF: 100,000 hours</li>
 								<li>Safety Approvals: UL, CUL, CE, CB, FCC Class B, T�V, CCC, C-tick</li>
 							    -->
-							    <?php echo $description; ?>
 							</section>
 										  
 						</div>
