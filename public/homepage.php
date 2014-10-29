@@ -56,7 +56,7 @@
 
                         $isbn = "$".$book['isbn']; // get price
 
-                        //createProdThumb($isbn);
+                        createProdThumb($isbn);
                     }
                 ?>
                 <!--
