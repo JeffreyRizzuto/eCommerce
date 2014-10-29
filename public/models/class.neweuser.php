@@ -19,7 +19,7 @@ class EUser {
     private $bil_address_zip;
     private $uid = -1;
     private $wishlist = -1; //oid connects wishlist order and book_order to a wishlist
-    private $cart = -1; //oid connects wishlist order and book_order to a cart
+    public  $cart = -1; //oid connects wishlist order and book_order to a cart
     public  $address_status = FALSE;
     public  $address_count = 0;
     public  $user_status = FALSE;
