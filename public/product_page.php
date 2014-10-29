@@ -29,7 +29,7 @@ $pic = $book['pic'];
 				<div class="col-md-12">
 					<div class="product col-md-3 service-image-left">
 						
-						    <img src="<?php echo $pic; ?>" alt=""></img>
+						    <img src="<?php echo $pic; ?>" style="width: 100%; height: 100%;" alt=""></img>
 						
 					</div>
     
