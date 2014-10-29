@@ -3,13 +3,9 @@
 <?php
 
 //GET PRODUCT INFO
-<<<<<<< HEAD
 $search = $_GET['isbn'];
 //print $search;
 $book = searchByISBN($search);
-=======
-$book = searchByISBN($_GET['isbn']);
->>>>>>> b59fdc77cfe117eb4184dbe34870328aebbc23f6
 $course= $book['course'];
 $cat = $book['cat'];
 $isbn = $book['isbn'];
