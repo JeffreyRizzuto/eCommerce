@@ -1,5 +1,17 @@
 <?php require_once 'models/master_page.php' ?>
 
+<?php
+if(!empty($_POST))
+{
+    if(isset($_GET['addtocart'])){
+        $euser->addToCart($isbn, $qty);
+    }elseif(isset($_GET['addtowish'])){
+        //nothing here yet
+    }
+}
+?>
+
+
 <div class="container-fluid">
     <div class="content-wrapper">	
 		<div class="item-container">	
@@ -23,9 +35,22 @@
 				
 				<?php
 				    //GET PRODUCT INFO
-				    $title = $_GET['title'];
-				    $price = $_GET['price'];
-				    $description = $_GET['description'];
+                    $book = searchByISBN($isbn);
+                    $course= $book['course'];
+                    $cat = $book['cat'];
+                    $isbn = $book['isbn'];
+                    $title = $book['title'];
+                    $edition= $book['edition'];
+                    $author = $book['author'];
+                    $type = $book['type'];
+                    $price = $book['price'];
+                    $details = $book['details'];
+                    $publisher = $book['publisher'];
+                    $quantity = $book['quantity'];
+                    //old
+				    //$title = $_GET['title'];
+				    //$price = $_GET['price'];
+				    //$description = $_GET['description'];
 				?>
 				
 					<div class="product-title"><?php echo $title; ?></div>
@@ -36,12 +61,12 @@
 					<div class="product-stock">In Stock</div>
 					<hr>
 					<div class="btn-group cart">
-						<button type="button" class="btn btn-success">
+						<button type="button" value ="addtocart" class="btn btn-success">
 							Add to cart 
 						</button>
 					</div>
 					<div class="btn-group wishlist">
-						<button type="button" class="btn btn-danger">
+						<button type="button" value ="addtowish" class="btn btn-danger">
 							Add to wishlist 
 						</button>
 					</div>

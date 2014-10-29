@@ -48,11 +48,15 @@
 
                     foreach($booklist as $book)
                     {
-                        $title = $book['title']; // get title
+                        //$title = $book['title']; // get title
                         
-                        $price = "$".$book['price']; // get price
+                        //$price = "$".$book['price']; // get price
                         
-                        createProdThumb($title, $price, $book['details']);
+                       //createProdThumb($title, $price, $book['details']);
+
+                        $isbn = "$".$book['isbn']; // get price
+
+                        //createProdThumb($isbn);
                     }
                 ?>
                 <!--
