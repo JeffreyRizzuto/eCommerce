@@ -1,16 +1,4 @@
 <?php require_once 'models/master_page.php' ?>
-require_once("models/config.php");
-<?php
-if(!empty($_POST))
-{
-    if(isset($_GET['addtocart'])){
-        $euser->addToCart($isbn, $qty);
-    }elseif(isset($_GET['addtowish'])){
-        //nothing here yet
-    }
-}
-?>
-
 
 <div class="container-fluid">
     <div class="content-wrapper">	
