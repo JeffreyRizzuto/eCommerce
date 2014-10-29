@@ -76,8 +76,9 @@ if(!empty($_POST)) {
         $euser = $_SESSION['euser'];
         $_POST['qty_isbn'] = NULL;
         $_POST['qty'] = NULL;
+        echo "ISBN: $isbn<br>Qty: $qty<br>";
         $euser->updateQuantity($newQty, $isbn);
-        header("Location cart.php"); die();
+        //header("Location cart.php");
     }
 }//end of POST
 
