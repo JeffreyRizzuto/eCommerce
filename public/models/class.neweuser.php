@@ -283,7 +283,7 @@ class EUser {
         $stmt = $myQuery->prepare($query);
         $stmt->bind_param("ii", $this->cart, $isbn);
         $stmt->execute();
-        echo "Error: $myQuery->error";
+        echo "Error: $stmt->error";
         $stmt->close();
 
     }
