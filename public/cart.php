@@ -35,8 +35,8 @@ $euser = $_SESSION["euser"];
                         <li>ISBN: " . $c['isbn'] . "</span></li>
                         <li>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
                         <li>Date Added: " . $c['date'] . "</span></li>
-                        <li>Price: $".$c['price']."</li>
-                        <input type='hidden' id='qty_isbn' name='qty_isbn' value='".$C['isbn']."'/>
+                        <input type='hidden' id='qty_isbn' name='qty_isbn' value='".$c['isbn']."'/>
+                        <li>Price: $</li>
                         </form>
                     </ul>
                     </div>
