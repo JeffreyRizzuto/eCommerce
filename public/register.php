@@ -13,7 +13,7 @@ if(!empty($_POST))
 	$errors = array();
 	$email = trim($_POST["email"]);
 	$username = trim($_POST["username"]);
-	$displayname = trim($_POST["displayname"]);
+	//$displayname = trim($_POST["displayname"]);
     $firstname = trim($_POST["firstname"]);
     $lastname = trim($_POST["lastname"]);
 	$password = trim($_POST["password"]);
@@ -40,10 +40,10 @@ if(!empty($_POST))
 	if(!ctype_alnum($username)){
 		$errors[] = lang("ACCOUNT_USER_INVALID_CHARACTERS");
 	}
-	if(minMaxRange(5,25,$displayname))
-	{
-		$errors[] = lang("ACCOUNT_DISPLAY_CHAR_LIMIT",array(5,25));
-	}
+//	if(minMaxRange(5,25,$displayname))
+//	{
+//		$errors[] = lang("ACCOUNT_DISPLAY_CHAR_LIMIT",array(5,25));
+//	}
 	if(!ctype_alnum($displayname)){
 		$errors[] = lang("ACCOUNT_DISPLAY_INVALID_CHARACTERS");
 	}
@@ -109,7 +109,7 @@ if(!empty($_POST))
 	if(count($errors) == 0)
 	{	
 		//Construct a user object
-		$user = new User($username,$displayname,$password,$email);
+		$user = new User($username,"Customer",$password,$email);
         $euser = new EUser($username, $password, $email, $firstname, $lastname, $telephone);
         $euser->addAddress($both, $street, $apartmentnumber, $city, $state, $zipcode);
 
@@ -165,16 +165,16 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Display Bane -->
-                            <label class="control-label">Display Name</label>
-                            <div class="controls">
-                                <input type="text"  name="displayname" placeholder="" class="input-xlarge">
-                                <p class="help-block">Must not already be taken</p>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="col-xs-12 col-sm-1 col-md-1">-->
+<!--                        <div class="form-group">-->
+<!--                            <!-- Display Bane -->-->
+<!--                            <label class="control-label">Display Name</label>-->
+<!--                            <div class="controls">-->
+<!--                                <input type="text"  name="displayname" placeholder="" class="input-xlarge">-->
+<!--                                <p class="help-block">Must not already be taken</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-1 col-md-1">
