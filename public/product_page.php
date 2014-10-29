@@ -28,9 +28,9 @@ $pic = $book['pic'];
 			<div class="container">	
 				<div class="col-md-12">
 					<div class="product col-md-3 service-image-left">
-						<center>
+						
 						    <img src="<?php echo $pic; ?>" alt=""></img>
-						</center>
+						
 					</div>
     
 					<div class="container service1-items col-sm-2 col-md-2 pull-left">
