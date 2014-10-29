@@ -47,6 +47,7 @@ if(!empty($_POST))
                     $details = $book['details'];
                     $publisher = $book['publisher'];
                     $quantity = $book['quantity'];
+                    $pic = $book['pic'];
                     //old
 				    //$title = $_GET['title'];
 				    //$price = $_GET['price'];
