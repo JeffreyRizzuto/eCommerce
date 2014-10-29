@@ -340,7 +340,7 @@ if(!empty($_POST))
                             <!-- Telephone -->
                             <label class="control-label">Telephone Number</label>
                             <div class="controls">
-                                <input type="tel"  name="phonenumber" placeholder="" class="input-xlarge">
+                                <input type="text"  name="phonenumber" placeholder="" class="input-xlarge">
                             </div>
                         </div>
                     </div>
