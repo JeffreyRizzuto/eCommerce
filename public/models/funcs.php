@@ -22,7 +22,7 @@ function createProdThumb($title, $shortTitle = "-1", $price, $description)
 		    <img src='http://placehold.it/320x150' alt=''>
 		    <div class='caption'>
 			<h4 class='pull-right'>$price</h4>
-			<h4><a href='product_page.php?title=$title&price=$price&description=$description'>$thisTitle</a>
+			<h4><a href='product_page.php?title='.urlencode($title).'&price='.urlencode($price).'&description='.urlencode($description)>$thisTitle</a>
 			</h4>
 			<p>$description</a>.</p>
 		    </div>
