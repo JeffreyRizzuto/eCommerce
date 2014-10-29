@@ -1,5 +1,6 @@
-<?php require_once 'models/master_page.php' ?>
-
+<?php require_once 'models/master_page.php'
+require_once("models/config.php");?>
+require_once("models/config.php");
 <?php
 if(!empty($_POST))
 {
