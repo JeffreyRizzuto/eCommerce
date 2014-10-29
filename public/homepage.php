@@ -48,7 +48,15 @@
 
                     foreach($booklist as $book)
                     {
-                        createProdThumb($book['title'], $book['price'], $book['details']);
+                        $title = $book['title'];
+                        $title_lngth = strlen($title);
+                        if($title_lngth > 20)
+                        {
+                            $title = substr($title, 0, 17);
+                            $title = $title."...";
+                        }
+                        $price = "$".$book['price'];
+                        createProdThumb($title, $price, $book['details']);
                     }
                 ?>
                 <!--
