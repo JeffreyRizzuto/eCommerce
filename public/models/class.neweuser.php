@@ -242,7 +242,7 @@ class EUser {
 
         //loop through isbns, add their (price * qty) to total
         foreach ($isbns as $isbn) {
-            echo "TEST:$prices[".$isbn."]<br>";
+            echo "TEST:$prices[$isbn]<br>";
             $stmt = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
             $stmt->bind_param("is", $this->cart, $isbn);
             $stmt->execute();
