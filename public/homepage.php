@@ -55,7 +55,7 @@
                        //createProdThumb($title, $price, $book['details']);
                         $isbn = $book['isbn'];
                         $title = $book['title'];
-                        $description = $book['description'];
+                        $description = $book['details'];
                         $price = $book['price'];
                         $pic = $book['pic'];
 
