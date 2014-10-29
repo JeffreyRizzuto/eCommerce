@@ -94,7 +94,7 @@ if(!empty($_POST))
     {
         $errors[] = lang("ACCOUNT_INVALID_ZIP");
     }
-    if(!preg_match('/^[0-9]+$/',$telephone))
+    if(!preg_match('/^[0-9]+$/',$phonenumber))
     {
         $errors[] = lang("ACCOUNT_INVALID_TELEPHONE");
     }
