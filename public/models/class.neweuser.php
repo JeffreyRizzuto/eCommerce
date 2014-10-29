@@ -205,29 +205,44 @@ class EUser {
     }//end of addToCart
 
     //used as a helper function to update total in order
-    function updateData($isbn) {
+    function updateData() {
         global $myQuery;
+        $isbns = array();
         $prices = array();
         $total = 0;
 
-        //get price of book
-        $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
-        $stmt->bind_param("s", $isbn);
+        //compile a list of all isbns of the customer's cart
+        $stmt = $myQuery->prepare("SELECT `isbn` FROM `book_order` WHERE `oid` = ?");
+        $stmt->bind_param("i", $this->cart);
         $stmt->execute();
-        $stmt->bind_result($price);
+        $stmt->bind_result($isbn);
         while($stmt->fetch()) {
-            $prices[] = $price;
+            $isbns[] = $isbn;
         }
         $stmt->close();
 
-        foreach ($prices as $price) {
+        //loop through isbns, getting list of prices tied to isbn
+        foreach($isbns as $isbn) {
+            //get price of book
+            $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
+            $stmt->bind_param("s", $isbn);
+            $stmt->execute();
+            $stmt->bind_result($price);
+            while($stmt->fetch()) {
+                $prices[] = array($isbn => $price);
+            }
+            $stmt->close();
+        }
+
+        //loop through isbns, add their (price * qty) to total
+        foreach ($isbns as $isbn) {
             $stmt = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
             $stmt->bind_param("is", $this->cart, $isbn);
             $stmt->execute();
             $stmt->bind_result($qty);
             $stmt->fetch();
             $stmt->close();
-            $total = $total + ($price * $qty);
+            $total = $total + ($prices[$isbn] * $qty);
         }
        
         $newTotal = $total;
