@@ -32,7 +32,7 @@ function createProdThumb($isbn, $title, $price, $description, $pic)
 	"
 	<div class='col-sm-4 col-lg-4 col-md-4'>
 		<div class='thumbnail'>
-		    <img src='$pic' alt='' style='width: 280px; height: 150px;'>
+		    <img src='$pic' alt='' style='width: 160px; height: 150px;'>
 		    <div class='caption'>
 			<h4 class='pull-right'>$price</h4>
 			<h4><a href='product_page.php?isbn=$isbn'>$thisTitle</a>
