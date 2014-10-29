@@ -206,6 +206,8 @@ class EUser {
 
     //used as a helper function to update total in order
     function updateData($isbn) {
+        global $myQuery;
+        
         //get price of book
         $stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
         $stmt->bind_param("s", $isbn);
