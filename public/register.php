@@ -204,7 +204,7 @@ if(!empty($_POST))
                     <legend class="">Address</legend>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Username -->
                             <label class="control-label"  for="username">Street</label>
@@ -213,7 +213,7 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Display Name -->
                             <label class="control-label"  for="username">Street Number</label>
@@ -266,7 +266,7 @@ if(!empty($_POST))
                 </div>
                 <!-- register button -->
                 <div id="legend">
-                    <legend class="">Address</legend>
+                    <legend class="">Register</legend>
                 </div>
                 <div class="form-group">
                     <!-- captcha-->
