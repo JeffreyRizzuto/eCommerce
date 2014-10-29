@@ -141,33 +141,37 @@ if(!empty($_POST))
                 <div id="legend">
                     <legend class="">Register</legend>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <div class="form-group">
-                        <!-- Username -->
-                        <label class="control-label"  for="username">Username</label>
-                        <div class="controls">
-                            <input type="text" name="username" placeholder="" class="input-xlarge">
-                            <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Username</label>
+                            <div class="controls">
+                                <input type="text" name="username" placeholder="" class="input-xlarge">
+                                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <!-- Username -->
+                            <label class="control-label"  for="username">Display Name</label>
+                            <div class="controls">
+                                <input type="text"  name="displayname" placeholder="" class="input-xlarge">
+                                <p class="help-block">Display names must not already be taken</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <div class="form-group">
-                        <!-- Username -->
-                        <label class="control-label"  for="username">Display Name</label>
-                        <div class="controls">
-                            <input type="text"  name="displayname" placeholder="" class="input-xlarge">
-                            <p class="help-block">Display names must not already be taken</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <div class="form-group">
-                        <!-- E-mail -->
-                        <label class="control-label" for="email">E-mail</label>
-                        <div class="controls">
-                            <input type="text"  name="email" placeholder="" class="input-xlarge">
-                            <p class="help-block">Please provide your E-mail</p>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <!-- E-mail -->
+                            <label class="control-label" for="email">E-mail</label>
+                            <div class="controls">
+                                <input type="text"  name="email" placeholder="" class="input-xlarge">
+                                <p class="help-block">Please provide your E-mail</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,35 +185,36 @@ if(!empty($_POST))
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <div class="form-group">
+                            <!-- Password -->
+                            <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+                            <div class="controls">
+                                <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
+                                <p class="help-block">Please confirm password</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                     <div class="form-group">
                         <!-- Password -->
-                        <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+                        <p>
+                            <label>Security Code:</label>
+                            <img src='models/captcha.php'>
+                        </p>
+                        <label class="control-label"  for="captcha">Enter Security Code</label>
                         <div class="controls">
-                            <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
-                            <p class="help-block">Please confirm password</p>
+                            <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
                         </div>
                     </div>
                 </div>
-                </div>
-                <div class="form-group">
-                    <!-- Password -->
-                    <p>
-                        <label>Security Code:</label>
-                        <img src='models/captcha.php'>
-                    </p>
-                    <label class="control-label"  for="captcha">Enter Security Code</label>
-                    <div class="controls">
-                        <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
-                    </div>
-                </div>
-
-                <hr class="colorgraph">
-
-                <div class="form-group">
-                    <!-- Button -->
-                    <div class="controls">
-                        <button class="btn btn-success">Register</button>
+                <div class="row">
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="controls">
+                            <button class="btn btn-success">Register</button>
+                        </div>
                     </div>
                 </div>
             </fieldset>
