@@ -212,7 +212,7 @@ class EUser {
         $total = 0;
 
         //compile a list of all isbns of the customer's cart
-        $stmt = $myQuery->prepare("SELECT `isbn` FROM `book_order` WHERE `oid` = ?");
+        $stmt = $myQuery->prepare("SELECT `ISBN` FROM `book_order` WHERE `oid` = ?");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
         $stmt->bind_result($isbn);
@@ -220,6 +220,8 @@ class EUser {
             $isbns[] = $isbn;
         }
         $stmt->close();
+
+        echo "var_dump($isbns)<br>";
 
         //loop through isbns, getting list of prices tied to isbn
         foreach($isbns as $isbn) {
@@ -229,7 +231,7 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($price);
             while($stmt->fetch()) {
-                $prices[] = array($isbn => $price);
+                $prices[] = array("$isbn" => $price);
             }
             $stmt->close();
         }
@@ -242,7 +244,7 @@ class EUser {
             $stmt->bind_result($qty);
             $stmt->fetch();
             $stmt->close();
-            $total = $total + ($prices[$isbn] * $qty);
+            $total = $total + ($prices["$isbn"] * $qty);
         }
        
         $newTotal = $total;
