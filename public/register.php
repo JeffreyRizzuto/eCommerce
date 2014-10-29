@@ -14,6 +14,8 @@ if(!empty($_POST))
 	$email = trim($_POST["email"]);
 	$username = trim($_POST["username"]);
 	$displayname = trim($_POST["displayname"]);
+    $firstname = trim($_POST["firstname"]);
+    $lastname = trim($_POST["lastname"]);
 	$password = trim($_POST["password"]);
 	$confirm_pass = trim($_POST["passwordc"]);
     $telephone = trim($_POST["telephone"]);
@@ -45,6 +47,12 @@ if(!empty($_POST))
 	if(!ctype_alnum($displayname)){
 		$errors[] = lang("ACCOUNT_DISPLAY_INVALID_CHARACTERS");
 	}
+    if(!ctype_alnum($firstname)){
+        $errors[] = lang("ACCOUNT_FIRST_NAME_INVALID_CHARACTERS");
+    }
+    if(!ctype_alnum($lastname)){
+        $errors[] = lang("ACCOUNT_LAST_NAME_INVALID_CHARACTERS");
+    }
 	if(minMaxRange(8,50,$password) && minMaxRange(8,50,$confirm_pass))
 	{
 		$errors[] = lang("ACCOUNT_PASS_CHAR_LIMIT",array(8,50));
@@ -96,7 +104,7 @@ if(!empty($_POST))
 	{	
 		//Construct a user object
 		$user = new User($username,$displayname,$password,$email);
-        $euser = new EUser($username, $password, $email, "FTest", "LTest", $telephone);
+        $euser = new EUser($username, $password, $email, $firstname, $lastname, $telephone);
 //        $st = 'UTSA Cirlce';
 //        $no = 1;
 //        $city = 'satown';
@@ -159,11 +167,31 @@ if(!empty($_POST))
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
-                            <!-- Username -->
+                            <!-- Display Bane -->
                             <label class="control-label">Display Name</label>
                             <div class="controls">
                                 <input type="text"  name="displayname" placeholder="" class="input-xlarge">
                                 <p class="help-block">Display names must not already be taken</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
+                        <div class="form-group">
+                            <!-- Username -->
+                            <label class="control-label">First Name</label>
+                            <div class="controls">
+                                <input type="text" name="firstname" placeholder="" class="input-xlarge">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-1 col-md-1">
+                        <div class="form-group">
+                            <!-- Display Bane -->
+                            <label class="control-label">Last Name</label>
+                            <div class="controls">
+                                <input type="text"  name="lastname" placeholder="" class="input-xlarge">
                             </div>
                         </div>
                     </div>
