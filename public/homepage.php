@@ -3,9 +3,9 @@
     <div class="row">
 
         <?php
-            require 'models/left-nav.php';
-            require("models/config.php");
-            require("models/master_page.php");
+            require_once ('models/left-nav.php');
+            require_once("models/config.php");
+            require_once("models/master_page.php");
         ?>
 
         <div class="col-md-9">
