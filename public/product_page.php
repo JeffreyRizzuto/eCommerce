@@ -7,6 +7,8 @@ $search = $_GET['isbn'];
 //print $search;
 $book = searchByISBN($search);
 var_dump($book);
+$book = $book[0]; echo "<br><br>";
+var_dump($book);
 $course= $book["course"];
 $cat = $book['cat'];
 $isbn = $book['isbn'];
