@@ -74,7 +74,7 @@ if(!empty($_POST))
         $errors[] = lang("ACCOUNT_STREET_INVALID");
     }
     //street number
-    if(!ctype_digit($streetnumber))
+    if(!ctype_digit($apartmentnumber) || empty($apartmentnumber))
     {
         $errors[] = lang("ACCOUNT_STREET_NUMBER_INVALID");
     }
@@ -242,7 +242,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Display Name -->
-                            <label class="control-label">Apartment Number</label>
+                            <label class="control-label">*Apartment Number</label>
                             <div class="controls">
                                 <input type="text"  name="apartmentnumber" placeholder="" class="input-xlarge">
                             </div>
