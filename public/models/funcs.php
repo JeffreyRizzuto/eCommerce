@@ -13,9 +13,9 @@ function createProdThumb($isbn)
 {
     //$book = getBookByISBN($isbn);
     $book = searchByISBN($isbn);
-    $title = .$book['title'];
-    $description = .$book['description'];
-    $price = .$book['price'];
+    $title = $book['title'];
+    $description = $book['description'];
+    $price = $book['price'];
 	$title_length = strlen($title); // get title length
 	if($title_length > 20) // check for book titles that are too long to display in thumbnail
 	{

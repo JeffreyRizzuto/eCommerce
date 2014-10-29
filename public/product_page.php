@@ -36,17 +36,17 @@ if(!empty($_POST))
 				<?php
 				    //GET PRODUCT INFO
                     $book = searchByISBN($isbn);
-                    $course= .$book['course'];
-                    $cat = .$book['cat'];
-                    $isbn = .$book['isbn'];
-                    $title = .$book['title'];
-                    $edition= .$book['edition'];
-                    $author = .$book['author'];
-                    $type = .$book['type'];
-                    $price = .$book['price'];
-                    $details = .$book['details'];
-                    $publisher = .$book['publisher'];
-                    $quantity = .$book['quantity'];
+                    $course= $book['course'];
+                    $cat = $book['cat'];
+                    $isbn = $book['isbn'];
+                    $title = $book['title'];
+                    $edition= $book['edition'];
+                    $author = $book['author'];
+                    $type = $book['type'];
+                    $price = $book['price'];
+                    $details = $book['details'];
+                    $publisher = $book['publisher'];
+                    $quantity = $book['quantity'];
                     //old
 				    //$title = $_GET['title'];
 				    //$price = $_GET['price'];
