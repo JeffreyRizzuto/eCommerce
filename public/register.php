@@ -207,27 +207,25 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Username</label>
+                            <label class="control-label"  for="username">Street</label>
                             <div class="controls">
                                 <input type="text" name="street" placeholder="" class="input-xlarge">
-                                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- Display Name -->
-                            <label class="control-label"  for="username">Display Name</label>
+                            <label class="control-label"  for="username">Street Number</label>
                             <div class="controls">
                                 <input type="text"  name="streetnumber" placeholder="" class="input-xlarge">
-                                <p class="help-block">Display names must not already be taken</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- City -->
                             <label class="control-label"  for="username">City</label>
@@ -236,7 +234,7 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- State -->
                             <label class="control-label"  for="username">State</label>
@@ -245,7 +243,7 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Zipcode -->
                             <label class="control-label"  for="username">Zip Code</label>
@@ -258,8 +256,8 @@ if(!empty($_POST))
                 <div class="row">
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
-                            <!-- Zipcode -->
-                            <label class="control-label"  for="username">Use as billing?</label>
+                            <!-- Use as Billing? -->
+                            <label class="control-label"  for="username">Use As Billing?</label>
                             <div class="controls">
                                 <input type="checkbox"  name="both" placeholder="" class="input-xlarge">
                             </div>
