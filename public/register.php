@@ -142,7 +142,7 @@ if(!empty($_POST))
                     <legend class="">Register</legend>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Username -->
                             <label class="control-label"  for="username">Username</label>
@@ -152,7 +152,7 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Username -->
                             <label class="control-label"  for="username">Display Name</label>
@@ -164,7 +164,7 @@ if(!empty($_POST))
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- E-mail -->
                             <label class="control-label" for="email">E-mail</label>
@@ -176,7 +176,7 @@ if(!empty($_POST))
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Password-->
                             <label class="control-label" for="password">Password</label>
@@ -187,7 +187,7 @@ if(!empty($_POST))
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Password -->
                             <label class="control-label"  for="password_confirm">Password (Confirm)</label>
