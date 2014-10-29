@@ -146,7 +146,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Username</label>
+                            <label class="control-label">Username</label>
                             <div class="controls">
                                 <input type="text" name="username" placeholder="" class="input-xlarge">
                                 <p class="help-block">Username can contain any letters or numbers, without spaces</p>
@@ -156,7 +156,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Display Name</label>
+                            <label class="control-label">Display Name</label>
                             <div class="controls">
                                 <input type="text"  name="displayname" placeholder="" class="input-xlarge">
                                 <p class="help-block">Display names must not already be taken</p>
@@ -168,7 +168,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- E-mail -->
-                            <label class="control-label" for="email">E-mail</label>
+                            <label class="control-label">E-mail</label>
                             <div class="controls">
                                 <input type="email"  name="email" placeholder="" class="input-xlarge">
                                 <p class="help-block">Please provide your E-mail</p>
@@ -180,7 +180,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- Password-->
-                            <label class="control-label" for="password">Password</label>
+                            <label class="control-label">Password</label>
                             <div class="controls">
                                 <input type="password"  name="password" placeholder="" class="input-xlarge">
                                 <p class="help-block">Password should be at least 8 characters</p>
@@ -191,7 +191,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
                             <!-- Password -->
-                            <label class="control-label"  for="password_confirm">Password (Confirm)</label>
+                            <label class="control-label">Password (Confirm)</label>
                             <div class="controls">
                                 <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
                                 <p class="help-block">Please confirm password</p>
@@ -207,7 +207,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Username -->
-                            <label class="control-label"  for="username">Street</label>
+                            <label class="control-label">Street</label>
                             <div class="controls">
                                 <input type="text" name="street" placeholder="" class="input-xlarge">
                             </div>
@@ -216,7 +216,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Display Name -->
-                            <label class="control-label"  for="username">Street Number</label>
+                            <label class="control-label">Street Number</label>
                             <div class="controls">
                                 <input type="text"  name="streetnumber" placeholder="" class="input-xlarge">
                             </div>
@@ -228,7 +228,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- City -->
-                            <label class="control-label"  for="username">City</label>
+                            <label class="control-label">City</label>
                             <div class="controls">
                                 <input type="text" name="city" placeholder="" class="input-xlarge">
                             </div>
@@ -237,7 +237,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- State -->
-                            <label class="control-label"  for="username">State</label>
+                            <label class="control-label">State</label>
                             <div class="controls">
                                 <input type="text"  name="state" placeholder="" class="input-xlarge">
                             </div>
@@ -246,7 +246,7 @@ if(!empty($_POST))
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
                             <!-- Zipcode -->
-                            <label class="control-label"  for="username">Zip Code</label>
+                            <label class="control-label">Zip Code</label>
                             <div class="controls">
                                 <input type="text"  name="zipcode" placeholder="" class="input-xlarge">
                             </div>
@@ -256,8 +256,19 @@ if(!empty($_POST))
                 <div class="row">
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <div class="form-group">
+                            <!-- Telephone -->
+                            <label class="control-label">Telephone Number</label>
+                            <div class="controls">
+                                <input type="checkbox"  name="both" placeholder="" class="input-xlarge">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2 col-md-2">
+                        <div class="form-group">
                             <!-- Use as Billing? -->
-                            <label class="control-label"  for="username">Use As Billing?</label>
+                            <label class="control-label">Use As Billing?</label>
                             <div class="controls">
                                 <input type="checkbox"  name="both" placeholder="" class="input-xlarge">
                             </div>
