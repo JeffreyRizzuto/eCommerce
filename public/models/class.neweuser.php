@@ -221,9 +221,6 @@ class EUser {
         }
         $stmt->close();
 
-        $output = var_dump($isbns);
-        echo "$output<br />";
-
         //loop through isbns, getting list of prices tied to isbn
         foreach($isbns as $isbn) {
             //get price of book
@@ -232,24 +229,22 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($price);
             while($stmt->fetch()) {
-                $prices[] = array($isbn => $price);
+                $prices[] = $price;
             }
             $stmt->close();
         }
 
-        $output = var_dump($prices);
-        echo "$output<br />";
-
+        $index = 0;
         //loop through isbns, add their (price * qty) to total
         foreach ($isbns as $isbn) {
-            echo "TEST:$prices[$isbn]<br>";
             $stmt = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
             $stmt->bind_param("is", $this->cart, $isbn);
             $stmt->execute();
             $stmt->bind_result($qty);
             $stmt->fetch();
             $stmt->close();
-            $total = $total + ($prices[$isbn] * $qty);
+            $total = $total + ($prices[$index] * $qty);
+            $index++;
         }
        
         echo "Total: $total<br />";
