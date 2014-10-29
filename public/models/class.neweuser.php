@@ -201,7 +201,7 @@ class EUser {
         $stmt->execute();
         $stmt->close();
 
-        $this->updateData($isbn);
+        updateData($isbn);
     }//end of addToCart
 
     //used as a helper function to update total in order
@@ -281,12 +281,12 @@ class EUser {
     function updateQuantity($newQty, $isbn) {
         global $myQuery;
 
-        $stmt = $myQuery->prepare("UPDATE `book_order` SET `qty`= ? WHERE `oid` = ? AND `ISBN` = ?");
+        $stmt = $myQuery->prepare("UPDATE `book_order` SET `qty` = ? WHERE `oid` = ? AND `ISBN` = ?");
         $stmt->bind_param("iis", $newQty, $this->cart, $isbn);
         $stmt->execute();
         $stmt->close();
 
-        $this->updateData($isbn);
+        updateData($isbn);
     }//end of updateQuantity
 
 }//end of EUser
