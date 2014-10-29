@@ -272,4 +272,13 @@ class EUser {
         $this->getCart();
     }//end of checkout
 
+    function updateQuantity($newQty, $isbn) {
+        global $myQuery;
+
+        $stmt = $myQuery->prepare("UPDATE `book_order` SET `qty` = ? WHERE `oid` = ? AND `isbn` = ?");
+        $stmt->bind_param("iii", $newQty, $this->cart, $isbn);
+        $stmt->execute();
+        $stmt->close();
+    }
+
 }//end of EUser

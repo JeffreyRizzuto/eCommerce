@@ -27,6 +27,8 @@ $euser = $_SESSION["euser"];
                         <li><span class='Quantity: '>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
                         <li><span class='Date Added: '>Date Added: " . $c['date'] . "</span></li>
                         <li>Price: $".$c['price']."</li>
+                        <input type='hidden' id='qty_isbn' name='qty_isbn' value='".$C['isbn']."'/>
+                        </form>
                     </ul>
                     </div>
                 </div>
