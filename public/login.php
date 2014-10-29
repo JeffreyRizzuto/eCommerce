@@ -83,7 +83,7 @@ if(!empty($_POST))
 
 					$_SESSION['euser'] = $euser;
 					
-					//Redirect to user account page
+					//Redirect to user index page
 					header("Location: index.php");
 					die();
 				}
