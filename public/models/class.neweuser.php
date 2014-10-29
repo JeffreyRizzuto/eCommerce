@@ -230,15 +230,7 @@ class EUser {
             $total = $total + ($price * $qty);
         }
        
-        //get current total_price of order
-        $stmt = $myQuery->prepare("SELECT `total_price` FROM `order` WHERE `oid` = ? AND `purchased` = 0");
-        $stmt->bind_param("i", $this->cart);
-        $stmt->execute();
-        $stmt->bind_result($oldTotal);
-        $stmt->fetch();
-        $stmt->close();
-       
-        $newTotal = $total + $oldTotal;
+        $newTotal = $total;
 
         //update total price
         $stmt = $myQuery->prepare("UPDATE `order` SET `total_price` = ? WHERE `oid` = ? AND `purchased` = 0");
