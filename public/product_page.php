@@ -4,7 +4,7 @@
 //GET PRODUCT INFO
 $search = $_GET['isbn'];
 print $search;
-$book = search($search);
+$book = searchByISBN($search);
 $course= $book['course'];
 $cat = $book['cat'];
 $isbn = $book['isbn'];
