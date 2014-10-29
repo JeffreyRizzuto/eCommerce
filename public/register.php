@@ -92,7 +92,7 @@ if(!empty($_POST))
 	{	
 		//Construct a user object
 		$user = new User($username,$displayname,$password,$email);
-        $euser = new EUser($username, $password, $email, "FTest", "LTest", 2108675309);
+        $euser = new EUser($username, $password, $email, "FTest", "LTest", $telephone);
 //        $st = 'UTSA Cirlce';
 //        $no = 1;
 //        $city = 'satown';
