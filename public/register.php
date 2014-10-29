@@ -44,9 +44,9 @@ if(!empty($_POST))
 //	{
 //		$errors[] = lang("ACCOUNT_DISPLAY_CHAR_LIMIT",array(5,25));
 //	}
-	if(!ctype_alnum($displayname)){
-		$errors[] = lang("ACCOUNT_DISPLAY_INVALID_CHARACTERS");
-	}
+//	if(!ctype_alnum($displayname)){
+//		$errors[] = lang("ACCOUNT_DISPLAY_INVALID_CHARACTERS");
+//	}
     if(!ctype_alnum($firstname)){
         $errors[] = lang("ACCOUNT_FIRST_NAME_INVALID_CHARACTERS");
     }
@@ -167,7 +167,7 @@ if(!empty($_POST))
                     </div>
 <!--                    <div class="col-xs-12 col-sm-1 col-md-1">-->
 <!--                        <div class="form-group">-->
-<!--                            <!-- Display Bane -->-->
+                                <!-- Display Bane -->
 <!--                            <label class="control-label">Display Name</label>-->
 <!--                            <div class="controls">-->
 <!--                                <input type="text"  name="displayname" placeholder="" class="input-xlarge">-->
