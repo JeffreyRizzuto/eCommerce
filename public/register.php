@@ -69,7 +69,7 @@ if(!empty($_POST))
     //address validation
 
     //street
-    if(!ctype_alnum($street))
+    if(!is_string($street))
     {
         $errors[] = lang("ACCOUNT_STREET_INVALID");
     }
@@ -79,12 +79,12 @@ if(!empty($_POST))
         $errors[] = lang("ACCOUNT_APARTMENT_NUMBER_INVALID");
     }
     //city
-    if(!ctype_alpha($city))
+    if(!is_string($city))
     {
         $errors[] = lang("ACCOUNT_CITY_INVALID");
     }
     //state
-    if(!ctype_alpha($state))
+    if(!is_string($state))
     {
         $errors[] = lang("ACCOUNT_STATE_INVALID");
     }
