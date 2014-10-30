@@ -50,17 +50,17 @@ $pic = $book['pic'];
 					<div class="product-title"><?php echo $title; ?></div>
 					<div class="product-desc">
 					    <p>
-						by: <?php echo $author; ?>
-						Publisher: <?php echo $publisher; ?>
-						Edition: <?php echo $edition; ?>
-						ISBN: <?php echo $isbn; ?>
-						Course: <?php echo $course; ?>
-						<?php echo $quantity; ?> in stock
+						by: <?php echo $author."<br>"; ?>
+						Publisher: <?php echo $publisher."<br>"; ?>
+						Edition: <?php echo $edition."<br>"; ?>
+						ISBN: <?php echo $isbn."<br>"; ?>
+						Course: <?php echo $course."<br>"; ?>
+						<?php echo $quantity."<br>"; ?> in stock
 					    </p>
 					</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
-					<div class="product-price"><?php echo $price; ?></div>	
+					<div class="product-price">$<?php echo $price; ?></div>	
 					<?php
 					    if($quantity > 0){   // check quantity to display proper stock message
 						echo "<div class='product-stock'>In Stock</div>";
