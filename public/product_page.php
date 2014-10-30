@@ -138,18 +138,21 @@ $pic = $book['pic'];
 		</div>
 	</div>
 </div>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     
-    $('#service-one a').click(function (e) {
-	e.preventDefault();
-	$(this).tab('show');
+    $( document ).ready(function() {
+	$('#service-one').attr('class').replace('tab-pane fade', 'tab-pane fade in active');
     });
     
-    $('#service-two a').click(function (e) {
-	e.preventDefault();
-	$(this).tab('show');
+    $("service-one").click(function(){
+	$(this).attr('class').replace('tab-pane fade', 'tab-pane fade in active');
+	$('#service-two').attr('class').replace('tab-pane fade in active', 'tab-pane fade');
+    });
+    
+    $("service-two").click(function(){
+	$(this).attr('class').replace('tab-pane fade', 'tab-pane fade in active');
+	$('#service-one').attr('class').replace('tab-pane fade in active', 'tab-pane fade');
     });
     
 </script>
