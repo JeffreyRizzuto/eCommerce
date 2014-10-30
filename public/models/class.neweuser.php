@@ -221,9 +221,6 @@ class EUser {
         }
         $stmt->close();
 
-        $output = var_dump($isbns);
-        echo "$output";
-
         //loop through isbns, getting list of prices tied to isbn
         foreach($isbns as $isbn) {
             //get price of book
@@ -232,11 +229,12 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($price);
             while($stmt->fetch()) {
-                $prices[] = array("$isbn" => $price);
+                $prices[] = $price;
             }
             $stmt->close();
         }
 
+        $index = 0;
         //loop through isbns, add their (price * qty) to total
         foreach ($isbns as $isbn) {
             $stmt = $myQuery->prepare("SELECT `qty` FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
@@ -245,17 +243,16 @@ class EUser {
             $stmt->bind_result($qty);
             $stmt->fetch();
             $stmt->close();
-            $total = $total + ($prices["$isbn"] * $qty);
+            $total = $total + ($prices[$index] * $qty);
+            $index++;
         }
-       
-        $newTotal = $total;
 
         //update total price
         $stmt = $myQuery->prepare("UPDATE `order` SET `total_price` = ? WHERE `oid` = ? AND `purchased` = 0");
-        $stmt->bind_param("di", $newTotal, $this->cart);
+        $stmt->bind_param("di", $total, $this->cart);
         $stmt->execute();
         $stmt->close();
-    }
+    }//end of updateData
 
     function getCartInfo() {
         global $myQuery;
@@ -314,5 +311,17 @@ class EUser {
 
         $this->updateData($isbn);
     }//end of updateQuantity
+
+    //removes the selected book from the user's cart
+    function removeFromCart($isbn) {
+        global $myQuery;
+
+        $stmt = $myQuery->prepare("DELETE FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
+        $stmt->bind_param("is", $this->cart, $isbn);
+        $stmt->execute();
+        $stmt->close();
+
+        $this->updateData();
+    }//end of removeFromCart
 
 }//end of EUser
