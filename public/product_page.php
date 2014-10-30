@@ -145,14 +145,14 @@ $pic = $book['pic'];
 	$("#service-one").attr("class", "tab-pane fade in active");
     });
     
-    $("service-one").click(function(){
-	$("service-one").attr("class", "tab-pane fade in active");
+    $("#service-one").click(function(){
 	$("service-two").attr("class", "tab-pane fade");
+	$("service-one").attr("class", "tab-pane fade in active");
     });
     
-    $("service-two").click(function(){
-	$("service-two").attr("class", "tab-pane fade in active");
+    $("#service-two").click(function(){
 	$("service-one").attr("class", "tab-pane fade");
+	$("service-two").attr("class", "tab-pane fade in active");
     });
     
 </script>
