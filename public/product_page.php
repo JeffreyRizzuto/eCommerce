@@ -87,8 +87,8 @@ $pic = $book['pic'];
 			<div class="col-md-12 product-info">
 					<ul id="myTab" class="nav nav-tabs nav_tabs">
 						
-						<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
-						<li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
+						<li class="" id="service-one"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
+						<li class="" id="service-two"><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
 						<!--<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li>-->
 						
 					</ul>
@@ -142,17 +142,17 @@ $pic = $book['pic'];
 <script>
     
     $( document ).ready(function() {
-	$("#service-one").attr("class", "tab-pane fade in active");
+	$("#service-one").attr("class", "active");
     });
     
     $("#service-one").click(function(){
-	$("#service-two").attr("class", "tab-pane fade");
-	$("#service-one").attr("class", "tab-pane fade in active");
+	$("#service-two").attr("class", "");
+	$("#service-one").attr("class", "active");
     });
     
     $("#service-two").click(function(){
-	$("#service-one").attr("class", "tab-pane fade");
-	$("#service-two").attr("class", "tab-pane fade in active");
+	$("#service-one").attr("class", "");
+	$("#service-two").attr("class", "active");
     });
     
 </script>
