@@ -47,7 +47,7 @@ $euser = $_SESSION["euser"];
         ?>
         <div class='panel panel-default' >
             <div class='panel-body'>
-            <span>Total: <?php echo "$total"; ?></span>
+            <span>Total: $<?php echo "$total"; ?></span>
             <span class="order pull-right"> <a class="text-center">
             <?php
             echo "
