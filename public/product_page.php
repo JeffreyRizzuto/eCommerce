@@ -57,7 +57,7 @@ $pic = $book['pic'];
 					<hr>
 					<div class="product-price"><?php echo $price; ?></div>	
 					<?php
-					    if($quantity > 100){
+					    if($quantity > 0){
 						echo "<div class='product-stock'>In Stock</div>";
 					    } else {
 						echo "<div class='product-no-stock'>Out of Stock</div>";
