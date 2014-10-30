@@ -50,14 +50,19 @@ $pic = $book['pic'];
 					<div class="product-title"><?php echo $title; ?></div>
 					<div class="product-desc">
 					    <p>
-						
+						by: <?php echo $author; ?>
+						Publisher: <?php echo $publisher; ?>
+						Edition: <?php echo $edition; ?>
+						ISBN: <?php echo $isbn; ?>
+						Course: <?php echo $course; ?>
+						<?php echo $quantity; ?> in stock
 					    </p>
 					</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
 					<div class="product-price"><?php echo $price; ?></div>	
 					<?php
-					    if($quantity > 0){
+					    if($quantity > 0){   // check quantity to display proper stock message
 						echo "<div class='product-stock'>In Stock</div>";
 					    } else {
 						echo "<div class='product-no-stock'>Out of Stock</div>";
@@ -91,7 +96,7 @@ $pic = $book['pic'];
 						<div class="tab-pane fade in active" id="service-one">
 						 
 							<section class="container product-info">
-
+							    <?php echo $details; ?>
 							    <!--
 								The Corsair Gaming Series GS600 power supply is the ideal price-performance solution for building or upgrading a Gaming PC. A single +12V rail provides up to 48A of reliable, continuous power for multi-core gaming PCs with multiple graphics cards. The ultra-quiet, dual ball-bearing fan automatically adjusts its speed according to temperature, so it will never intrude on your music and games. Blue LEDs bathe the transparent fan blades in a cool glow. Not feeling blue? You can turn off the lighting with the press of a button.
 
