@@ -58,6 +58,12 @@
 	margin-top: 10px;
 }
 
+.product-no-stock{
+	color: #FF0000;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
 .product-info{
 		margin-top: 50px;
 }

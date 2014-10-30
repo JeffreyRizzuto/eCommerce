@@ -55,8 +55,15 @@ $pic = $book['pic'];
 					</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
 					<hr>
-					<div class="product-price"><?php echo $price; ?></div>
-					<div class="product-stock">In Stock</div>
+					<div class="product-price"><?php echo $price; ?></div>	
+					<?php
+					    if($quantity > 0){
+						echo "<div class='product-stock'>In Stock</div>";
+					    } else {
+						echo "<div class='product-no-stock'>Out of Stock</div>";
+					    }
+					    
+					?>
 					<hr>
 					<div class="btn-group cart">
 						<button type="button" value ="addtocart" class="btn btn-success">
