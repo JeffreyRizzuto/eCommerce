@@ -93,7 +93,7 @@ $pic = $book['pic'];
 						
 					</ul>
 				<div id="myTabContent" class="tab-content">
-						<div class="tab-pane fade" id="service-one">
+						<div class="tab-pane fade in active" id="service-one">
 						 
 							<section class="container product-info">
 							    <?php echo $details; ?>
@@ -138,7 +138,8 @@ $pic = $book['pic'];
 		</div>
 	</div>
 </div>
-    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
     
     $('#service-one a').click(function (e) {
