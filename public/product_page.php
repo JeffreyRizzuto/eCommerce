@@ -142,16 +142,21 @@ $pic = $book['pic'];
 <script>
     
     $( document ).ready(function() {
+	$("#service-one").attr("class", "tab-pane fade in active");
 	$("#service-one").attr("class", "active");
     });
     
     $("#service-one").click(function(){
+	$("#service-two").attr("class", "tab-pane fade");
 	$("#service-two").attr("class", "");
+	$("#service-one").attr("class", "tab-pane fade in active");
 	$("#service-one").attr("class", "active");
     });
     
     $("#service-two").click(function(){
+	$("#service-one").attr("class", "tab-pane fade");
 	$("#service-one").attr("class", "");
+	$("#service-two").attr("class", "tab-pane fade in active");
 	$("#service-two").attr("class", "active");
     });
     
