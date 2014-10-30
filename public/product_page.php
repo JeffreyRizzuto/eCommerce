@@ -55,7 +55,7 @@ $pic = $book['pic'];
 						Edition: <?php echo $edition."<br>"; ?>
 						ISBN: <?php echo $isbn."<br>"; ?>
 						Course: <?php echo $course."<br>"; ?>
-						<?php echo $quantity."<br>"; ?> in stock
+						<?php echo $quantity." in stock"; ?> 
 					    </p>
 					</div>
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
