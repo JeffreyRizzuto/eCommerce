@@ -119,13 +119,15 @@ $pic = $book['pic'];
 					<div class="tab-pane fade" id="service-two-det">
 						
 						<section class="container">
+						    <p>
 						    Author: <?php echo $author."<br>"; ?>
 						    Publisher: <?php echo $publisher."<br>"; ?>
 						    Edition: <?php echo $edition."<br>"; ?>
 						    ISBN: <?php echo $isbn."<br>"; ?>
 						    Type: <?php echo $type."<br>"; ?>
 						    Course: <?php echo $course."<br>"; ?>
-						    Available: <?php echo $quantity; ?> 
+						    Available: <?php echo $quantity; ?>
+						    </p>
 						</section>
 						
 					</div>
