@@ -132,4 +132,16 @@ function getAllBooks() {
 	return returnValueCheck($row);
 }//end of getAllBooks
 
+function getPrice($isbn) {
+	global $myQuery;
+	$stmt = $myQuery->prepare("SELECT `price` FROM `books` WHERE `isbn` = ?");
+	$stmt->bind_param("s", $isbn);
+	$stmt->execute();
+	$stmt->bind_result($price);
+	$stmt->fetch();
+	$stmt->close();
+
+	return $price;
+}//end of getPrice
+
 ?>

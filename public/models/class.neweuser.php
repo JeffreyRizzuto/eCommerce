@@ -312,4 +312,16 @@ class EUser {
         $this->updateData($isbn);
     }//end of updateQuantity
 
+    //removes the selected book from the user's cart
+    function removeFromCart($isbn) {
+        global $myQuery;
+
+        $stmt = $myQuery->prepare("DELETE FROM `book_order` WHERE `oid` = ? AND `ISBN` = ?");
+        $stmt->bind_param("is", $this->cart, $isbn);
+        $stmt->execute();
+        $stmt->close();
+
+        $this->updateData();
+    }//end of removeFromCart
+
 }//end of EUser
