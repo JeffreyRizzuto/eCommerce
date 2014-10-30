@@ -1,19 +1,11 @@
 /*********************************************
     			Call Bootstrap
 *********************************************/
-<<<<<<< HEAD
-/*
-@import url("bootstrap/bootstrap.min.css");
-@import url("bootstrap-override.css");
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-*/
-=======
 
 @import url("bootstrap/bootstrap.min.css");
 @import url("bootstrap-override.css");
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 
->>>>>>> 36aeb26a147a04389f518550c9e52ca87fce59e7
 /*********************************************
         		Theme Elements
 *********************************************/

@@ -89,7 +89,7 @@ $pic = $book['pic'];
 						
 						<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
 						<li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
-						<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li>
+						<!--<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li>-->
 						
 					</ul>
 				<div id="myTabContent" class="tab-content">
@@ -119,7 +119,13 @@ $pic = $book['pic'];
 					<div class="tab-pane fade" id="service-two">
 						
 						<section class="container">
-								
+						    Author: <?php echo $author."<br>"; ?>
+						    Publisher: <?php echo $publisher."<br>"; ?>
+						    Edition: <?php echo $edition."<br>"; ?>
+						    ISBN: <?php echo $isbn."<br>"; ?>
+						    Type: <?php echo $type."<br>"; ?>
+						    Course: <?php echo $course."<br>"; ?>
+						    Available: <?php echo $quantity; ?> 
 						</section>
 						
 					</div>
@@ -132,3 +138,17 @@ $pic = $book['pic'];
 		</div>
 	</div>
 </div>
+    
+<script>
+    
+    $('#service-one a').click(function (e) {
+	e.preventDefault();
+	$(this).tab('show');
+    });
+    
+    $('#service-two a').click(function (e) {
+	e.preventDefault();
+	$(this).tab('show');
+    });
+    
+</script>
