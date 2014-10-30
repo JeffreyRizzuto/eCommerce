@@ -58,7 +58,7 @@ $pic = $book['pic'];
 						<?php echo $quantity." in stock"; ?> 
 					    </p>
 					</div>
-					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+					<!--<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>-->
 					<hr>
 					<div class="product-price">$<?php echo $price; ?></div>	
 					<?php
