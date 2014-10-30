@@ -87,13 +87,13 @@ $pic = $book['pic'];
 			<div class="col-md-12 product-info">
 					<ul id="myTab" class="nav nav-tabs nav_tabs">
 						
-						<li class="" id="service-one"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
-						<li class="" id="service-two"><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
+						<li class="" id="service-one"><a href="#service-one-det" data-toggle="tab">DESCRIPTION</a></li>
+						<li class="" id="service-two"><a href="#service-two-det" data-toggle="tab">PRODUCT INFO</a></li>
 						<!--<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li>-->
 						
 					</ul>
 				<div id="myTabContent" class="tab-content">
-						<div class="tab-pane fade" id="service-one">
+						<div class="tab-pane fade" id="service-one-det">
 						 
 							<section class="container product-info">
 							    <?php echo $details; ?>
@@ -116,7 +116,7 @@ $pic = $book['pic'];
 							</section>
 										  
 						</div>
-					<div class="tab-pane fade" id="service-two">
+					<div class="tab-pane fade" id="service-two-det">
 						
 						<section class="container">
 						    Author: <?php echo $author."<br>"; ?>
@@ -142,21 +142,21 @@ $pic = $book['pic'];
 <script>
     
     $( document ).ready(function() {
-	$("#service-one").attr("class", "tab-pane fade in active");
+	$("#service-one-det").attr("class", "tab-pane fade in active");
 	$("#service-one").attr("class", "active");
     });
     
     $("#service-one").click(function(){
-	$("#service-two").attr("class", "tab-pane fade");
+	$("#service-two-det").attr("class", "tab-pane fade");
 	$("#service-two").attr("class", "");
-	$("#service-one").attr("class", "tab-pane fade in active");
+	$("#service-one-det").attr("class", "tab-pane fade in active");
 	$("#service-one").attr("class", "active");
     });
     
     $("#service-two").click(function(){
-	$("#service-one").attr("class", "tab-pane fade");
+	$("#service-one-det").attr("class", "tab-pane fade");
 	$("#service-one").attr("class", "");
-	$("#service-two").attr("class", "tab-pane fade in active");
+	$("#service-two-det").attr("class", "tab-pane fade in active");
 	$("#service-two").attr("class", "active");
     });
     
