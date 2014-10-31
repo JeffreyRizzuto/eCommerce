@@ -7,6 +7,8 @@ $euser = $_SESSION['euser'];
 
 $info = $euser->getPastOrders();
 
+var_dump($info);
+
 foreach($info as $inf) {
 	echo "Order #:			".$inf['oid']."<br>";
 	foreach($inf['o_inf'] as $i) {
