@@ -10,7 +10,7 @@ $info = $euser->getPastOrders();
 //var_dump($info);
 
 foreach($info as $inf) {
-	echo "Order #:			".$inf['oid']."<br>";	
+	echo "Order #:			".$inf['oid']."<br><br>";	
 	foreach($inf['o_inf'] as $i) {
    		echo "
       		ISBN:			".$i['isbn']."<br>
