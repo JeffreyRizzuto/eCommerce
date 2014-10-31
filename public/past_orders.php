@@ -14,9 +14,9 @@ foreach($info as $inf) {
 	if(is_array($inf)) {
 		//foreach($inf as $i) {
    			echo "
-      			ISBN:			".$inf['isbn']."<br>
-      			Quantity:		".$inf['qty']."<br>
-      			Date Added:		".$inf['date']."<br>
+      			ISBN:			".$inf['o_inf']['isbn']."<br>
+      			Quantity:		".$inf['o_inf']['qty']."<br>
+      			Date Added:		".$inf['o_inf']['date']."<br>
    			";
    		//}//end of inner foreach
 	}//end of if 
