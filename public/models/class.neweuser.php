@@ -86,7 +86,9 @@ class EUser {
                 bil_address_state, bil_address_zip 
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-            $stmt->bind_param("ssssssssiisssssi", $this->username, $this->email, $this->fname, $this->lname, $this->cur_address_street, $this->cur_address_no, $this->cur_address_city, $this->cur_address_state, $this->cur_address_zip, $this->phone_number, $securepass, $this->bil_address_street, $this->bil_address_no, $this->bil_address_city, $this->bil_address_state, $this->bil_address_zip);
+            $stmt->bind_param("ssssssssiisssssi", $this->username, $this->email, $this->fname, $this->lname, $this->cur_address_street, 
+                $this->cur_address_no, $this->cur_address_city, $this->cur_address_state, $this->cur_address_zip, $this->phone_number, 
+                $securepass, $this->bil_address_street, $this->bil_address_no, $this->bil_address_city, $this->bil_address_state, $this->bil_address_zip);
             $stmt->execute();
             $this->uid = $myQuery->insert_id;
             $stmt->close();
@@ -323,5 +325,36 @@ class EUser {
 
         $this->updateData();
     }//end of removeFromCart
+
+    function getPastOrders() {
+        global $myQuery;
+
+        //get all oids that correspond to the customer
+        $stmt = $myQuery->prepare("SELECT `oid` FROM `shopping_cart` WHERE `uid` = ?");
+        $stmt->bind_param("i", $this->uid);
+        $stmt->execute();
+        $stmt->bind_results($oid);
+        while($stmt->fetch()) {
+            $orders[] = $oid;
+        }
+        $stmt->close();
+
+        //the last oid in the array will be the customer's current shopping cart
+        array_pop($orders);
+
+        //loop through the customer's past orders to get the information
+        foreach ($orders as $oid) {
+            $stmt = $myQuery->prepare("SELECT * FROM `book_order` WHERE `oid` = ?");
+            $stmt->bind_param("i", $oid);
+            $stmt->execute();
+            $stmt->bind_result($noid, $isbn, $qty, $date);
+            while($stmt->fetch()) {
+                $row[] = array('order' => $noid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date);
+            }
+            $stmt->close();
+        }
+
+        return $row;
+    }//end of getPastOrders
 
 }//end of EUser
