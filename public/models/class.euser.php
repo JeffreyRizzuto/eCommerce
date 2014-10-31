@@ -141,6 +141,7 @@ class EUser {
     */
     function getCart() {
         global $myQuery;
+        $count = 0; //this counter is used to see if the user has a cart or not
 
         if($this->newCart == TRUE) {
             $stmt = $myQuery->prepare("INSERT INTO `order` (purchased, purchase_date, total_price) VALUES (?, ?, ?)");
@@ -157,11 +158,12 @@ class EUser {
             $stmt->bind_param("i", $this->uid);
             $stmt->execute();
             $stmt->bind_result($cart);
-            if($stmt->fetch()) {
+            while($stmt->fetch()) {
                 $this->cart = $cart;
-                $stmt->close();
-            } else {
-                $stmt->close();
+                $count++;
+            } 
+            $stmt->close();
+            if($count == 0) {
                 //we must create a new order to be the user's cart
                 $stmt = $myQuery->prepare("INSERT INTO `order` (
                     purchased,
