@@ -191,12 +191,24 @@ class EUser {
                 $stmt->close();
             }//end of finding cart oid
         }//end of else
+        $found = FALSE;
 
-        //put the info into shopping_cart table
-        $stmt = $myQuery->prepare("INSERT IGNORE INTO `shopping_cart` (uid, oid) VALUES ( ?, ?)");
+        $stmt = $myQuery->prepare("SELECT * FROM `shopping_cart` WHERE `uid` = ? AND `oid` = ?");
         $stmt->bind_param("ii", $this->uid, $this->cart);
         $stmt->execute();
+        $stmt->bind_results($u, $i);
+        if($stmt->fetch()) {
+            $found = TRUE;
+        }
         $stmt->close();
+
+        if(!$found) {
+            //put the info into shopping_cart table
+            $stmt = $myQuery->prepare("INSERT IGNORE INTO `shopping_cart` (uid, oid) VALUES ( ?, ?)");
+            $stmt->bind_param("ii", $this->uid, $this->cart);
+            $stmt->execute();
+            $stmt->close();
+        }
     }//end of getCart
 
     function addToCart($isbn, $qty) {
