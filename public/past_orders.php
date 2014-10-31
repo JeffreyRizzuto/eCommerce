@@ -15,7 +15,7 @@ foreach($info as $inf) {
    		echo "
       		ISBN:			".$i['isbn']."<br>
       		Quantity:		".$i['qty']."<br>
-      		Date Added:		".$i['date']."<br>
+      		Date Added:		".$i['date']."<br><br>
    		";
    	}//end of inner foreach
 	echo "Total Price: $".$inf['price']."<br><hr>";
