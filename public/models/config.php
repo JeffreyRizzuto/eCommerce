@@ -44,7 +44,7 @@ require_once($language);
 require_once("class.mail.php");
 require_once("class.user.php");
 require_once("class.newuser.php");
-require_once("class.neweuser.php");
+require_once("class.euser.php");
 require_once("funcs.php");
 require_once("searchFuncs.php");
 
