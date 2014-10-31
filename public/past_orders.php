@@ -11,7 +11,7 @@ $info = $euser->getPastOrders();
 
 foreach($info as $inf) {
 	echo "Order #:			".$inf."<br>";	
-	if(!is_array($inf)) {
+	if(is_array($inf)) {
 		foreach($inf as $i) {
    			echo "
       			ISBN:			".$i['isbn']."<br>
