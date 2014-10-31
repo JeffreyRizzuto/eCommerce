@@ -365,7 +365,7 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($noid, $isbn, $qty, $date);
             while($stmt->fetch()) {
-                $ret[] = array('oid' => $noid, 'o_inf' => array('order' => $noid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date), 'price' => $prices[$index]);
+                $ret[] = array('oid' => $noid, 'o_inf' => array('isbn' => $isbn, 'qty' => $qty, 'date' => $date), 'price' => $prices[$index]);
                 $index++;
             }
             $stmt->close();
