@@ -13,7 +13,7 @@ foreach($info as $inf) {
 	if(!is_array($inf)) {
 		echo "Order #:			".$inf."<br>";	
 	} else {
-		foreach($inf['o_inf'] as $i) {
+		foreach($inf as $i) {
    			echo "
       			ISBN:			".$i['isbn']."<br>
       			Quantity:		".$i['qty']."<br>
