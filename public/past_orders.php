@@ -7,10 +7,9 @@ $euser = $_SESSION['euser'];
 
 $info = $euser->getPastOrders();
 
-
-echo "Order #:".$info[0]['order'];
 foreach($info as $i) {
    echo "
+      Order #:        ".$i['order']."<br>
       ISBN:             ".$i['isbn']."<br>
       Quantity:       ".$i['qty']."<br>
       Date Added:  ".$i['date']."<br><hr>
