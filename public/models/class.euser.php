@@ -358,7 +358,6 @@ class EUser {
             $stmt->close();
         }
 
-        $ret = array();
         //loop through the customer's past orders to get the information
         foreach ($orders as $oid) {
             $stmt = $myQuery->prepare("SELECT * FROM `book_order` WHERE `oid` = ?");
@@ -366,7 +365,7 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($noid, $isbn, $qty, $date);
             while($stmt->fetch()) {
-                $ret[] = array('oid' => $oid, 'o_inf' => array('order' => $noid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date, 'price' => $prices[$index]));
+                $ret[] = array('oid' => $noid, 'o_inf' => array('order' => $noid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date, 'price' => $prices[$index]));
                 $index++;
             }
             $stmt->close();
