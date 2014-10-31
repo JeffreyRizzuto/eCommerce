@@ -9,16 +9,19 @@ $info = $euser->getPastOrders();
 
 //var_dump($info);
 
-foreach($info as $inf) {
-	echo "Order #:			".$inf['oid']."<br><br>";	
-	foreach($inf['o_inf'] as $i) {
-   		echo "
-      		ISBN:			".$i['isbn']."<br>
-      		Quantity:		".$i['qty']."<br>
-      		Date Added:		".$i['date']."<br><br>
-   		";
-   	}//end of inner foreach
-	echo "Total Price: $".$inf['price']."<br><hr>";
-}//end of outer foreach
-
+if(is_null($info)) {
+	echo "You have no past orders.<br>";
+} else {
+	foreach($info as $inf) {
+		echo "Order #:			".$inf['oid']."<br><br>";	
+		foreach($inf['o_inf'] as $i) {
+   			echo "
+      			ISBN:			".$i['isbn']."<br>
+      			Quantity:		".$i['qty']."<br>
+      			Date Added:		".$i['date']."<br><br>
+   			";
+   		}//end of inner foreach
+		echo "Total Price: $".$inf['price']."<br><hr>";
+	}//end of outer foreach
+}//end of else
 ?>
