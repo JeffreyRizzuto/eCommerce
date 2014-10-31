@@ -14,6 +14,7 @@ $euser = $_SESSION['euser'];
              <div id='main'>
                  <?php
                 require_once("models/account-nav.php");
+                var_dump($euser);
                 echo"Hello, ".$euser->getFName().". This is your account page. Here you can view your past
                 orders and change your account information.";
                 ?>
