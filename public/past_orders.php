@@ -7,13 +7,13 @@ $euser = $_SESSION['euser'];
 
 $info = $euser->getPastOrders();
 
-foreach($info as $inf => $in) {
-	echo "Order #:        ".$inf."<br>";
-	foreach($in as $i) {
+foreach($info as $inf) {
+	echo "Order #:			".$inf['oid']."<br>";
+	foreach($inf['o_inf'] as $i) {
    		echo "
-      		ISBN:             ".$i['isbn']."<br>
-      		Quantity:       ".$i['qty']."<br>
-      		Date Added:  ".$i['date']."<br><hr>
+      		ISBN:			".$i['isbn']."<br>
+      		Quantity:		".$i['qty']."<br>
+      		Date Added:		".$i['date']."<br><hr>
    		";
    	}
 }
