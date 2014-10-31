@@ -348,7 +348,7 @@ class EUser {
 
         //get the order information for orders that have been purchased
         foreach ($orders as $oid) {
-            $stmt = $myQuery->prepare("SELECT `price` FROM `order` WHERE `oid` = ?");
+            $stmt = $myQuery->prepare("SELECT `total_price` FROM `order` WHERE `oid` = ?");
             $stmt->bind_param("i", $oid);
             $stmt->execute();
             $stmt->bind_result($price);
