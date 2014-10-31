@@ -1237,13 +1237,17 @@ function fetchEUserDetails($username)
 	$stmt->bind_param("s", $username);
 	$stmt->execute();
 	$stmt->bind_result($uid, $uname, $email, $fname, $lname, $cas, $can, $cac, $cast, $caz, $pn, $pass, $bas, $ban, $bac, $bast, $baz);
-	$stmt->fetch();
-	$stmt->close();
-
-	$row[] = array(	'uid' => $uid, 'username' => $uname, 'email' => $email, 'fname' => $fname, 'lname' => $lname, 'cur_address_st' => $cas,
+	if($stmt->fetch()) {
+		$row[] = array(	'uid' => $uid, 'username' => $uname, 'email' => $email, 'fname' => $fname, 'lname' => $lname, 'cur_address_st' => $cas,
 					'cur_address_no' => $can, 'cur_address_c' => $cac, 'cur_address_state' => $cast, 'cur_address_zip' => $caz, 'phone_num' => $pn,
 					'bil_address_st' => $bas, 'bil_address_no' => $ban, 'bil_address_c' => $bac, 'bil_address_state' => $bast, 'bil_address_z' => $baz);
 
+	} else {
+		echo "DATABASE ERROR OMG WTF!";
+	}
+	$stmt->close();
+
+	
 	return $row;
 }//end of fetchEUserDetails
 
