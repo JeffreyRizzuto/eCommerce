@@ -335,12 +335,13 @@ class EUser {
         $stmt->execute();
         $stmt->bind_result($oid);
         while($stmt->fetch()) {
-            $orders[] = $oid;
+            $order[] = $oid;
         }
         $stmt->close();
 
         //the last oid in the array will be the customer's current shopping cart
-        array_pop($orders);
+        array_pop($order);
+        $orders = array_unique($order);
 
         //loop through the customer's past orders to get the information
         foreach ($orders as $oid) {
