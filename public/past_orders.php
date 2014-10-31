@@ -7,12 +7,11 @@ $euser = $_SESSION['euser'];
 
 $info = $euser->getPastOrders();
 
-var_dump($info);
+//var_dump($info);
 
 foreach($info as $inf) {
+	echo "Order #:			".$inf."<br>";	
 	if(!is_array($inf)) {
-		echo "Order #:			".$inf."<br>";	
-	} else {
 		foreach($inf as $i) {
    			echo "
       			ISBN:			".$i['isbn']."<br>
@@ -20,7 +19,7 @@ foreach($info as $inf) {
       			Date Added:		".$i['date']."<br><hr>
    			";
    		}//end of inner foreach
-	}//end of else 
+	}//end of if 
 }//end of outer foreach
 
 ?>
