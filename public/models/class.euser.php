@@ -196,7 +196,7 @@ class EUser {
         $stmt = $myQuery->prepare("SELECT * FROM `shopping_cart` WHERE `uid` = ? AND `oid` = ?");
         $stmt->bind_param("ii", $this->uid, $this->cart);
         $stmt->execute();
-        $stmt->bind_results($u, $i);
+        $stmt->bind_result($u, $i);
         if($stmt->fetch()) {
             $found = TRUE;
         }
