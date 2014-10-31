@@ -365,10 +365,11 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($noid, $isbn, $qty, $date);
             while($stmt->fetch()) {
-                $ret[] = array('oid' => $noid, 'o_inf' => array('isbn' => $isbn, 'qty' => $qty, 'date' => $date), 'price' => $prices[$index]);
-                $index++;
+                $row[] = array('isbn' => $isbn, 'qty' => $qty, 'date' => $date);
             }
             $stmt->close();
+            $ret[] = array('oid' => $oid, 'o_inf' => $row, 'price' => $prices[$index]);
+            $index++;
         }
 
         return $ret;

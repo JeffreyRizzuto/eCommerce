@@ -11,13 +11,13 @@ $info = $euser->getPastOrders();
 
 foreach($info as $inf) {
 	echo "Order #:			".$inf['oid']."<br>";	
-	if(is_array($inf)) {
-		echo "
-      		ISBN:			".$inf['o_inf']['isbn']."<br>
-      		Quantity:		".$inf['o_inf']['qty']."<br>
-      		Date Added:		".$inf['o_inf']['date']."<br>
+	foreach($inf['o_inf'] as $i) {
+   		echo "
+      		ISBN:			".$i['isbn']."<br>
+      		Quantity:		".$i['qty']."<br>
+      		Date Added:		".$i['date']."<br>
    		";
-	}//end of if 
+   	}//end of inner foreach
 	echo "Total Price: $".$inf['price']."<br><hr>";
 }//end of outer foreach
 
