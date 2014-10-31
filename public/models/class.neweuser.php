@@ -333,7 +333,7 @@ class EUser {
         $stmt = $myQuery->prepare("SELECT `oid` FROM `shopping_cart` WHERE `uid` = ?");
         $stmt->bind_param("i", $this->uid);
         $stmt->execute();
-        $stmt->bind_results($oid);
+        $stmt->bind_result($oid);
         while($stmt->fetch()) {
             $orders[] = $oid;
         }
