@@ -8,7 +8,7 @@ $euser = $_SESSION['euser'];
 $info = $euser->getPastOrders();
 
 foreach($info as $inf => $in) {
-	echo "Order #:        ".$info[$inf]."<br>";
+	echo "Order #:        ".$inf."<br>";
 	foreach($in as $i) {
    		echo "
       		ISBN:             ".$i['isbn']."<br>
