@@ -330,6 +330,7 @@ class EUser {
 
     function getPastOrders() {
         global $myQuery;
+        $index = 0;
 
         //get all oids that correspond to the customer
         $stmt = $myQuery->prepare("SELECT `oid` FROM `shopping_cart` WHERE `uid` = ?");
@@ -345,6 +346,19 @@ class EUser {
         array_pop($order);
         $orders = array_unique($order);
 
+        //get the order information for orders that have been purchased
+        foreach ($orders as $oid) {
+            $stmt = $myQuery->prepare("SELECT `price` FROM `order` WHERE `oid` = ?");
+            $stmt->bind_param("i", $oid);
+            $stmt->execute();
+            $stmt->bind_result($price);
+            while($stmt->fetch()) {
+                $prices[] = $price;
+            }
+            $stmt->close();
+        }
+
+        $ret = array();
         //loop through the customer's past orders to get the information
         foreach ($orders as $oid) {
             $stmt = $myQuery->prepare("SELECT * FROM `book_order` WHERE `oid` = ?");
@@ -352,12 +366,13 @@ class EUser {
             $stmt->execute();
             $stmt->bind_result($noid, $isbn, $qty, $date);
             while($stmt->fetch()) {
-                $row[] = array('order' => $noid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date);
+                $ret[] = array($oid => array('order' => $noid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date, 'price' => $prices[$index]));
+                $index++;
             }
             $stmt->close();
         }
 
-        return $row;
+        return $ret;
     }//end of getPastOrders
 
 }//end of EUser
