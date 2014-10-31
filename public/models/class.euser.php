@@ -108,6 +108,14 @@ class EUser {
         //$stmt->close();
     }
 
+    function getFName() {
+        return $this->fname;
+    }//end of getFName
+
+    function getShippingDetails() {
+        $row = array();
+    }//end of getShippingDetails
+
     /*
     * Helper function to create a new order to be the user's wishlist.
     */
