@@ -74,7 +74,7 @@ $pic = $book['pic'];
 						<?php echo "
 						<form name='addtocart' action='".$_SERVER['PHP_SELF']."' method='post'>
 						<input type='hidden' id='addtocart' name='addtocart' value='".$isbn."'/>
-							<button type='button' value ='addtocart' class='btn btn-success'>
+							<button type='button' value ='addtocart' class='btn btn-success' type='submit'>
 								Add to cart 
 							</button>
 						</form>";?>
