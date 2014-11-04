@@ -75,11 +75,13 @@ $pic = $book['pic'];
 							Add to cart 
 						</button>
 					</div>
+					<!--
 					<div class="btn-group wishlist">
 						<button type="button" value ="addtowish" class="btn btn-danger">
 							Add to wishlist 
 						</button>
 					</div>
+					-->
 				</div>
 			</div> 
 		</div>
