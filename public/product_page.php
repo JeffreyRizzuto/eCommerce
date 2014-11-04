@@ -71,9 +71,12 @@ $pic = $book['pic'];
 					?>
 					<hr>
 					<div class="btn-group cart">
-						<button type="button" value ="addtocart" class="btn btn-success">
-							Add to cart 
-						</button>
+						<form name='addtocart' action='".$_SERVER['PHP_SELF']."' method='post'>
+							<input type='hidden' id='addtocart' name='addtocart' value='".$r['isbn']."'/>
+							<button type="button" value ="addtocart" class="btn btn-success" form='addtocart' type='submit'>
+								Add to cart 
+							</button>
+						</form>
 					</div>
 					<!--
 					<div class="btn-group wishlist">

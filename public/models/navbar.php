@@ -81,6 +81,12 @@ if(!empty($_POST)) {
         } else {
             $euser->updateQuantity($newQty, $isbn);
         }
+    } elseif (!is_null($_POST['addtocart'])) {
+       $isbn = $_POST['addtocart'];
+       $_POST['addtocart'] = NULL;
+       $euser = $_SESSION['euser'];
+       $euser->addToCart($isbn,1);
+       header("Location: cart.php"); die();
     }
 }//end of POST
 
