@@ -96,7 +96,7 @@ function searchByTitle($searchString) {
 	global $myQuery;
 
 	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE `title` = ?");
-	$smtm->bind_param("s",$searchString);
+	$stmt->bind_param("s", $searchString);
 	$stmt->execute();
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
 	while($stmt->fetch()) {
