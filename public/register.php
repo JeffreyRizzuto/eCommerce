@@ -148,7 +148,7 @@ if(!empty($_POST))
     <div id='main'>
     <?php    echo resultBlock($errors,$successes);    ?>
 
-    <div id='regbox ' class="col-xs-12 col-sm-6 col-md-6">
+    <div id='regbox '>
     <?php echo"
         <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
             <fieldset>
