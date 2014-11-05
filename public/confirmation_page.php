@@ -62,9 +62,9 @@ $sd = $euser->getShippingDetails();
             <span class="order pull-right"> <a class="text-center">
             <?php
             echo "
+                <a href='index.php'><button class='btn'>Go Back</button></a>
                 <form name='confirm' action='".$_SERVER['PHP_SELF']."' method='post'>
                     <input type='hidden' id='confirm' name='confirm'/>
-                    <a href='index.php'><button class='btn'>Go Back</button></a>
                     <button class='btn btn-success' value='Checkout'>Confirm</button>
                 </form><br>";
             ?>
