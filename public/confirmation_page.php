@@ -12,6 +12,7 @@ $euser = $_SESSION["euser"];
     </p>
 </div>
 
+<div class="col-xs-12 col-sm-7 col-md-7 pull-left">
     <?php
     $cartInfo = $euser->getCartInfo();
     $total = $euser->getCartTotal();
