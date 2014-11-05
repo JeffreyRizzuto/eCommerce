@@ -3,12 +3,24 @@ require_once("models/config.php");
 if(!isUserLoggedIn()) { header("Location: login.php"); die(); }
 require_once("models/master_page.php");
 $euser = $_SESSION["euser"];
+$sd = $euser->getShippingDetails();
 ?>
 <div class="col-xs-12 col-sm-5 col-md-5 text-left pull-right">
     <div class="bigcart"></div>
     <h1>Confirmation</h1>
     <p>
         Are you sure you would like to checkout?
+    </p>
+    <p>
+        Please make sure the following information is correct.<br/>
+        <?php echo"
+            Address:                ".$sd['street']."<br>
+            City:                   ".$sd['city']."<br>
+            State:                  ".$sd['state']."<br>
+            Zip:                    ".$sd['zip']."<br>
+            Phone:                  ".$sd['phone']."<br>
+        ";
+        ?>
     </p>
 </div>
 
@@ -52,6 +64,7 @@ $euser = $_SESSION["euser"];
             echo "
                 <form name='confirm' action='".$_SERVER['PHP_SELF']."' method='post'>
                     <input type='hidden' id='confirm' name='confirm'/>
+                    <a href='index.php'><button class='btn'>Go Back</button></a>
                     <button class='btn btn-success' value='Checkout'>Confirm</button>
                 </form><br>";
             ?>

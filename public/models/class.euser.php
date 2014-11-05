@@ -113,7 +113,8 @@ class EUser {
     }//end of getFName
 
     function getShippingDetails() {
-        $row = array();
+        $row = array('street' => $this->cur_address_street, 'aptno' => $this->cur_address_no, 'city' => $this->cur_address_city, 'state' => $this->cur_address_state, 'zip' =>$this->cur_address_zip, 'phone' => $this->phone_number);
+        return $row;
     }//end of getShippingDetails
 
     /*
