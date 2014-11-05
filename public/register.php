@@ -148,7 +148,7 @@ if(!empty($_POST))
     <div id='main'>
     <?php    echo resultBlock($errors,$successes);    ?>
 
-    <div id='regbox'>
+    <div id='regbox ' class="col-xs-12 col-sm-6 col-md-6">
     <?php echo"
         <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
             <fieldset>
@@ -180,7 +180,7 @@ if(!empty($_POST))
                 <div class="row">
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
-                            <!-- Username -->
+                            <!-- First Name -->
                             <label class="control-label">First Name</label>
                             <div class="controls">
                                 <input type="text" name="firstname" placeholder="" class="input-xlarge">
@@ -189,7 +189,7 @@ if(!empty($_POST))
                     </div>
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
-                            <!-- Display Bane -->
+                            <!-- Last Name -->
                             <label class="control-label">Last Name</label>
                             <div class="controls">
                                 <input type="text"  name="lastname" placeholder="" class="input-xlarge">
@@ -268,7 +268,7 @@ if(!empty($_POST))
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
+                    <div class="col-xs-12 col-sm-2 col-md-2">
                         <label class="control-label">State</label>
                             <select name="state" class="form-control">
                                 <option value="AL">Alabama</option>
