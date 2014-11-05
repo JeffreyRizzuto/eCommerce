@@ -67,6 +67,9 @@ if(!empty($_POST)) {
         header("Location: cart.php"); die();
     } elseif (!is_null($_POST['checkout'])) {
         $_POST['checkout'] = NULL;
+        header("Location: confirmation_page.php");
+    } elseif (!is_null($_POST['confirm'])) {
+        $_POST['confirm'] = NULL;
         $euser = $_SESSION['euser'];
         $euser->checkout();
         header("Location: cart.php");
