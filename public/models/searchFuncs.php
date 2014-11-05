@@ -92,6 +92,22 @@ function searchByAuthor($searchAuthor) {
 	return returnValueCheck($row);
 }//end of searchByAuthor
 
+function searchByTitle($searchString) {
+	global $myQuery;
+
+	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE `title` = ?");
+	$smtm->bind_param($searchString);
+	$stmt->execute();
+	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
+	while($stmt->fetch()) {
+		$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
+						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
+	}
+	$stmt->close();
+
+	return returnValueCheck($row);
+}//end of searchByTitle
+
 
 function search($searchString) {
 	global $myQuery;
@@ -111,6 +127,10 @@ function search($searchString) {
 
 		if(is_null($row)) {
 			$row = searchByAuthor($searchString);
+
+			if(is_null($row)) {
+				$row = searchByTitle($searchString);
+			}
 		}
 
 		return $row;
