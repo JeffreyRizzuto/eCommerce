@@ -148,7 +148,7 @@ if(!empty($_POST))
     <div id='main'>
     <?php    echo resultBlock($errors,$successes);    ?>
 
-    <div id='regbox '>
+    <div id='regbox'>
     <?php echo"
         <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
             <fieldset>
@@ -239,17 +239,17 @@ if(!empty($_POST))
                 <div class="row">
                     <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
-                            <!-- Username -->
+                            <!-- Street -->
                             <label class="control-label">Street</label>
                             <div class="controls">
                                 <input type="text" name="street" placeholder="" class="input-xlarge">
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-2 col-md-2">
+                    <div class="col-xs-12 col-sm-1 col-md-1">
                         <div class="form-group">
-                            <!-- Display Name -->
-                            <label class="control-label">*Apartment Number</label>
+                            <!-- Apartment Number -->
+                            <label class="control-label">Apartment Number</label>
                             <div class="controls">
                                 <input type="text"  name="apartmentnumber" placeholder="" class="input-xlarge">
                                 <p class="help-block">Optional Field</p>
