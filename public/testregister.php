@@ -221,8 +221,7 @@ if(!empty($_POST))
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<label>Security Code:</label>
-						<img src='models/captcha.php'>
+						<label>Security Code: <img src='models/captcha.php'></label>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
