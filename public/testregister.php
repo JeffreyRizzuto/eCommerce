@@ -228,14 +228,6 @@ if(!empty($_POST))
 				<div class="controls">
 				    <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
 				</div>
-				<div class="row">
-				    <div class="form-group">
-					<!-- Button -->
-					<div class="controls">
-					    <button class="btn btn-success">Register</button>
-					</div>
-				    </div>
-				</div>
 			</div>
 			
 			<hr class="colorgraph">
