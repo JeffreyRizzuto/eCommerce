@@ -195,7 +195,7 @@ if(!empty($_POST))
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<!--<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State" tabindex="2">-->
-						<select name="state" class="form-control">
+						<select name="state" class="form-control" class="form-control input-lg" placeholder="State">
 							<option value="AL">Alabama</option>
 							<option value="AK">Alaska</option>
 							<option value="AZ">Arizona</option>
