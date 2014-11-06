@@ -8,7 +8,7 @@
         <div class="navbar-collapse collapse" id="searchbar">
             <ul class="nav navbar-nav navbar-right">
             <?php
-                $count = $euser->getCartSize();
+                //$count = $euser->getCartSize();
                     if(isUserLoggedIn()){
                         echo "
                             <li><a href='account.php'>Account</a></li>

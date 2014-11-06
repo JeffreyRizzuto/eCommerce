@@ -309,7 +309,8 @@ class EUser {
 
         return $count;
 
-    }
+    }//end of getCartSize
+
     function getCartTotal() {
         global $myQuery;
 
