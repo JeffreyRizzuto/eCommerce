@@ -7,7 +7,7 @@
         </div>
         <div class="navbar-collapse collapse" id="searchbar">
             <ul class="nav navbar-nav navbar-right">
-<!--            <?php
+            <?php
                     if(isUserLoggedIn()){
                         echo "
                             <li><a href='account.php'>Account</a></li>
