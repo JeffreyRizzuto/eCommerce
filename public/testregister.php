@@ -218,6 +218,26 @@ if(!empty($_POST))
 				</div>
 			</div>
 			
+			<div class="form-group">
+				<!-- captcha-->
+				<p>
+				    <label>Security Code:</label>
+				    <img src='models/captcha.php'>
+				</p>
+				<label class="control-label"  for="captcha">Enter Security Code</label>
+				<div class="controls">
+				    <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
+				</div>
+				<div class="row">
+				    <div class="form-group">
+					<!-- Button -->
+					<div class="controls">
+					    <button class="btn btn-success">Register</button>
+					</div>
+				    </div>
+				</div>
+			</div>
+			
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
