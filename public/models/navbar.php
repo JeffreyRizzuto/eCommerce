@@ -8,6 +8,7 @@
         <div class="navbar-collapse collapse" id="searchbar">
             <ul class="nav navbar-nav navbar-right">
             <?php
+
                 //$count = $euser->getCartSize();
                     if(isUserLoggedIn()){
                         echo "
