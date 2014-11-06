@@ -2,9 +2,6 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.php">CSBS</a>
         </div>
@@ -23,7 +20,7 @@
                     echo"
                 <li><a href='login.php'>Login</a></li>
                 <li><a href='register.php'>Register</a></li>
-                <li><a href='cart.php'>Cart</a><span class='badge'>";getCartTotal();"</span></li>
+                <li><a href='cart.php'>Cart</a><span class='badge'>getCartTotal();</span></li>
                 ";
                 }
                 ?>
