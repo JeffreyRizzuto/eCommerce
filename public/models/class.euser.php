@@ -294,10 +294,13 @@ class EUser {
         return $row;
     }//end of getCartInfo
 
+    /**
+     * @return mixed
+     */
     function getCartSize(){
         global $myQuery;
 
-        $stmt = $myQuery->prepare("SELECT COUNT(*) FROM `book_order` WHERE `oid` = ?");
+        $stmt = $myQuery->prepare("SELECT COUNT('oid' = ?) FROM `book_order` ");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
         $stmt->bind_result($count);
