@@ -301,6 +301,7 @@ class EUser {
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
         $stmt->bind_result($count);
+        $stmt->fetch();
         $stmt->close();
 
         return $count;
