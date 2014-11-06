@@ -6,22 +6,29 @@
             <a class="navbar-brand" href="index.php">CSBS</a>
         </div>
         <div class="navbar-collapse collapse" id="searchbar">
-
             <ul class="nav navbar-nav navbar-right">
                 <?php
+                $count = $euser->getCartTotal();
                 if(isUserLoggedIn()){
-                    echo "
-                <li><a href='account.php'>Account</a></li>
-                <li><a href='cart.php'>Cart</a></li>
-                <li><a href='logout.php'>Logout</a></li>
-                ";
+                echo "<li><a href='account.php'>Account</a></li>";
+                if($count){
+                    echo "<li><a href='cart.php'>Cart</a><span class='badge'>$count</span></li>";
+                }
+                else{
+                    echo "<li><a href='cart.php'>Cart</a></li>";
+                }
+                echo"<li><a href='logout.php'>Logout</a></li>";
                 }
                 else{
                     echo"
-                <li><a href='login.php'>Login</a></li>
-                <li><a href='register.php'>Register</a></li>
-                <li><a href='cart.php'>Cart</a><span class='badge'>getCartTotal();</span></li>
-                ";
+                    <li><a href='login.php'>Login</a></li>
+                    <li><a href='register.php'>Register</a></li>";
+                     if($count){
+                    echo"<li><a href='cart.php'>Cart</a><span class='badge'>$count</span></li>";
+                    }
+                    else{
+                    echo"<li><a href='cart.php'>Cart</a></li>";
+                }
                 }
                 ?>
             </ul>
