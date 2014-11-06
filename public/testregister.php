@@ -218,12 +218,6 @@ if(!empty($_POST))
 				</div>
 			</div>
 			
-			<div class="form-group">
-				<!-- captcha-->
-				
-				
-			</div>
-			
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
