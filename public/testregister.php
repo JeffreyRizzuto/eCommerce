@@ -221,17 +221,14 @@ if(!empty($_POST))
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<p>
-							<label>Security Code:</label>
-							<img src='models/captcha.php'>
-						</p>
+						<label>Security Code:</label>
+						<img src='models/captcha.php'>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<label class="control-label"  for="captcha">Enter Security Code</label>
 						<div class="controls">
-						    <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
+						    <input type="text"  name ='captcha' placeholder="Security Code" class="input-xlarge">
 						</div>
 					</div>
 				</div>
