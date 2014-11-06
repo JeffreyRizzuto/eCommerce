@@ -141,247 +141,86 @@ if(!empty($_POST))
 
 }
 ?>
-    <div id='wrapper'>
-    <div id='top'><div id='logo'></div></div>
-    <div id='content'>
+<div class="container">
 
-    <div id='main'>
-    <?php    echo resultBlock($errors,$successes);    ?>
-
-    <div id='regbox'>
-    <?php echo"
-        <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
-            <fieldset>
-                <div id="legend">
-                    <legend class="">Account</legend>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Username -->
-                            <label class="control-label">Username</label>
-                            <div class="controls">
-                                <input type="text" name="username" placeholder="" class="input-xlarge">
-                                <p class="help-block">Contains only letters or numbers</p>
-                            </div>
-                        </div>
-                    </div>
-<!--                    <div class="col-xs-12 col-sm-1 col-md-1">-->
-<!--                        <div class="form-group">-->
-                                <!-- Display Bane -->
-<!--                            <label class="control-label">Display Name</label>-->
-<!--                            <div class="controls">-->
-<!--                                <input type="text"  name="displayname" placeholder="" class="input-xlarge">-->
-<!--                                <p class="help-block">Must not already be taken</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- First Name -->
-                            <label class="control-label">First Name</label>
-                            <div class="controls">
-                                <input type="text" name="firstname" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Last Name -->
-                            <label class="control-label">Last Name</label>
-                            <div class="controls">
-                                <input type="text"  name="lastname" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- E-mail -->
-                            <label class="control-label">E-mail</label>
-                            <div class="controls">
-                                <input type="email"  name="email" placeholder="" class="input-xlarge">
-                                <p class="help-block">Please provide your E-mail</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Password-->
-                            <label class="control-label">Password</label>
-                            <div class="controls">
-                                <input type="password"  name="password" placeholder="" class="input-xlarge">
-                                <p class="help-block">At least 8 characters</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- Password -->
-                            <label class="control-label">Password (Confirm)</label>
-                            <div class="controls">
-                                <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
-                                <p class="help-block">Confirm password</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Address form -->
-                <div id="legend">
-                    <legend class="">Address</legend>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Street -->
-                            <label class="control-label">Street</label>
-                            <div class="controls">
-                                <input type="text" name="street" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Apartment Number -->
-                            <label class="control-label">Apartment Number</label>
-                            <div class="controls">
-                                <input type="text"  name="apartmentnumber" placeholder="" class="input-xlarge">
-                                <p class="help-block">Optional Field</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- City -->
-                            <label class="control-label">City</label>
-                            <div class="controls">
-                                <input type="text" name="city" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <label class="control-label">State</label>
-                            <!-- State -->
-                            <select name="state" class="form-control">
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District Of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Zipcode -->
-                            <label class="control-label">Zip Code</label>
-                            <div class="controls">
-                                <input type="text"  name="zipcode" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- Telephone -->
-                            <label class="control-label">Telephone Number</label>
-                            <div class="controls">
-                                <input type="text"  name="phonenumber" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- Use as Billing? -->
-                            <label class="control-label">Use As Billing?</label>
-                            <div class="controls">
-                                <input type="checkbox"  name="both" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- register button -->
-                <div id="legend">
-                    <legend class="">Register</legend>
-                </div>
-                <div class="form-group">
-                    <!-- captcha-->
-                    <p>
-                        <label>Security Code:</label>
-                        <img src='models/captcha.php'>
-                    </p>
-                    <label class="control-label"  for="captcha">Enter Security Code</label>
-                    <div class="controls">
-                        <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <!-- Button -->
-                            <div class="controls">
-                                <button class="btn btn-success">Register</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </form><!-- End Form -->
-    </div><!-- End registration box -->
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form role="form">
+			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-sm-3 col-md-3">
+					<span class="button-checkbox">
+						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
+                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+					</span>
+				</div>
+				<div class="col-xs-8 col-sm-9 col-md-9">
+					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+				</div>
+			</div>
+			
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">?</button>
+				<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
     <!-- Footer-->
     <?php   require 'models/footer.php';    ?>
