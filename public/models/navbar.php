@@ -2,7 +2,8 @@
 require_once("models/config.php");
 
 
-$euser = $_SESSION['euser'];
+$euser = isset($_SESSION['euser']) ? $_SESSION['euser'] : 0;
+
 ?>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
