@@ -1,3 +1,9 @@
+<?php
+require_once("models/config.php");
+
+$euser = $_SESSION['euser'];
+?>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
