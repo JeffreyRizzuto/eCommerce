@@ -3,8 +3,6 @@ require_once("models/config.php");
 
 
 $euser = $_SESSION['euser'];
-
-$count = $euser->getCartSize();
 ?>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -33,7 +31,7 @@ $count = $euser->getCartSize();
 //                            <li><a href='cart.php'>Cart</a></li>
 //                            ";
 //                    }
-
+                $count = $euser->getCartSize();
                 print $count;
                 if(isUserLoggedIn()){
                     echo "<li><a href='account.php'>Account</a></li>";
