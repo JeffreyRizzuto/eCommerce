@@ -37,7 +37,6 @@ $euser = isset($_SESSION['euser']) ? $_SESSION['euser'] : NULL;
                 } else {
                     $count = 0;
                 }
-                $count = 0;
                 print $count;
                 if(isUserLoggedIn()){
                     echo "<li><a href='account.php'>Account</a></li>";
