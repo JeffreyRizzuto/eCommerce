@@ -2,7 +2,7 @@
 require_once("models/config.php");
 
 
-$euser = isset($_SESSION['euser']) ? $_SESSION['euser'] : NULL;
+$checkcartuser= isset($_SESSION['euser']) ? $_SESSION['euser'] : NULL;
 
 ?>
 
@@ -32,12 +32,12 @@ $euser = isset($_SESSION['euser']) ? $_SESSION['euser'] : NULL;
 //                            <li><a href='cart.php'>Cart</a></li>
 //                            ";
 //                    }
-                if(isset($euser)){
-                    $count = $euser->getCartSize();
+                if(isset($checkcartuser)){
+                    $checkcartuser = $checkcartuser->getCartSize();
                 } else {
-                    $count = 0;
+                    $checkcartuser = 0;
                 }
-                print $count;
+                print $checkcartuser;
                 if(isUserLoggedIn()){
                     echo "<li><a href='account.php'>Account</a></li>";
                     if($count){
