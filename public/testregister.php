@@ -14,18 +14,18 @@ if(!empty($_POST))
 	$email = trim($_POST["email"]);
 	$username = trim($_POST["username"]);
 	//$displayname = trim($_POST["displayname"]);
-    $firstname = trim($_POST["firstname"]);
-    $lastname = trim($_POST["lastname"]);
+	$firstname = trim($_POST["firstname"]);
+	$lastname = trim($_POST["lastname"]);
 	$password = trim($_POST["password"]);
 	$confirm_pass = trim($_POST["passwordc"]);
-    $telephone = trim($_POST["telephone"]);
-    $street = trim($_POST["street"]);
-    $apartmentnumber = trim($_POST["streetnumber"]);
-    $city = trim($_POST["city"]);
-    $state = trim($_POST["state"]);
-    $zipcode = trim($_POST["zipcode"]);
-    $both = trim($_POST["both"]);
-    $phonenumber = trim($_POST["phonenumber"]);
+	$telephone = trim($_POST["telephone"]);
+	$street = trim($_POST["street"]);
+	$apartmentnumber = trim($_POST["streetnumber"]);
+	$city = trim($_POST["city"]);
+	$state = trim($_POST["state"]);
+	$zipcode = trim($_POST["zipcode"]);
+	$both = trim($_POST["both"]);
+	$phonenumber = trim($_POST["phonenumber"]);
 	$captcha = md5($_POST["captcha"]);
 	
 	
