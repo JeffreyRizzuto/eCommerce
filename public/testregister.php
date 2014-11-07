@@ -151,30 +151,30 @@ if(!empty($_POST))
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-					<input type="text" name="firstname" id="firstname" class="form-control input-lg" placeholder="First Name" tabindex="1">
+					<input type="text" name="firstname" id="firstname" class="form-control input-lg" placeholder="First Name">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+						<input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Last Name">
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<input type="text" name="username" id="username" class="form-control input-lg" placeholder="UserName" tabindex="3">
+				<input type="text" name="username" id="username" class="form-control input-lg" placeholder="UserName">
 			</div>
 			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
 			</div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="password" name="passwordc" id="passwordc" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+						<input type="password" name="passwordc" id="passwordc" class="form-control input-lg" placeholder="Confirm Password">
 					</div>
 				</div>
 			</div>
@@ -182,29 +182,29 @@ if(!empty($_POST))
 			<!-- ADDRESS -->
 			<!-- Street -->
 			<div class="form-group">
-				<input type="text" name="street" id="street" class="form-control input-lg" placeholder="Street" tabindex="3">
+				<input type="text" name="street" id="street" class="form-control input-lg" placeholder="Street">
 			</div>
 			
 			<!-- CITY, ST, ZIP -->
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="city" id="city" class="form-control input-lg" placeholder="City" tabindex="1">
+						<input type="text" name="city" id="city" class="form-control input-lg" placeholder="City">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State" tabindex="2">
+						<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="zipcode" id="zipcode" class="form-control input-lg" placeholder="Zip" tabindex="2">
+						<input type="text" name="zipcode" id="zipcode" class="form-control input-lg" placeholder="Zip">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="phonenumber" id="phonenumber" class="form-control input-lg" placeholder="Phone" tabindex="2">
+						<input type="text" name="phonenumber" id="phonenumber" class="form-control input-lg" placeholder="Phone">
 					</div>
 				</div>
 			</div>
@@ -212,7 +212,7 @@ if(!empty($_POST))
 			<div class="row">
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
-						<button type="button" class="btn" data-color="info" tabindex="7"> Same As Billing?</button>
+						<button type="button" class="btn" data-color="info"> Same As Billing?</button>
 						<input type="checkbox" name="both" id="t_and_c" class="hidden" value="1">
 					</span>
 				</div>
@@ -237,8 +237,8 @@ if(!empty($_POST))
 			
 			<hr class="colorgraph">
 			<div class="row">
-				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg"></div>
+				<div class="col-xs-12 col-md-6"><a href="24.243.19.100/login.php" class="btn btn-success btn-block btn-lg">Sign In</a></div>
 			</div>
 		</form>
 	</div>
