@@ -38,7 +38,7 @@ class User
 		}
 		else if(displayNameExists($this->displayname))
 		{
-			$this->displayname_taken = true;
+			//$this->displayname_taken = true;
 		}
 		else if(emailExists($this->clean_email))
 		{
