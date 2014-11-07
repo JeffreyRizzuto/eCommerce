@@ -44,7 +44,7 @@ function createProdThumb($book)
 			<p>
 			<form name='cart' action='".$_SERVER['PHP_SELF']."' method='post'>
             <input type='hidden' id='isbn' name='isbn' value='".$isbn."'/>
-            <button type='submit' class='btn btn-primary'>Add to Cart</button>
+            <button type='submit' class='btn btn-primary' style='width: 100%' >Add to Cart</button>
             </form>
 			</p>
 		    </div>
