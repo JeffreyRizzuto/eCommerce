@@ -77,7 +77,8 @@ $pic = $book['pic'];
 							<button value ='addtocart' class='btn btn-success'>
 								Add to cart 
 							</button>
-						</form>";?>
+						</form>";
+						?>
 					</div>
 					<!--
 					<div class="btn-group wishlist">

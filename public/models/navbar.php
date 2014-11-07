@@ -1,3 +1,8 @@
+<?php
+require_once("models/config.php");
+
+?>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -9,7 +14,7 @@
             <ul class="nav navbar-nav navbar-right">
             <?php
 
-                //$count = $euser->getCartSize();
+//                //$count = $euser->getCartSize();
                     if(isUserLoggedIn()){
                         echo "
                             <li><a href='account.php'>Account</a></li>
@@ -24,8 +29,12 @@
                             <li><a href='cart.php'>Cart</a></li>
                             ";
                     }
-//                $count = $euser->getCartSize();
-//                print $count;
+                if(isset($euser)){
+                    $count = $euser->getCartSize();
+                } else {
+                    $count = 0;
+                }
+
 //                if(isUserLoggedIn()){
 //                    echo "<li><a href='account.php'>Account</a></li>";
 //                    if($count){

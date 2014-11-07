@@ -300,11 +300,14 @@ class EUser {
     function getCartSize(){
         global $myQuery;
 
-        $stmt = $myQuery->prepare("SELECT COUNT('oid' = ?) FROM `book_order` ");
+        $stmt = $myQuery->prepare("SELECT *  FROM 'book_order' WHERE 'oid' = ?");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
-        $stmt->bind_result($count);
-        $stmt->fetch();
+        $stmt->bind_result($oid, $isbn, $qty, $date);
+        $count= 0;
+        while($stmt->fetch()){
+            $count++;
+        }
         $stmt->close();
 
         return $count;
