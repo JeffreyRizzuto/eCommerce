@@ -3,7 +3,7 @@
     <div class="row">
 
         <?php
-            require_once ('models/left-nav.php');
+            //require_once ('models/left-nav.php');
             require_once("models/config.php");
             require_once("models/master_page.php");
         ?>
