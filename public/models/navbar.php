@@ -1,9 +1,6 @@
 <?php
 require_once("models/config.php");
 
-
-$checkcartuser= isset($_SESSION['euser']) ? $_SESSION['euser'] : NULL;
-
 ?>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -18,45 +15,45 @@ $checkcartuser= isset($_SESSION['euser']) ? $_SESSION['euser'] : NULL;
             <?php
 
 //                //$count = $euser->getCartSize();
-//                    if(isUserLoggedIn()){
-//                        echo "
-//                            <li><a href='account.php'>Account</a></li>
-//                            <li><a href='cart.php'>Cart</a></li>
-//                            <li><a href='logout.php'>Logout</a></li>
-//                            ";
-//                    }
-//                    else{
-//                        echo"
-//                            <li><a href='login.php'>Login</a></li>
-//                            <li><a href='register.php'>Register</a></li>
-//                            <li><a href='cart.php'>Cart</a></li>
-//                            ";
-//                    }
-                if(isset($checkcartuser)){
-                    $checkcartuser = $checkcartuser->getCartSize();
+                    if(isUserLoggedIn()){
+                        echo "
+                            <li><a href='account.php'>Account</a></li>
+                            <li><a href='cart.php'>Cart</a></li>
+                            <li><a href='logout.php'>Logout</a></li>
+                            ";
+                    }
+                    else{
+                        echo"
+                            <li><a href='login.php'>Login</a></li>
+                            <li><a href='register.php'>Register</a></li>
+                            <li><a href='cart.php'>Cart</a></li>
+                            ";
+                    }
+                if(isset($euser)){
+                    $count = $euser->getCartSize();
                 } else {
-                    $checkcartuser = 0;
+                    $count = 0;
                 }
-                print $checkcartuser;
-                if(isUserLoggedIn()){
-                    echo "<li><a href='account.php'>Account</a></li>";
-                    if($count){
-                        echo "<li><a href='cart.php'>Cart</a><span class='badge'>$count</span></li>";
-                    }else{
-                        echo "<li><a href='cart.php'>Cart</a></li>";
-                    }
-                    echo"<li><a href='logout.php'>Logout</a></li>";
-                }
-                else{
-                    echo"
-                        <li><a href='login.php'>Login</a></li>
-                        <li><a href='register.php'>Register</a></li>";
-                    if($count){
-                        echo"<li><a href='cart.php'>Cart</a><span class='badge'>$count</span></li>";
-                    }else{
-                        echo"<li><a href='cart.php'>Cart</a></li>";
-                    }
-                }
+
+//                if(isUserLoggedIn()){
+//                    echo "<li><a href='account.php'>Account</a></li>";
+//                    if($count){
+//                        echo "<li><a href='cart.php'>Cart</a><span class='badge'>$count</span></li>";
+//                    }else{
+//                        echo "<li><a href='cart.php'>Cart</a></li>";
+//                    }
+//                    echo"<li><a href='logout.php'>Logout</a></li>";
+//                }
+//                else{
+//                    echo"
+//                        <li><a href='login.php'>Login</a></li>
+//                        <li><a href='register.php'>Register</a></li>";
+//                    if($count){
+//                        echo"<li><a href='cart.php'>Cart</a><span class='badge'>$count</span></li>";
+//                    }else{
+//                        echo"<li><a href='cart.php'>Cart</a></li>";
+//                    }
+//                }
                 ?>
             </ul>
             <?php echo" <form class='navbar-form' name='search' action='".$_SERVER['PHP_SELF']."' method='post'> "?>
