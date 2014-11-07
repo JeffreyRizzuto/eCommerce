@@ -141,12 +141,18 @@ if(!empty($_POST))
 
 }
 ?>
-<div class="container">
 
-<div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<?php echo"
-		<form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
+    <div id='wrapper'>
+    <div id='top'><div id='logo'></div></div>
+    <div id='content'>
+
+    <div id='main'>
+    <?php    echo resultBlock($errors,$successes);    ?>
+
+    <div id='regbox'>
+    <?php echo"
+        <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
+            <fieldset>
 			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
