@@ -303,6 +303,7 @@ class EUser {
         $stmt = $myQuery->prepare("SELECT *  FROM 'book_order' WHERE 'oid' = ?");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
+        $stmt->bind_result($oid, $isbn, $qty, $date);
         $count= 0;
         while($stmt->fetch()){
             $count++;
