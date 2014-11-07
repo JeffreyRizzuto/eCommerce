@@ -14,18 +14,18 @@ if(!empty($_POST))
 	$email = trim($_POST["email"]);
 	$username = trim($_POST["username"]);
 	//$displayname = trim($_POST["displayname"]);
-    $firstname = trim($_POST["firstname"]);
-    $lastname = trim($_POST["lastname"]);
+	$firstname = trim($_POST["firstname"]);
+	$lastname = trim($_POST["lastname"]);
 	$password = trim($_POST["password"]);
 	$confirm_pass = trim($_POST["passwordc"]);
-    $telephone = trim($_POST["telephone"]);
-    $street = trim($_POST["street"]);
-    $apartmentnumber = trim($_POST["streetnumber"]);
-    $city = trim($_POST["city"]);
-    $state = trim($_POST["state"]);
-    $zipcode = trim($_POST["zipcode"]);
-    $both = trim($_POST["both"]);
-    $phonenumber = trim($_POST["phonenumber"]);
+	$telephone = trim($_POST["telephone"]);
+	$street = trim($_POST["street"]);
+	$apartmentnumber = trim($_POST["streetnumber"]);
+	$city = trim($_POST["city"]);
+	$state = trim($_POST["state"]);
+	$zipcode = trim($_POST["zipcode"]);
+	$both = trim($_POST["both"]);
+	$phonenumber = trim($_POST["phonenumber"]);
 	$captcha = md5($_POST["captcha"]);
 	
 	
@@ -141,247 +141,180 @@ if(!empty($_POST))
 
 }
 ?>
-    <div id='wrapper'>
-    <div id='top'><div id='logo'></div></div>
-    <div id='content'>
 
-    <div id='main'>
-    <?php    echo resultBlock($errors,$successes);    ?>
 
-    <div id='regbox'>
-    <?php echo"
-        <form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
-            <fieldset>
-                <div id="legend">
-                    <legend class="">Account</legend>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Username -->
-                            <label class="control-label">Username</label>
-                            <div class="controls">
-                                <input type="text" name="username" placeholder="" class="input-xlarge">
-                                <p class="help-block">Contains only letters or numbers</p>
-                            </div>
-                        </div>
-                    </div>
-<!--                    <div class="col-xs-12 col-sm-1 col-md-1">-->
-<!--                        <div class="form-group">-->
-                                <!-- Display Bane -->
-<!--                            <label class="control-label">Display Name</label>-->
-<!--                            <div class="controls">-->
-<!--                                <input type="text"  name="displayname" placeholder="" class="input-xlarge">-->
-<!--                                <p class="help-block">Must not already be taken</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- First Name -->
-                            <label class="control-label">First Name</label>
-                            <div class="controls">
-                                <input type="text" name="firstname" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Last Name -->
-                            <label class="control-label">Last Name</label>
-                            <div class="controls">
-                                <input type="text"  name="lastname" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- E-mail -->
-                            <label class="control-label">E-mail</label>
-                            <div class="controls">
-                                <input type="email"  name="email" placeholder="" class="input-xlarge">
-                                <p class="help-block">Please provide your E-mail</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Password-->
-                            <label class="control-label">Password</label>
-                            <div class="controls">
-                                <input type="password"  name="password" placeholder="" class="input-xlarge">
-                                <p class="help-block">At least 8 characters</p>
-                            </div>
-                        </div>
-                    </div>
+<div class="container">
+<?php    echo resultBlock($errors,$successes);    ?>
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<?php echo"
+		<form name='newUser' action='".$_SERVER['PHP_SELF']."' method='post'>" ?>
+			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+					<input type="text" name="firstname" id="firstname" class="form-control input-lg" placeholder="First Name">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Last Name">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="text" name="username" id="username" class="form-control input-lg" placeholder="UserName">
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="passwordc" id="passwordc" class="form-control input-lg" placeholder="Confirm Password">
+					</div>
+				</div>
+			</div>
+			
+			<!-- ADDRESS -->
+			<!-- Street -->
+			<div class="form-group">
+				<input type="text" name="street" id="street" class="form-control input-lg" placeholder="Street">
+			</div>
+			
+			<!-- CITY, ST, ZIP -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="city" id="city" class="form-control input-lg" placeholder="City">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="zipcode" id="zipcode" class="form-control input-lg" placeholder="Zip">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="phonenumber" id="phonenumber" class="form-control input-lg" placeholder="Phone">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-4 col-sm-3 col-md-3">
+					<span class="button-checkbox">
+						<button type="button" class="btn" data-color="info"> Same As Billing?</button>
+						<input type="checkbox" name="both" id="t_and_c" class="hidden" value="1">
+					</span>
+				</div>
+			</div>
+			
+			<div class="row"></div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<label>Security Code: <img src='models/captcha.php'></label>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<div class="controls">
+						    <input type="text"  name ='captcha' placeholder="Security Code" class="input-xlarge">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-md-6"><button class="btn btn-primary btn-block btn-lg">Register</button></div>
+				<div class="col-xs-12 col-md-6"><a href="login.php" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+			</div>
+		</form>
+	</div>
+</div>
 
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- Password -->
-                            <label class="control-label">Password (Confirm)</label>
-                            <div class="controls">
-                                <input type="password"  name="passwordc" placeholder="" class="input-xlarge">
-                                <p class="help-block">Confirm password</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Address form -->
-                <div id="legend">
-                    <legend class="">Address</legend>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Street -->
-                            <label class="control-label">Street</label>
-                            <div class="controls">
-                                <input type="text" name="street" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Apartment Number -->
-                            <label class="control-label">Apartment Number</label>
-                            <div class="controls">
-                                <input type="text"  name="apartmentnumber" placeholder="" class="input-xlarge">
-                                <p class="help-block">Optional Field</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</div>
+<!-- Footer-->
+<?php   require 'models/footer.php';    ?>
+    
+<script type="text/javascript">
+	$(function () {
+    $('.button-checkbox').each(function () {
 
-                <div class="row">
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- City -->
-                            <label class="control-label">City</label>
-                            <div class="controls">
-                                <input type="text" name="city" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <label class="control-label">State</label>
-                            <!-- State -->
-                            <select name="state" class="form-control">
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District Of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>
-                    </div>
-                    <div class="col-xs-12 col-sm-1 col-md-1">
-                        <div class="form-group">
-                            <!-- Zipcode -->
-                            <label class="control-label">Zip Code</label>
-                            <div class="controls">
-                                <input type="text"  name="zipcode" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- Telephone -->
-                            <label class="control-label">Telephone Number</label>
-                            <div class="controls">
-                                <input type="text"  name="phonenumber" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-2 col-md-2">
-                        <div class="form-group">
-                            <!-- Use as Billing? -->
-                            <label class="control-label">Use As Billing?</label>
-                            <div class="controls">
-                                <input type="checkbox"  name="both" placeholder="" class="input-xlarge">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- register button -->
-                <div id="legend">
-                    <legend class="">Register</legend>
-                </div>
-                <div class="form-group">
-                    <!-- captcha-->
-                    <p>
-                        <label>Security Code:</label>
-                        <img src='models/captcha.php'>
-                    </p>
-                    <label class="control-label"  for="captcha">Enter Security Code</label>
-                    <div class="controls">
-                        <input type="text"  name ='captcha' placeholder="" class="input-xlarge">
-                    </div>
-                    <div class="row">
-                        <div class="form-group">
-                            <!-- Button -->
-                            <div class="controls">
-                                <button class="btn btn-success">Register</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-        </form><!-- End Form -->
-    </div><!-- End registration box -->
-    <!-- Footer-->
-    <?php   require 'models/footer.php';    ?>
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color + ' active');
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color + ' active')
+                    .addClass('btn-default');
+            }
+        }
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($button.find('.state-icon').length == 0) {
+                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i>');
+            }
+        }
+        init();
+    });
+});
+</script>
