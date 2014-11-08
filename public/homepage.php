@@ -8,7 +8,7 @@
             require_once("models/master_page.php");
         ?>
 
-        <div class="col-md-12">
+        <div class="col-md-9">
 
             <div class="row carousel-holder">
 
