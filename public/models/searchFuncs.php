@@ -78,14 +78,14 @@ function searchByCourse($course) {
 function searchByAuthor($searchAuthor) {
 	global $myQuery;
 
-	$stmt = $myQuery->prepare("SELECT * FROM `books`");
+	$search_string = "%$searchAuthor%";
+	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE `author` LIKE ?");
+	$stmt->bind_param("s", $search_string);
 	$stmt->execute();
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
 	while($stmt->fetch()) {
-		if(strpos($searchAuthor, $author) !== false) {
-			$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
-						'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
-		}
+		$row[] = array('isbn' => $isbn, 'title' => $title, 'author' => $author, 'edition' => $edition, 'type' => $type, 'details' => $details,
+			'publisher' => $publisher, 'price' => $price, 'course' => $course, 'category' => $cat, 'qty' => $quantity, 'pic' => '../images/'.$isbn.'.jpg');
 	}
 	$stmt->close();
 
