@@ -118,6 +118,11 @@ if(!empty($_POST)) {
        $euser = $_SESSION['euser'];
        $euser->addToCart($isbn,1);
        header("Location: cart.php"); die();
+    } elseif (!is_null($_POST['del_isbn'])) {
+        $isbn = $_POST['del_isbn'];
+        $_POST['del_isbn'] = NULL;
+        $euser = $_SESSION['euser'];
+        $euser->removeFromCart($isbn);
     }
 }//end of POST
 
