@@ -10,13 +10,13 @@ $info = $euser->getPastOrders();
 //var_dump($info);
 
 if(is_null($info)) {
-	echo "<h2>You have no past orders.</h2>";
+	echo "<h3>You have no past orders.</h3>";
 } else {
 	foreach($info as $inf) {
 		echo "
             <div class='panel panel-default'>
                 <div class='panel-body'>
-                    <h4>Order #:			".$inf['oid']."</h4>
+                    <h3>Order #:			".$inf['oid']."</h3>
 		            <ul class='list-group'>";
                     foreach($inf['o_inf'] as $i) {
                         echo "
@@ -29,7 +29,7 @@ if(is_null($info)) {
                         </li>
                         ";
                     }//end of inner foreach
-                    echo "<h3>Total Price: $".$inf['price']."</h3>
+                    echo "<h4>Total Price: $".$inf['price']."</h4>
                                 </ul>
                             </div>
                         </div>";
