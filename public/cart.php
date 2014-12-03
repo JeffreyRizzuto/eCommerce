@@ -54,10 +54,10 @@ $euser = $_SESSION["euser"];
             <span class="order pull-right"> <a class="text-center">
             <?php
             echo "
-                <form name='checkout' action='".$_SERVER['PHP_SELF']."' method='post'>
-                    <input type='hidden' id='checkout' name='checkout'/>";
+                <form name='checkout' action='".$_SERVER['PHP_SELF']."' method='post'>";
                     if(!is_null($cartInfo)) {
-                        echo "<button class='btn btn-success' value='Checkout'>Checkout</button>";
+                        echo "<input type='hidden' id='checkout' name='checkout'/>
+                        <button class='btn btn-success' value='Checkout'>Checkout</button>";
                     } else {
                         echo "<button class='btn btn-disabled' value='Checkout'>Checkout</button>";
                     }
