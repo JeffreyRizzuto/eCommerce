@@ -10,7 +10,7 @@ $euser = $_SESSION["euser"];
     <div class="bigcart"></div>
     <h1>Your shopping cart</h1>
     <p>
-        Something Something shopping cart
+        <a href'homepage.php'>Continue Shopping</a>
     </p>
 </div>
 
@@ -34,7 +34,7 @@ $euser = $_SESSION["euser"];
                         <form name='updateCart' action='".$_SERVER['PHP_SELF']."' method='post'>
                         <li>Title: " . $c['title'] . "</li>
                         <li>ISBN: " . $c['isbn'] . "</span></li>
-                        <li>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
+                        <li>Quantity: <input type='text' id='qty' name='quantity' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
                         <li>Date Added: " . $c['date'] . "</span></li>
                         <input type='hidden' id='qty_isbn' name='qty_isbn' value='".$c['isbn']."'/>
                         </form><li>Price: $".getPrice($c['isbn'])."</li>
