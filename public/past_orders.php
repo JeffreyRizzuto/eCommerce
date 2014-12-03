@@ -29,7 +29,7 @@ if(is_null($info)) {
                         </li>
                         ";
                     }//end of inner foreach
-                    echo "Total Price: $".$inf['price']."
+                    echo "<h3>Total Price: $".$inf['price']."</h3>
                                 </ul>
                             </div>
                         </div>";
