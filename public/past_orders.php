@@ -10,26 +10,27 @@ $info = $euser->getPastOrders();
 //var_dump($info);
 
 if(is_null($info)) {
-	echo "<h1>You have no past orders.</h1>";
+	echo "<div class='panel panel-default'>
+                <div class='panel-body'>
+                    <ul class='pull-left' style='list-style-type:none'>
+                        <h1>You have no past orders.</h1>";
 } else {
 	foreach($info as $inf) {
 		echo "<h1>Order #:			".$inf['oid']."</h1><br><br>";
 		foreach($inf['o_inf'] as $i) {
    			echo "
-   			<div class='panel panel-default'>
-                <div class='panel-body'>
-                    <ul class='pull-left' style='list-style-type:none'>
+
                         <li>Title:          ".$i['title']."</li>
                         <li>ISBN:			".$i['isbn']."</li>
                         <li>Quantity:		".$i['qty']."</li>
                         <li>Date Added:		".$i['date']."</li>
                         <li>Price:          ".$i['book_price']."</li>
-                    </ul>
-                </div>
-            </div>
    			";
    		}//end of inner foreach
-		echo "Total Price: $".$inf['price']."<br><hr>";
+		echo "Total Price: $".$inf['price']."
+		            </ul>
+                </div>
+            </div>";
 	}//end of outer foreach
 }//end of else
 ?>
