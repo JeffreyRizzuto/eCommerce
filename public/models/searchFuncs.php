@@ -87,8 +87,6 @@ function searchByAuthor($searchAuthor) {
 	}
 	$query = substr($query, 0, -3); //remove the trailing OR from the query string
 
-	echo "$query<br>";
-
 	$stmt = $myQuery->prepare($query);
 	$stmt->execute();
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);

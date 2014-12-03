@@ -282,12 +282,12 @@ class EUser {
     function getCartInfo() {
         global $myQuery;
 
-        $stmt = $myQuery->prepare("SELECT * FROM `book_order` WHERE `oid` = ?");
+        $stmt = $myQuery->prepare("SELECT O.*, B.title ` FROM `book_order` AS O, `books` as B WHERE `oid` = ? AND O.ISBN = B.isbn");
         $stmt->bind_param("i", $this->cart);
         $stmt->execute();
-        $stmt->bind_result($oid, $isbn, $qty, $date);
+        $stmt->bind_result($oid, $isbn, $qty, $date, $title);
         while($stmt->fetch()) {
-            $row[] = array('oid' => $oid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date, 'pic' => '../images/'.$isbn.'.jpg');
+            $row[] = array('oid' => $oid, 'isbn' => $isbn, 'qty' => $qty, 'date' => $date, 'pic' => '../images/'.$isbn.'.jpg', 'title' => $title);
         }
         $stmt->close();
 
