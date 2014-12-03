@@ -79,7 +79,7 @@ function searchByAuthor($searchAuthor) {
 	global $myQuery;
 
 	$search_string = '%'.$searchAuthor.'%';
-	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE ? LIKE CONCAT('%', `author`,'%') ");
+	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE ? REGEXP `author`");
 	$stmt->bind_param("s", $search_string);
 	$stmt->execute();
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
