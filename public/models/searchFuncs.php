@@ -78,9 +78,8 @@ function searchByCourse($course) {
 function searchByAuthor($searchAuthor) {
 	global $myQuery;
 
-	$search_string = '%'.$searchAuthor.'%';
-	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE ? REGEXP `author`");
-	$stmt->bind_param("s", $search_string);
+	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE `author` REGEXP ?");
+	$stmt->bind_param("s", $searchAuthor);
 	$stmt->execute();
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
 	while($stmt->fetch()) {
