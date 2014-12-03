@@ -16,7 +16,7 @@ $info = $euser->getPastOrders();
         <div id='content'>
             <h2>Account</h2>
         </div>
-         <div class'col-md-4' id='leftnav'>
+         <div class'row col-md-4' id='leftnav'>
              <?php
             require_once("models/account-nav.php");
             ?>
