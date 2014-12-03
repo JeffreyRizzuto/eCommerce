@@ -37,12 +37,11 @@ $info = $euser->getPastOrders();
                                 ISBN:			".$i['isbn']."<br>
                                 Quantity:		".$i['qty']."<br>
                                 Date Added:		".$i['date']."<br>
-                                Price:          ".$i['book_price']."<br>
+                                Price:          ".$i['book_price']."
                             </li>
                             ";
                         }//end of inner foreach
-                        echo "<h4>Total Price: $".$inf['price']."</h4>
-                                    </ul>
+                        echo "<h4>Total Price: $".$inf['price']."</h4></ul>
                                     ";
         }//end of outer foreach
     }//end of else
