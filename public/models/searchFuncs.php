@@ -82,7 +82,7 @@ function searchByAuthor($searchAuthor) {
 	$query = "SELECT * FROM `books` WHERE ";
 	$token = strtok($searchAuthor, ' ');
 	while($token !== false) {
-		$query .= "`author` LIKE ".$token."% OR ";
+		$query .= "`author` LIKE \'%".$token."%\' OR ";
 		$token = strtok(',');
 	}
 	$query = substr($query, 0, -3); //remove the trailing OR from the query string
