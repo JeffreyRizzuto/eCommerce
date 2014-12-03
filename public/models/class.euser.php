@@ -401,12 +401,13 @@ class EUser {
 
         //loop through the customer's past orders to get the information
         foreach ($orders as $oid) {
-            $stmt = $myQuery->prepare("SELECT * FROM `book_order` WHERE `oid` = ?");
+            $stmt = $myQuery->prepare("SELECT  `book_order`. * ,  `books`.title, `books`.price FROM  `book_order` JOIN  `books` WHERE  `oid` = ? AND  `book_order`.ISBN =  `books`.isbn");
             $stmt->bind_param("i", $oid);
             $stmt->execute();
-            $stmt->bind_result($noid, $isbn, $qty, $date);
+            $stmt->bind_result($noid, $isbn, $qty, $date, $title, $price);
             while($stmt->fetch()) {
-                $row[] = array('isbn' => $isbn, 'qty' => $qty, 'date' => $date);
+                $price = $price * $qty;
+                $row[] = array('isbn' => $isbn, 'qty' => $qty, 'date' => $date, 'title' => $title, 'book_price' => $price);
             }
             $stmt->close();
             $ret[] = array('oid' => $oid, 'o_inf' => $row, 'price' => $prices[$index]);
