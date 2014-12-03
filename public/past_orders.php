@@ -16,10 +16,9 @@ $info = $euser->getPastOrders();
             <h2>Account</h2>
         </div>
         <div id='main'>
-             <?php
-            require_once("models/account-nav.php");
-            ?>
-
+         <?php
+        require_once("models/account-nav.php");
+        ?>
 <?php
     if(is_null($info)) {
         echo "<h3>You have no past orders.</h3>";
