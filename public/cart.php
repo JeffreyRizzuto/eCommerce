@@ -56,7 +56,7 @@ $euser = $_SESSION["euser"];
             echo "
                 <form name='checkout' action='".$_SERVER['PHP_SELF']."' method='post'>
                     <input type='hidden' id='checkout' name='checkout'/>";
-                    if(!is_null(cartInfo)) {
+                    if(!is_null($cartInfo)) {
                         echo "<button class='btn btn-success' value='Checkout'>Checkout</button>";
                     } else {
                         echo "<button class='btn btn-disabled' value='Checkout'>Checkout</button>";
