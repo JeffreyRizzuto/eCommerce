@@ -38,8 +38,7 @@ $info = $euser->getPastOrders();
                             </li>
                             ";
                         }//end of inner foreach
-                        echo "<h4>Total Price: $".$inf['price']."</h4></ul>
-                                    ";
+                        echo "<h4>Total Price: $".$inf['price']."</h4></ul>";
         }//end of outer foreach
     }//end of else
 ?>
