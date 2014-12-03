@@ -21,11 +21,11 @@ if(is_null($info)) {
                     foreach($inf['o_inf'] as $i) {
                         echo "
                         <li class='list-group-item'>
-                            Title:          ".$i['title']."
-                            ISBN:			".$i['isbn']."
-                            Quantity:		".$i['qty']."
-                            Date Added:		".$i['date']."
-                            Price:          ".$i['book_price']."
+                            <li>Title:          ".$i['title']."</li>
+                            <li>ISBN:			".$i['isbn']."</li>
+                            <li>Quantity:		".$i['qty']."</li>
+                            <li>Date Added:		".$i['date']."</li>
+                            <li>Price:          ".$i['book_price']."</li>
                         </li>
                         ";
                     }//end of inner foreach
