@@ -88,10 +88,12 @@ function searchByAuthor($searchAuthor) {
 
 	$query = "SELECT * FROM `books` WHERE ";
 	foreach($tokens as $tok) {
-		$query .= "`author` LIKE %$tok% OR";
+		$query .= "`author` LIKE %".$tok."% OR";
 	}
-	$query .= '0';
 
+	echo "$query<br>";
+	return;
+	
 	$stmt = $myQuery->prepare($query);
 	$stmt->execute();
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
