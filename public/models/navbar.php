@@ -17,7 +17,7 @@ require_once("models/config.php");
 //                //$count = $euser->getCartSize();
                     if(isUserLoggedIn()){
                         echo "
-                            <li><a href='account.php'>Hello ".$euser->getFName().", Account</a></li>
+                            <li><a href='account.php'>Account</a></li>
                             <li><a href='cart.php'>Cart</a></li>
                             <li><a href='logout.php'>Logout</a></li>
                             ";
