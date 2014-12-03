@@ -78,8 +78,21 @@ function searchByCourse($course) {
 function searchByAuthor($searchAuthor) {
 	global $myQuery;
 
-	$stmt = $myQuery->prepare("SELECT * FROM `books` WHERE `author` REGEXP ?");
-	$stmt->bind_param("s", $searchAuthor);
+	//tokenize the user input and search
+	$tokens = [];
+	$token = strtok($searchAuthor, ',');
+	while($token !== false) {
+		$tokens[] = $token;
+		$token = strtok($searchAuthor);
+	}
+
+	$query = "SELECT * FROM `books` WHERE ";
+	foreach($tokens as $tok) {
+		$query .= "`author` LIKE %$tok% OR";
+	}
+	$query .= '0';
+
+	$stmt = $myQuery->prepare($query);
 	$stmt->execute();
 	$stmt->bind_result($course, $cat, $isbn, $title, $edition, $author, $type, $price, $details, $publisher, $quantity);
 	while($stmt->fetch()) {
