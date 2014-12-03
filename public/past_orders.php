@@ -14,7 +14,7 @@ if(is_null($info)) {
 } else {
 	foreach($info as $inf) {
 		echo "
-            <div class='panel panel-default'>
+            <div class='panel panel-default col-xs-12 col-sm-6 col-md-6'>
                 <div class='panel-body'>
                     <h3>Order #:			".$inf['oid']."</h3>
 		            <ul class='list-group'>";
