@@ -32,6 +32,7 @@ $euser = $_SESSION["euser"];
                     <span class=''><img src=" . $c['pic'] . "></span>
                     <ul class='pull-right' style='list-style-type:none'>
                         <form name='updateCart' action='".$_SERVER['PHP_SELF']."' method='post'>
+                        <li>Title: " . $c['title'] . "</li>
                         <li>ISBN: " . $c['isbn'] . "</span></li>
                         <li>Quantity: <input type='text' id='qty' name='qty' value='".$c['qty']."'/></span><input type='Submit' value='Update Quantity' /></li>
                         <li>Date Added: " . $c['date'] . "</span></li>
