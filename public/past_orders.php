@@ -29,9 +29,6 @@ $info = $euser->getPastOrders();
     } else {
         foreach($info as $inf) {
             echo "
-
-                <div class='panel panel-default'>
-                    <div class='panel-body'>
                         <h3>Order #:			".$inf['oid']."</h3>
                         <ul class='list-group'>";
                         foreach($inf['o_inf'] as $i) {
@@ -47,8 +44,7 @@ $info = $euser->getPastOrders();
                         }//end of inner foreach
                         echo "<h4>Total Price: $".$inf['price']."</h4>
                                     </ul>
-                                </div>
-                            </div>";
+                                    ";
         }//end of outer foreach
     }//end of else
 ?>
