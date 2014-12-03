@@ -86,7 +86,7 @@ function searchByAuthor($searchAuthor) {
 		$token = strtok(',');
 	}
 
-	echo "$tokens<br>";
+	echo var_dump($tokens);
 
 	$query = "SELECT * FROM `books` WHERE ";
 	foreach($tokens as $tok) {
