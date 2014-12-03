@@ -80,14 +80,12 @@ function searchByAuthor($searchAuthor) {
 
 	//tokenize the user input and search
 	$query = "SELECT * FROM `books` WHERE ";
-	$token = strtok($searchAuthor, ',');
+	$token = strtok($searchAuthor, ' ');
 	while($token !== false) {
 		$query .= "`author` LIKE %".$token."% OR";
 		$token = strtok(',');
 	}
-
-	echo "$query<br>";
-	return;
+	$query = substr($query, 0, -3); //remove the trailing OR from the query string
 
 	$stmt = $myQuery->prepare($query);
 	$stmt->execute();
