@@ -22,7 +22,6 @@ $info = $euser->getPastOrders();
             require_once("models/account-nav.php");
             ?>
         </div>
-    <div class'col-md-8 align-right' id='content'>
 <?php
     if(is_null($info)) {
         echo "<h3>You have no past orders.</h3>";
@@ -30,7 +29,7 @@ $info = $euser->getPastOrders();
         foreach($info as $inf) {
             echo "
                         <h3>Order #:			".$inf['oid']."</h3>
-                        <ul class='list-group'>";
+                        <ul class='list-group col-md-3'>";
                         foreach($inf['o_inf'] as $i) {
                             echo "
                             <li class='list-group-item'>
