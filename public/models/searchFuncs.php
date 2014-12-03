@@ -79,18 +79,11 @@ function searchByAuthor($searchAuthor) {
 	global $myQuery;
 
 	//tokenize the user input and search
-	$tokens = [];
+	$query = "SELECT * FROM `books` WHERE ";
 	$token = strtok($searchAuthor, ',');
 	while($token !== false) {
-		$tokens[] = $token;
+		$query .= "`author` LIKE %".$token."% OR";
 		$token = strtok(',');
-	}
-
-	echo var_dump($tokens);
-
-	$query = "SELECT * FROM `books` WHERE ";
-	foreach($tokens as $tok) {
-		$query .= "`author` LIKE %".$tok."% OR";
 	}
 
 	echo "$query<br>";
