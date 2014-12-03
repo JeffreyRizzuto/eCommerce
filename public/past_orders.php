@@ -20,9 +20,6 @@ $info = $euser->getPastOrders();
              <?php
             require_once("models/account-nav.php");
             ?>
-    </div>
-</div>
-
 <?php
     if(is_null($info)) {
         echo "<h3>You have no past orders.</h3>";
@@ -52,5 +49,7 @@ $info = $euser->getPastOrders();
         }//end of outer foreach
     }//end of else
 ?>
+         </div>
+</div>
     <!-- Footer-->
     <?php   require 'models/footer.php';  ?>
