@@ -17,12 +17,12 @@ $info = $euser->getPastOrders();
             <h2>Account</h2>
         </div>
         <div class 'row'>
-         <div class'col-md-4' id='leftnav'>
+         <div class'col-md-4 align-left' id='leftnav'>
              <?php
             require_once("models/account-nav.php");
             ?>
         </div>
-    <div class'col-md-8' id='content'>
+    <div class'col-md-8 align-right' id='content'>
 <?php
     if(is_null($info)) {
         echo "<h3>You have no past orders.</h3>";
