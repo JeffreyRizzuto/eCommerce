@@ -16,7 +16,8 @@ $info = $euser->getPastOrders();
         <div id='content'>
             <h2>Account</h2>
         </div>
-         <div class'row col-md-4' id='leftnav'>
+        <div class 'row'>
+         <div class'rcol-md-4' id='leftnav'>
              <?php
             require_once("models/account-nav.php");
             ?>
@@ -51,6 +52,7 @@ $info = $euser->getPastOrders();
         }//end of outer foreach
     }//end of else
 ?>
+    </div>
 </div>
     <!-- Footer-->
     <?php   require 'models/footer.php';  ?>
