@@ -10,7 +10,7 @@ $euser = $_SESSION["euser"];
     <div class="bigcart"></div>
     <h1>Your shopping cart</h1>
     <p>
-        <a href='homepage.php'>Continue Shopping</a>
+        <a href='index.php'>Continue Shopping</a>
     </p>
 </div>
 
